@@ -31,6 +31,29 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ---
 
+### Statistics Foundation
+
+#### **Primary Resource: Khan Academy Statistics**
+**Course**: [Statistics and Probability](https://www.khanacademy.org/math/statistics-probability)
+- **Why**: Essential for mathematical reasoning and LLM evaluation
+- **Focus**: Descriptive statistics, probability distributions, hypothesis testing
+- **Time Commitment**: 3 hours/week
+- **Milestone**: Complete descriptive statistics and probability basics
+
+**Supplementary Resources**:
+- **StatQuest YouTube**: [Statistics concepts](https://www.youtube.com/c/statquest) simplified
+- **3Blue1Brown**: [Probability and statistics](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_970vX_6LqdIcGx3W) intuition
+- **MIT OCW**: [Introduction to Probability](https://ocw.mit.edu/courses/6-041sc-introduction-to-probability-fall-2013/) (Phase 2)
+
+#### **Statistics for Math LLMs**:
+- **Descriptive Statistics**: Mean, median, mode, variance, standard deviation
+- **Probability Distributions**: Normal, binomial, Poisson distributions
+- **Hypothesis Testing**: A/B testing, statistical significance
+- **Bayesian Statistics**: Bayesian inference, prior/posterior distributions
+- **Evaluation Metrics**: Accuracy, precision, recall, F1-score for math LLMs
+
+---
+
 ### Programming Fundamentals
 
 #### **Primary Resource: Harvard CS50**
@@ -79,6 +102,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 **Weeks 1-2 (March 1-14): Foundation Setup**
 - [ ] Start [Khan Academy Linear Algebra](https://www.khanacademy.org/math/linear-algebra) (vectors, matrices)
 - [ ] Begin [Harvard CS50](https://cs50.harvard.edu/x/2023/) Week 0-1
+- [ ] Start [Khan Academy Statistics](https://www.khanacademy.org/math/statistics-probability) (descriptive statistics)
 - [ ] Set up Math LLM development environment: [Python 3.11+](https://www.python.org/downloads/) + [VS Code](https://code.visualstudio.com/) + [Jupyter](https://jupyter.org/) + [Git](https://git-scm.com/)
 - [ ] Install essential packages: [NumPy](https://numpy.org/), [SymPy](https://www.sympy.org/), [Matplotlib](https://matplotlib.org/), [PyTorch](https://pytorch.org/), [Transformers](https://huggingface.co/docs/transformers/index)
 - [ ] Join 2 LLM-focused Discord servers: [OpenAI](https://discord.com/invite/openai), [Learn AI Together](https://discord.com/invite/learnaitogether)
@@ -87,6 +111,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 **Weeks 3-4 (March 15-28): Core Concepts**
 - [ ] Complete [Khan Academy Linear Algebra](https://www.khanacademy.org/math/linear-algebra) (vectors, matrices)
 - [ ] Finish [Harvard CS50](https://cs50.harvard.edu/x/2023/) Week 2-3
+- [ ] Complete [Khan Academy Statistics](https://www.khanacademy.org/math/statistics-probability) (probability basics)
 - [ ] Master [Python basics](https://www.python.org/about/gettingstarted/) for mathematical computing
 - [ ] Read 2 key Math LLM papers: [Toolformer](https://arxiv.org/abs/2302.04761), [MathCoder](https://arxiv.org/abs/2410.01985)
 - [ ] Start mathematical expression parser with [SymPy](https://www.sympy.org/)
@@ -95,6 +120,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 - [ ] Complete [Harvard CS50](https://cs50.harvard.edu/x/2023/) Week 4-5
 - [ ] Build mathematical expression parser using [SymPy tutorial](https://docs.sympy.org/latest/tutorials/intro-tutorial.html)
 - [ ] Implement simple tokenizer using [Hugging Face tokenizers](https://huggingface.co/docs/tokenizers/index)
+- [ ] Start [StatQuest YouTube](https://www.youtube.com/c/statquest) for statistics concepts
 - [ ] Join 1 additional LLM community: [r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA)
 - [ ] Read 1 more Math LLM paper: [AutoMath](https://arxiv.org/abs/2402.07145)
 
@@ -104,11 +130,13 @@ Build specialized foundations for Math LLM research and development with top-tie
 - [ ] Apply to [Inspirit AI](https://www.inspiritai.com/) (deadline April 15) ⚠️
 - [ ] Submit to 1 math competition: [Kaggle MATH](https://www.kaggle.com/competitions/math-competition)
 - [ ] Follow 5 Math LLM researchers on [Twitter](https://twitter.com/) or [LinkedIn](https://www.linkedin.com/)
+- [ ] Complete basic statistics evaluation metrics for math LLMs
 
 ---
 
 #### **Critical Goals (Must Achieve)**:
 - [ ] Complete Khan Academy Linear Algebra (vectors, matrices)
+- [ ] Complete Khan Academy Statistics (descriptive statistics + probability basics)
 - [ ] Complete Harvard CS50 with LLM-focused project
 - [ ] Master Python for mathematical computing
 - [ ] Read 3 key Math LLM papers
@@ -120,6 +148,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 - [ ] Attend prestigious summer program
 - [ ] Contribute to open-source Math LLM project
 - [ ] Read 10+ mathematical reasoning papers
+- [ ] Complete advanced statistics (hypothesis testing, Bayesian inference)
 
 #### **Projects**:
 - [ ] **Mathematical Expression Parser** (Python + SymPy)
@@ -227,6 +256,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 - [ ] Start [MIT ML mathematical foundations](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/) course
 - [ ] Begin [Hugging Face Transformers course](https://huggingface.co/course/chapter1/1)
 - [ ] Review linear algebra for attention mechanisms using [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+- [ ] Continue [StatQuest YouTube](https://www.youtube.com/c/statquest) for hypothesis testing basics
 - [ ] Apply to [Inspirit AI](https://www.inspiritai.com/) (deadline April 15)
 - [ ] Research backup summer programs: [Google CSSI](https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/)
 
