@@ -214,11 +214,19 @@ Land a mathematical reasoning LLM internship by Grade 10 or 11.
 ## 🎯 Monthly Goals
 
 ### March 2026 (Current Month)
+#### **Critical Goals (Must Achieve)**:
 - [ ] Complete linear algebra basics for attention mechanisms
 - [ ] Finish mathematical expression parser project
 - [ ] Start Stanford CS224n course
 - [ ] Join 3 Math LLM Discord servers
 - [ ] Read 2 mathematical reasoning papers
+
+#### **Stretch Goals (Ambitious but Optional)**:
+- [ ] Complete MIT 6.046 Algorithms course
+- [ ] Master SymPy symbolic computation
+- [ ] Attend prestigious summer program
+- [ ] Contribute to open-source Math LLM project
+- [ ] Read 5+ mathematical reasoning papers
 
 ### April 2026
 - [ ] Start calculus for gradients and optimization
@@ -228,11 +236,18 @@ Land a mathematical reasoning LLM internship by Grade 10 or 11.
 - [ ] Write first mathematical AI blog post
 
 ### May 2026
+#### **Critical Goals (Must Achieve)**:
 - [ ] Complete probability and statistics basics
 - [ ] Start symbolic computation with SymPy
-- [ ] Apply to math-focused summer programs
+- [ ] **URGENT**: Apply to Inspirit AI by April 15
 - [ ] Contribute to Math LLM open source
 - [ ] Attend mathematical AI webinar
+
+#### **Updated Timeline Due to Stanford AIMI Deadline**:
+- [x] **Stanford AIMI**: Deadline passed - apply for 2027
+- [ ] **Inspirit AI**: New priority #1 - apply by April 15
+- [ ] **Local Programs**: Research backup options
+- [ ] **Online Courses**: Supplement summer learning
 
 ### June 2026
 - [ ] Start discrete mathematics
@@ -293,11 +308,12 @@ Land a mathematical reasoning LLM internship by Grade 10 or 11.
 ✅ **March 2026**: Built first mathematical expression parser
 
 ### Upcoming Milestones
-🎯 **April 2026**: Complete attention mechanism demo
-🎯 **May 2026**: Apply to math-focused summer programs
-🎯 **June 2026**: Complete first mathematical reasoning project
-🎯 **Summer 2026**: Attend mathematical AI program
-🎯 **Fall 2026**: Start advanced math LLM projects
+🎯 **April 2026**: Apply to Inspirit AI (new priority)
+🎯 **May 2026**: Complete first mathematical reasoning project
+🎯 **June 2026**: Attend alternative summer program
+🎯 **Summer 2026**: Focus on self-directed Math LLM projects
+🎯 **Fall 2026**: Start advanced Math LLM projects
+🎯 **January 2027**: Apply to Stanford AIMI for 2027 program
 
 ---
 

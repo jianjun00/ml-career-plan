@@ -2,38 +2,22 @@
 
 ## 🎯 Summer Programs & Applications
 
-### Tier 1: Prestigious Programs (Apply by March 2026)
+### Tier 1: Prestigious Programs (Apply by April 2026)
 
-#### Stanford AIMI Summer Health AI Bootcamp
-**Status**: ⏳ Researching
-**Deadline**: March 31, 2026
-**Duration**: 2 weeks virtual
-**Cost**: FREE (income-based financial aid)
-**Eligibility**: High school students
-**Application Requirements**:
-- [ ] Online application form
-- [ ] Transcript (unofficial OK)
-- [ ] Personal statement
-- [ ] Family income documentation (if seeking aid)
-- [ ] Teacher recommendation (1)
-
-**Action Items**:
-- [ ] Draft personal statement (focus on healthcare AI interest)
-- [ ] Request teacher recommendation (by March 15)
-- [ ] Prepare transcript
-- [ ] Complete application by March 25
-
-**Contact**: aimi@stanford.edu
+#### ⚠️ **URGENT: Stanford AIMI Deadline Passed**
+**Status**: ❌ DEADLINE PASSED - Apply for 2027
+**Original Deadline**: February 20, 2026 (PASSED)
+**Next Opportunity**: Apply by February 1, 2027
+**Action**: Mark calendar for January 2027 application
 
 ---
 
-#### Inspirit AI Scholars
-**Status**: ⏳ Researching
-**Deadlines**: Rolling admission (summer sessions fill by April)
+#### Inspirit AI Scholars (Priority #1)
+**Status**: ⏳ URGENT - Apply by April 15, 2026
+**Deadline**: April 15, 2026 (sessions fill quickly)
 **Duration**: 3 weeks
 **Cost**: $2,900-$4,200 (scholarships available)
-**Sessions**: Multiple summer options
-**Instructors**: Stanford/MIT alumni
+**Focus**: Mathematical Reasoning Track available
 
 **Application Requirements**:
 - [ ] Online application

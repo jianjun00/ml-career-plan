@@ -74,11 +74,19 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Q1 Milestones & Deliverables
 
-#### **Academic Goals**:
-- [ ] Complete MIT 6.046 first half
-- [ ] Master linear algebra fundamentals
-- [ ] Complete Stanford CS224n first 5 lectures
-- [ ] Finish CS50 with math LLM project
+#### **Critical Goals (Must Achieve)**:
+- [x] Complete Khan Academy Linear Algebra (vectors, matrices)
+- [ ] Complete Harvard CS50 with LLM-focused project
+- [ ] Master Python for mathematical computing
+- [ ] Read 3 key Math LLM papers
+- [ ] Build mathematical expression parser
+
+#### **Stretch Goals (Ambitious but Optional)**:
+- [ ] Complete MIT 6.046 Algorithms (very advanced for Grade 9)
+- [ ] Master SymPy symbolic computation
+- [ ] Attend prestigious summer program
+- [ ] Contribute to open-source Math LLM project
+- [ ] Read 10+ mathematical reasoning papers
 
 #### **Projects**:
 - [ ] **Mathematical Expression Parser** (Python + SymPy)
@@ -135,34 +143,30 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Math LLM Summer Programs
 
-#### **Tier 1: Math/LLM Specific Programs**
-**Stanford AI Lab Outreach**
-- **Duration**: Summer research programs
-- **Focus**: Mathematical reasoning in AI
-- **Application**: Contact AI Lab directly
-- **Why**: Direct access to cutting-edge research
+#### ⚠️ **URGENT: Stanford AIMI Deadline Passed**
+**Status**: ❌ DEADLINE PASSED - Apply for 2027
+**Original Deadline**: February 20, 2026 (PASSED)
+**Next Opportunity**: Apply by February 1, 2027
+**Action**: Focus on other 2026 programs, prepare for 2027
 
-**MIT PRIMES**
-- **Duration**: Year-long research program
-- **Focus**: Advanced mathematics research
-- **Application**: January deadline (plan for next year)
-- **Why**: Mathematical research experience
+#### **Priority #1: Inspirit AI - Mathematical Reasoning Track**
+**Duration**: 3 weeks
+**Focus**: AI for mathematical problem solving
+**Project**: Math reasoning system
+**Deadline**: April 15, 2026 (URGENT)
+**Cost**: $2,900-$4,200 (scholarships available)
 
-**Research Science Institute (RSI)**
-- **Duration**: 6 weeks
-- **Focus**: Original research projects
-- **Why**: Prestigious, research experience
+#### **Priority #2: Research Science Institute (RSI)**
+**Duration**: 6 weeks
+**Focus**: Original research projects
+**Application**: January deadline for 2027
+**Why**: Prestigious, research experience
 
-#### **Tier 2: AI/ML Programs with Math Focus**
-**Inspirit AI - Mathematical Reasoning Track**
-- **Duration**: 3 weeks
-- **Focus**: AI for mathematical problem solving
-- **Project**: Math reasoning system
-
-**Stanford AIMI - Mathematical Modeling**
-- **Duration**: 2 weeks
-- **Focus**: Mathematical models in healthcare
-- **Skills**: Mathematical reasoning applications
+#### **Priority #3: MIT PRIMES**
+**Duration**: Year-long research program
+**Focus**: Advanced mathematics research
+**Application**: January deadline for 2027
+**Why**: Mathematical research experience
 
 ---
 
@@ -184,11 +188,20 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Q2 Milestones & Deliverables
 
-#### **Academic Goals**:
+#### **Critical Goals (Must Achieve)**:
 - [ ] Complete MIT ML mathematical foundations
-- [ ] Master Hugging Face Transformers
+- [ ] Master Hugging Face Transformers basics
 - [ ] Build transformer from scratch
-- [ ] Understand mathematical reasoning in LLMs
+- [ ] Understand mathematical reasoning concepts
+- [ ] Attend any summer program (local OK)
+
+#### **Stretch Goals (Ambitious but Optional)**:
+- [ ] Complete advanced mathematical optimization
+- [ ] Master symbolic computation with SymPy
+- [ ] Build custom mathematical evaluation framework
+- [ ] Attend Stanford/elite summer program
+- [ ] Contribute to major Math LLM open source
+- [ ] Read and implement 5+ research papers
 
 #### **Projects**:
 - [ ] **Transformer from Scratch** (NumPy implementation)
