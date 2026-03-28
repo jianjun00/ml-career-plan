@@ -19,9 +19,9 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 - **Milestone**: Complete first 4 modules by end of Q1
 
 **Supplementary Resources**:
-- **Khan Academy**: Algebra II completion (target 90%+)
-- **3Blue1Brown YouTube**: Linear algebra intuition
-- **Professor Leonard**: Calculus fundamentals (YouTube)
+- **Khan Academy**: [Algebra II](https://www.khanacademy.org/math/algebra2) completion (target 90%+)
+- **3Blue1Brown YouTube**: [Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) intuition
+- **Professor Leonard**: [Calculus Fundamentals](https://www.youtube.com/playlist?list=PLDesaqWTN6EsmhDrc44Q8h-i1gJq0sTnB) (YouTube)
 
 #### **Weekly Math Schedule**:
 - **Monday/Wednesday**: MIT OCW ML theory (1 hour)
@@ -40,9 +40,9 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 - **Milestone**: Complete weeks 0-5 by end of Q1
 
 **Secondary Resources**:
-- **Codecademy Python Pro**: Interactive practice
-- **freeCodeCamp**: Supplemental projects
-- **Real Python**: Deep dive articles
+- **Codecademy Python Pro**: [Interactive Practice](https://www.codecademy.com/learn/learn-python-3)
+- **freeCodeCamp**: [Python Projects](https://www.freecodecamp.org/learn/scientific-computing-with-python/)
+- **Real Python**: [Deep Dive Articles](https://realpython.com/)
 
 #### **Weekly Coding Schedule**:
 - **Daily**: 30 minutes coding practice
@@ -61,9 +61,9 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 - **Milestone**: Complete Part 1 by end of Q1
 
 **Supplementary Resources**:
-- **StatQuest YouTube**: Concept clarity
-- **Coursera ML for Everyone**: Andrew Ng's foundational course
-- **Papers With Code**: Stay current with research
+- **StatQuest YouTube**: [Concept Clarity](https://www.youtube.com/c/statquest)
+- **Coursera ML for Everyone**: [Andrew Ng's Foundational Course](https://www.coursera.org/learn/machine-learning)
+- **Papers With Code**: [Stay Current with Research](https://paperswithcode.com/)
 
 ---
 
@@ -136,20 +136,23 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 **Stanford AIMI Summer Health AI Bootcamp**
 - **Duration**: 2 weeks virtual
 - **Cost**: Free (income-based financial aid)
-- **Application Deadline**: March 2026
+- **Application Deadline**: February 20, 2026 (PASSED - apply for 2027)
+- **Website**: [Stanford AIMI](https://aimi.stanford.edu/)
 - **Why**: Stanford credibility, healthcare AI focus
-- **Action**: Apply by March 31
+- **Action**: Apply for 2027 program by January 2027
 
 **Inspirit AI Scholars**
 - **Duration**: 3 weeks (multiple sessions)
 - **Cost**: $2,900-$4,200 (scholarships available)
+- **Website**: [Inspirit AI](https://www.inspiritai.com/)
 - **Instructors**: Stanford/MIT alumni
 - **Why**: Small group instruction, project-based
-- **Action**: Apply for summer session
+- **Action**: Apply by April 15, 2026 (PRIORITY #1)
 
 **Google CSSI (Computer Science Summer Institute)**
 - **Duration**: 4 weeks online
 - **Cost**: Free
+- **Website**: [Google CSSI](https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/)
 - **Eligibility**: Rising college freshmen (check age requirements)
 - **Why**: Google name recognition, strong network
 - **Action**: Monitor application timeline
@@ -158,12 +161,14 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 **NYU Tandon Summer Program**
 - **Duration**: 2-6 weeks
 - **Focus**: Machine learning fundamentals
+- **Website**: [NYU Tandon Summer](https://engineering.nyu.edu/academics/programs/high-school-programs)
 - **Cost**: Varies by duration
 - **Why**: University credit option
 
 **NextGen Bootcamp**
 - **Duration**: 1-2 weeks
 - **Focus**: Python & AI fundamentals
+- **Website**: [NextGen Bootcamp](https://nextgenbootcamp.com/)
 - **Cost**: $1,500-$2,500
 - **Why**: Practical, hands-on approach
 
@@ -173,11 +178,12 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 
 #### **GitHub Student Developer Pack**
 - **Benefits**: Free cloud credits, developer tools
+- **Website**: [GitHub Student Developer Pack](https://education.github.com/pack)
 - **Application**: Ongoing, immediate approval
 - **Why**: Professional tools for projects
 
 #### **Open Source Contribution Strategy**
-- **Target Projects**: Scikit-learn, TensorFlow, PyTorch documentation
+- **Target Projects**: [Scikit-learn](https://github.com/scikit-learn/scikit-learn), [TensorFlow](https://github.com/tensorflow/tensorflow), [PyTorch](https://github.com/pytorch/pytorch) documentation
 - **Approach**: Start with documentation fixes, move to simple bug fixes
 - **Goal**: 3-5 accepted contributions by end of summer
 
@@ -308,7 +314,7 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 
 ### Research & Advanced Topics
 
-#### **Primary Resource: arXiv Papers**
+#### **Primary Resource: [arXiv Papers](https://arxiv.org/list/cs.LG/recent)**
 **Strategy**: Read 1-2 papers per week, implement key ideas
 
 **Focus Areas**:
@@ -327,8 +333,8 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 
 #### **Technical Interview Prep**
 **Resources**:
-- **LeetCode**: Medium problems (target 100 solved)
-- **System Design**: ML system design interviews
+- **LeetCode**: [Medium Problems](https://leetcode.com/problemset/all/) (target 100 solved)
+- **System Design**: [ML System Design](https://www.youtube.com/playlist?list=PLMCXHNnjt3tY8R0b3jE3M4C7tqK1mHnU) interviews
 - **ML Concepts**: Explain to non-technical audience
 
 **Practice Schedule**:
@@ -397,27 +403,27 @@ Build rock-solid foundations in mathematics, programming, and ML fundamentals wi
 ## 🏆 Ultra-Resource Library
 
 ### University Courses (Free Audit)
-- **MIT OCW**: 6.036 ML, 6.006 Algorithms, 6.S191 Deep Learning
-- **Stanford Online**: CS229 ML, CS231n Computer Vision
-- **Harvard CS50**: Introduction to Computer Science
-- **Berkeley**: CS188 Artificial Intelligence
+- **MIT OCW**: [6.036 ML](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/), [6.006 Algorithms](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-spring-2020/), [6.S191 Deep Learning](https://introtodeeplearning.com/)
+- **Stanford Online**: [CS229 ML](https://online.stanford.edu/courses/cs229), [CS231n Computer Vision](http://cs231n.stanford.edu/)
+- **Harvard CS50**: [Introduction to Computer Science](https://cs50.harvard.edu/x/2023/)
+- **Berkeley**: [CS188 Artificial Intelligence](https://inst.eecs.berkeley.edu/~cs188/sp22/)
 
 ### Industry Programs
-- **Google**: CSSI (free), Summer of Code
-- **Microsoft**: Discovery Program (4-week internship)
-- **Stanford**: AIMI programs, AI Lab outreach
-- **Inspirit AI**: Stanford/MIT alumni instruction
+- **Google**: [CSSI](https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/) (free), [Summer of Code](https://summerofcode.withgoogle.com/)
+- **Microsoft**: [Discovery Program](https://careers.microsoft.com/students/us/en/discoveryprogram) (4-week internship)
+- **Stanford**: [AIMI programs](https://aimi.stanford.edu/), [AI Lab outreach](https://ai.stanford.edu/outreach)
+- **Inspirit AI**: [Stanford/MIT alumni instruction](https://www.inspiritai.com/)
 
 ### Open Source Opportunities
-- **GitHub Student Developer Pack**: Free tools and credits
-- **Google Summer of Code**: Summer program (check age)
-- **ML Libraries**: Scikit-learn, TensorFlow, PyTorch contributions
+- **GitHub Student Developer Pack**: [Free tools and credits](https://education.github.com/pack)
+- **Google Summer of Code**: [Summer program](https://summerofcode.withgoogle.com/) (check age)
+- **ML Libraries**: [Scikit-learn](https://github.com/scikit-learn/scikit-learn), [TensorFlow](https://github.com/tensorflow/tensorflow), [PyTorch](https://github.com/pytorch/pytorch) contributions
 
 ### Competition Platforms
-- **Kaggle**: ML competitions, datasets
-- **LeetCode**: Algorithm practice, interview prep
-- **HackerRank**: Coding challenges, skills assessment
-- **Devpost**: Hackathons, project showcases
+- **Kaggle**: [ML Competitions](https://www.kaggle.com/competitions), [datasets](https://www.kaggle.com/datasets)
+- **LeetCode**: [Algorithm Practice](https://leetcode.com/problemset/all/), [Interview Prep](https://leetcode.com/explore/)
+- **HackerRank**: [Coding Challenges](https://www.hackerrank.com/dashboard), [Skills Assessment](https://www.hackerrank.com/skills)
+- **Devpost**: [Hackathons](https://devpost.com/hackathons), [Project Showcases](https://devpost.com/software)
 
 ---
 
