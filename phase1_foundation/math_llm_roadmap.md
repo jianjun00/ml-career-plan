@@ -74,8 +74,40 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Q1 Milestones & Deliverables
 
+#### **2-Week Milestones**
+
+**Weeks 1-2 (March 1-14): Foundation Setup**
+- [ ] Start Khan Academy Linear Algebra (vectors, matrices)
+- [ ] Begin Harvard CS50 Week 0-1
+- [ ] Set up Python development environment
+- [ ] Join 2 LLM-focused Discord servers
+- [ ] Read first Math LLM paper
+
+**Weeks 3-4 (March 15-28): Core Concepts**
+- [ ] Complete Khan Academy Linear Algebra (vectors, matrices)
+- [ ] Finish Harvard CS50 Week 2-3
+- [ ] Master Python basics for mathematical computing
+- [ ] Read 2 key Math LLM papers
+- [ ] Start mathematical expression parser
+
+**Weeks 5-6 (March 29 - April 11): Project Development**
+- [ ] Complete Harvard CS50 Week 4-5
+- [ ] Build mathematical expression parser
+- [ ] Implement simple tokenizer
+- [ ] Join 1 additional LLM community
+- [ ] Read 1 more Math LLM paper
+
+**Weeks 7-8 (April 12-25): Integration & Application**
+- [ ] Complete Harvard CS50 with LLM-focused project
+- [ ] Build attention mechanism demo
+- [ ] Apply to Inspirit AI (deadline April 15)
+- [ ] Submit to 1 math competition
+- [ ] Follow 5 Math LLM researchers
+
+---
+
 #### **Critical Goals (Must Achieve)**:
-- [x] Complete Khan Academy Linear Algebra (vectors, matrices)
+- [ ] Complete Khan Academy Linear Algebra (vectors, matrices)
 - [ ] Complete Harvard CS50 with LLM-focused project
 - [ ] Master Python for mathematical computing
 - [ ] Read 3 key Math LLM papers
@@ -188,6 +220,38 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Q2 Milestones & Deliverables
 
+#### **2-Week Milestones**
+
+**Weeks 9-10 (June 1-14): Advanced Mathematics**
+- [ ] Start MIT ML mathematical foundations course
+- [ ] Begin Hugging Face Transformers course
+- [ ] Review linear algebra for attention mechanisms
+- [ ] Apply to Inspirit AI (deadline April 15)
+- [ ] Research backup summer programs
+
+**Weeks 11-12 (June 15-28): Implementation Skills**
+- [ ] Complete MIT ML mathematical foundations (first half)
+- [ ] Build transformer components from scratch
+- [ ] Master Hugging Face Transformers basics
+- [ ] Start mathematical reasoning concept study
+- [ ] Accept/reject summer program decisions
+
+**Weeks 13-14 (June 29 - July 12): Project Development**
+- [ ] Complete transformer from scratch implementation
+- [ ] Build math problem solver prototype
+- [ ] Start open source contribution
+- [ ] Attend summer program (if accepted)
+- [ ] Read 2 mathematical reasoning papers
+
+**Weeks 15-16 (July 13-26): Integration & Advanced Topics**
+- [ ] Complete summer program requirements
+- [ ] Submit open source contribution
+- [ ] Read 2 more mathematical reasoning papers
+- [ ] Prepare Q3 learning plan
+- [ ] Document summer learnings
+
+---
+
 #### **Critical Goals (Must Achieve)**:
 - [ ] Complete MIT ML mathematical foundations
 - [ ] Master Hugging Face Transformers basics
@@ -268,6 +332,38 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ### Q3 Milestones & Deliverables
 
+#### **2-Week Milestones**
+
+**Weeks 17-18 (September 1-14): Advanced Concepts**
+- [ ] Start Berkeley RL for mathematical reasoning
+- [ ] Read 2 cutting-edge math LLM papers
+- [ ] Plan chain-of-thought math solver architecture
+- [ ] Join math competition (GSM8K, MATH dataset)
+- [ ] Set up advanced development environment
+
+**Weeks 19-20 (September 15-28): System Development**
+- [ ] Complete Berkeley RL first half
+- [ ] Build chain-of-thought math solver prototype
+- [ ] Implement tool augmentation framework
+- [ ] Read 2 more math LLM papers
+- [ ] Start mathematical benchmark design
+
+**Weeks 21-22 (September 29 - October 12): Advanced Projects**
+- [ ] Complete Berkeley RL course
+- [ ] Build tool-augmented LLM with calculator integration
+- [ ] Create mathematical benchmark suite
+- [ ] Read 1 more research paper
+- [ ] Submit to math competition
+
+**Weeks 23-24 (October 13-26): Research & Presentation**
+- [ ] Write first technical paper
+- [ ] Prepare science fair presentation
+- [ ] Submit to conference/workshop
+- [ ] Document all Q3 projects
+- [ ] Plan Q4 internship preparation
+
+---
+
 #### **Academic Goals**:
 - [ ] Complete Berkeley RL for mathematical reasoning
 - [ ] Read and implement 5+ math LLM papers
@@ -321,6 +417,38 @@ Build specialized foundations for Math LLM research and development with top-tie
 ---
 
 ### Q4 Milestones & Deliverables
+
+#### **2-Week Milestones**
+
+**Weeks 25-26 (November 1-14): Research Focus**
+- [ ] Start original research project
+- [ ] Submit paper to math/AI conference
+- [ ] Build neural theorem prover prototype
+- [ ] Begin internship applications
+- [ ] Connect with 5 math LLM researchers
+
+**Weeks 27-28 (November 15-28): Advanced Projects**
+- [ ] Complete neural theorem prover
+- [ ] Build mathematical tutoring system
+- [ ] Submit 10+ internship applications
+- [ ] Prepare technical talks
+- [ ] Master mathematical reasoning evaluation
+
+**Weeks 29-30 (December 1-14): Portfolio Building**
+- [ ] Build advanced math solver (state-of-the-art)
+- [ ] Complete impressive math LLM portfolio
+- [ ] Interview preparation
+- [ ] Network with industry professionals
+- [ ] Document all research
+
+**Weeks 31-32 (December 15-28): Final Preparation**
+- [ ] Complete all internship applications
+- [ ] Finalize portfolio website
+- [ ] Prepare for Phase 2
+- [ ] Review and document Phase 1 achievements
+- [ ] Plan Phase 2 advanced skills
+
+---
 
 #### **Academic Goals**:
 - [ ] Complete original research project
