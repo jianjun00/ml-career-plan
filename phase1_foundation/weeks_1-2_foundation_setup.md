@@ -48,6 +48,22 @@ pip install numpy sympy matplotlib torch transformers jupyter pandas
 - [OpenAI Discord](https://discord.com/invite/openai) - Official GPT research discussions
 - [Learn AI Together](https://discord.com/invite/learnaitogether) - Large AI learning community
 
+### **Open Source Contribution**
+**Repository**: [Awesome-LLM4Math](https://github.com/tongyx361/Awesome-LLM4Math)
+- **Why Perfect for Grade 9**: Resource curation repository (easier to contribute)
+- **Focus**: Comprehensive collection of math LLM papers, datasets, and methods
+- **Learning Strategy**: 
+  - Week 1: Explore repository structure and understand math LLM landscape
+  - Week 2: Identify missing resources or documentation improvements
+- **Contribution Opportunities**:
+  - Add new paper summaries or resource links
+  - Improve documentation and organization
+  - Fix broken links or update outdated information
+- **Repository Resources**:
+  - [Repository Guide](https://github.com/tongyx361/Awesome-LLM4Math/blob/main/README.md)
+  - [Contributing Guidelines](https://github.com/tongyx361/Awesome-LLM4Math/blob/main/CONTRIBUTING.md)
+  - [Issues Page](https://github.com/tongyx361/Awesome-LLM4Math/issues) - Find good first issues
+
 ### **Research Reading**
 **Paper**: [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903)
 - **Reading Strategy**: 
@@ -109,6 +125,19 @@ print("All packages installed successfully!")
 - [ ] Submit paper summary to Discord for feedback
 - [ ] Receive positive feedback from community members
 - [ ] Connect with 1 researcher mentioned in paper
+
+### **Open Source Exploration Evaluation**
+**Repository Analysis**:
+- Explore Awesome-LLM4Math repository structure
+- Identify 3 key sections of the repository
+- Find 2 interesting papers or resources from the repository
+- Identify 1 potential improvement or addition
+
+**Success Criteria**:
+- [ ] Understand repository organization and purpose
+- [ ] Create personal repository exploration notes
+- [ ] Identify specific contribution opportunity
+- [ ] Fork repository to personal GitHub account
 
 ---
 
@@ -177,6 +206,7 @@ plt.show()
 - [ ] 30 minutes Khan Academy Statistics  
 - [ ] 15 minutes Discord community engagement
 - [ ] 15 minutes research paper reading
+- [ ] 15 minutes Awesome-LLM4Math repository exploration
 
 ### **Weekly Milestones**
 **Week 1**:
@@ -184,12 +214,14 @@ plt.show()
 - [ ] Set up development environment
 - [ ] Join Discord servers
 - [ ] Read Chain-of-Thought introduction
+- [ ] Explore Awesome-LLM4Math repository structure
 
 **Week 2**:
 - [ ] Complete matrix transformations unit
 - [ ] Complete descriptive statistics unit
 - [ ] Finish Chain-of-Thought paper
 - [ ] Complete environment setup project
+- [ ] Identify potential contribution to Awesome-LLM4Math
 
 ### **End-of-Period Assessment**
 **Success Metrics**:
@@ -198,6 +230,7 @@ plt.show()
 - [ ] Development environment: Fully functional
 - [ ] Community engagement: 10+ meaningful interactions
 - [ ] Research comprehension: Paper summary completed
+- [ ] Open source exploration: Awesome-LLM4Math repository understood
 
 ---
 
