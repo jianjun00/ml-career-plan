@@ -562,12 +562,17 @@ if __name__ == "__main__":
 ## 📊 **Progress Tracking**
 
 ### **Daily Checklist**
-- [ ] 2 hours MIT ML course
-- [ ] 1.5 hours Hugging Face course
+- [ ] 1.5 hours MIT ML course
+- [ ] 1 hour Hugging Face course
 - [ ] 45 minutes linear algebra review
 - [ ] 30 minutes statistics
 - [ ] 15 minutes summer program research
 - [ ] 15 minutes Inspirit AI follow-up
+
+**Total Daily**: 4h
+**Weekly Average**: ~28 hours
+
+**⚠️ NOTE**: This week is heavy - consider moving Hugging Face course to Phase 2
 
 ### **Weekly Milestones**
 **Week 9**:

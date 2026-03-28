@@ -207,6 +207,10 @@ plt.show()
 - [ ] 15 minutes Discord community engagement
 - [ ] 15 minutes research paper reading
 - [ ] 15 minutes Awesome-LLM4Math repository exploration
+- [ ] 1 hour Harvard CS50 (4 days/week only)
+
+**Total Daily**: 2h 15m (with CS50) / 1h 15m (without CS50)
+**Weekly Average**: ~25 hours
 
 ### **Weekly Milestones**
 **Week 1**:
