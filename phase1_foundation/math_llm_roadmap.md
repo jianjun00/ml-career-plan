@@ -80,7 +80,7 @@ Build specialized foundations for Math LLM research and development with top-tie
 - [ ] Start [Khan Academy Linear Algebra](https://www.khanacademy.org/math/linear-algebra) (vectors, matrices)
 - [ ] Begin [Harvard CS50](https://cs50.harvard.edu/x/2023/) Week 0-1
 - [ ] Set up [Python development environment](https://www.python.org/downloads/) + [VS Code](https://code.visualstudio.com/)
-- [ ] Join 2 LLM-focused Discord servers: [Hugging Face](https://discord.gg/hugging-face), [LocalLLaMA](https://discord.gg/local-llama)
+- [ ] Join 2 LLM-focused Discord servers: [OpenAI](https://discord.com/invite/openai), [Learn AI Together](https://discord.com/invite/learnaitogether)
 - [ ] Read first Math LLM paper: [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903)
 
 **Weeks 3-4 (March 15-28): Core Concepts**
