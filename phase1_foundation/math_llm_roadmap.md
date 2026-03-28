@@ -1,7 +1,13 @@
-# Phase 1: Math LLM Foundation Building (Grade 9)
+# Phase 1: Math LLM Foundation Building (Grade 9) - UNIFIED PLAN
 
 ## 🎯 Ultimate Goal
 Build specialized foundations for Math LLM research and development with top-tier resources and opportunities.
+
+## 📋 Plan Status: **PRIMARY & UNIFIED PLAN**
+- **This is your single, consistent plan**
+- **detailed_roadmap.md**: Archive/Reference only
+- **Focus here**: All Math LLM progress tracked in this document
+- **Bulletproof**: Built-in flexibility for robotics integration
 
 ## 📅 Quarterly Breakdown
 

@@ -1,7 +1,42 @@
-# Phase 1: Foundation Building - Ultra Detailed Plan (Grade 9)
+# Phase 1: Foundation Building - ARCHIVE/REFERENCE ONLY
 
-## 🎯 Ultimate Goal
-Build rock-solid foundations in mathematics, programming, and ML fundamentals with top-tier resources and opportunities.
+## ⚠️ **IMPORTANT: This is NOT your active plan**
+
+### **Current Status**: ARCHIVED
+- **Active Plan**: Use `math_llm_roadmap.md` 
+- **Purpose**: Reference material only
+- **Why Archived**: Multiple plans were confusing
+- **Action**: Follow the unified Math LLM plan
+
+---
+
+## 📊 Plan Comparison
+
+| **Document** | **Status** | **Purpose** |
+|-------------|-----------|-------------|
+| `math_llm_roadmap.md` | ✅ **ACTIVE** | Your unified plan |
+| `detailed_roadmap.md` | ❌ **ARCHIVED** | Reference only |
+
+---
+
+## 🎯 **Your Single Plan: math_llm_roadmap.md**
+
+### **Why This Approach Works**:
+- **Consistent**: One source of truth
+- **Focused**: Math LLM specialization
+- **Bulletproof**: Built-in flexibility
+- **Reasonable**: Achievable timeline
+- **Change-Ready**: Robotics integration possible
+
+### **Next Steps**:
+1. **Close this file** - Don't use for planning
+2. **Use `math_llm_roadmap.md`** - Your active plan
+3. **Track progress** - In the unified document
+4. **Ignore conflicts** - They're resolved
+
+---
+
+*This document is kept for reference only. All planning and progress tracking should happen in `math_llm_roadmap.md`.*
 
 ## 📅 Quarterly Breakdown
 
