@@ -79,7 +79,8 @@ Build specialized foundations for Math LLM research and development with top-tie
 **Weeks 1-2 (March 1-14): Foundation Setup**
 - [ ] Start [Khan Academy Linear Algebra](https://www.khanacademy.org/math/linear-algebra) (vectors, matrices)
 - [ ] Begin [Harvard CS50](https://cs50.harvard.edu/x/2023/) Week 0-1
-- [ ] Set up [Python development environment](https://www.python.org/downloads/) + [VS Code](https://code.visualstudio.com/)
+- [ ] Set up Math LLM development environment: [Python 3.11+](https://www.python.org/downloads/) + [VS Code](https://code.visualstudio.com/) + [Jupyter](https://jupyter.org/) + [Git](https://git-scm.com/)
+- [ ] Install essential packages: [NumPy](https://numpy.org/), [SymPy](https://www.sympy.org/), [Matplotlib](https://matplotlib.org/), [PyTorch](https://pytorch.org/), [Transformers](https://huggingface.co/docs/transformers/index)
 - [ ] Join 2 LLM-focused Discord servers: [OpenAI](https://discord.com/invite/openai), [Learn AI Together](https://discord.com/invite/learnaitogether)
 - [ ] Read first Math LLM paper: [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903)
 
