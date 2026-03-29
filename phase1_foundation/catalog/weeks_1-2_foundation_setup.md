@@ -13,7 +13,7 @@
 ### **Mathematics Foundation**
 **Primary Resources**:
 - [MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
-- [Stanford CS229 Machine Learning](http://cs229.stanford.edu/)
+- [Stanford CS229 Machine Learning](https://see.stanford.edu/course/cs229)
 - [3Blue1Brown Linear Algebra Series](https://www.3blue1brown.com/topics/linear-algebra)
 
 **Focus Areas**:
