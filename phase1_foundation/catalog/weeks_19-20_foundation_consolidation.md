@@ -1,4 +1,4 @@
-# Weeks 19-20: Foundation Consolidation (August 10-23, 2026)
+# Weeks 19-20: Foundation Consolidation
 
 ## 🎯 **Learning Objectives**
 - Consolidate all Phase 1 learning
@@ -9,45 +9,99 @@
 
 ---
 
-## 📚 **Content & Resources**
+## 📚 **Core Resources**
 
 ### **Phase 1 Review and Consolidation**
-**Resource**: [Comprehensive Review Materials](https://github.com/jianjun00/ml-career-plan)
-- **Areas to Review**:
-  - Linear algebra fundamentals
-  - Statistics and probability
-  - Python mathematical computing
-  - Basic LLM concepts
-  - Mathematical reasoning
-- **Time Commitment**: 2 hours/day, 3 days/week
-- **Focus**: Identifying knowledge gaps and strengthening foundations
+**Primary Resources**:
+- [MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
+- [Stanford CS229 Machine Learning](https://see.stanford.edu/course/cs229)
+- [3Blue1Brown Linear Algebra Series](https://www.3blue1brown.com/topics/linear-algebra)
+
+**Review Areas**:
+- Linear algebra fundamentals
+- Statistics and probability
+- Python mathematical computing
+- Basic LLM concepts
+- Mathematical reasoning
 
 ### **Portfolio Development**
-**Resource**: [GitHub Pages](https://pages.github.com/)
-- **Portfolio Components**:
-  - Project documentation
-  - Code repositories
-  - Learning reflections
-  - Skill assessments
-  - Future plans
-- **Time Commitment**: 2 hours/day, 4 days/week
+**Primary Resources**:
+- [GitHub Pages Guide](https://pages.github.com/)
+- [Portfolio Templates](https://github.com/topics/portfolio)
+- [GitHub Projects](https://github.com/explore)
+
+**Portfolio Components**:
+- Project documentation
+- Code repositories
+- Learning reflections
+- Skill assessments
+- Future plans
 
 ### **Mathematical Reasoning Assessment**
-**Resource**: [GSM8K Dataset](https://github.com/openai/grade-school-math)
-- **Assessment Areas**:
-  - Problem-solving accuracy
-  - Reasoning clarity
-  - Method selection
-  - Solution verification
-- **Time Commitment**: 1.5 hours/day, 3 days/week
+**Primary Resources**:
+- [GSM8K Dataset](https://github.com/openai/grade-school-math)
+- [Math Competition Problems](https://www.kaggle.com/competitions)
+- [Math Olympiad Resources](https://artofproblemsolving.com/)
+
+**Assessment Areas**:
+- Problem-solving accuracy
+- Reasoning clarity
+- Method selection
+- Solution verification
 
 ### **Phase 2 Planning**
-**Resource**: [Advanced Learning Roadmap](https://github.com/jianjun00/ml-career-plan)
-- **Planning Areas**:
-  - Advanced mathematical topics
-  - Specialized Math LLM research
-  - Project complexity scaling
-  - Time management strategies
+**Primary Resources**:
+- [Advanced Learning Roadmap](https://github.com/jianjun00/ml-career-plan)
+- [Q3 Planning Guide](https://docs.github.com/en/get-started/quickstart/writing-roadmaps)
+- [Time Management Strategies](https://www.mindtools.com/pages/article/new-habit/)
+
+**Planning Areas**:
+- Advanced mathematical topics
+- Specialized Math LLM research
+- Project complexity scaling
+- Time management strategies
+
+---
+
+## 🛠️ **Core Projects**
+
+### **Project 1: Comprehensive Phase 1 Portfolio**
+**Objective**: Create complete portfolio of all Phase 1 work
+
+**Components**:
+- All project implementations
+- Learning reflections
+- Skill assessments
+- Future learning plans
+
+### **Project 2: Mathematical Reasoning Assessment**
+**Objective**: Create comprehensive assessment of reasoning skills
+
+**Features**:
+- Problem-solving accuracy tracking
+- Reasoning method analysis
+- Solution verification tools
+
+---
+
+## 📊 **Learning Outcomes**
+
+Upon completing weeks 19-20, you will be able to:
+1. **Consolidation**: Integrate all Phase 1 knowledge areas
+2. **Assessment**: Evaluate mathematical reasoning capabilities
+3. **Portfolio**: Create comprehensive learning documentation
+4. **Planning**: Structure advanced learning for Phase 2
+5. **Reflection**: Analyze learning journey and growth
+
+---
+
+## 🚀 **Next Steps**
+
+**Phase 2 Preview**:
+- Advanced mathematical topics
+- Specialized Math LLM research
+- Complex project implementation
+- Research contribution strategies
 - **Time Commitment**: 1 hour/day, 3 days/week
 
 ### **Community and Networking**

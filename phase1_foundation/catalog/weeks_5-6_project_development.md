@@ -12,19 +12,30 @@
 ## 📚 **Core Resources**
 
 ### **Programming**
-**Focus Areas**:
+**Primary Resources**:
+- [Harvard CS50 Advanced](https://cs50.harvard.edu/x/2023/)
+- [C Programming Language](https://www.amazon.com/C-Programming-Language-2nd/dp/0131103628)
+- [Algorithms](https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X)
+
+**Specific Topics**:
 - Memory management and pointers
 - Data structures (linked lists, trees, hash tables)
 - Advanced algorithms
 
 ### **Mathematical Computing**
+**Primary Resources**:
+- [SymPy Tutorial](https://docs.sympy.org/latest/tutorials/intro-tutorial.html)
+- [Hugging Face Tokenizers](https://huggingface.co/docs/tokenizers/index)
+- [StatQuest YouTube Channel](https://www.youtube.com/c/statquest)
+
 **Key Topics**:
 - Expression parsing with SymPy
 - Symbolic mathematics
 - Statistical analysis
 
 ### **Research**
-**Primary Paper**: AutoMath (automated mathematical reasoning)
+**Primary Paper**: [AutoMath: Automated Mathematical Reasoning](https://arxiv.org/abs/2402.07145)
+- **Reading Strategy**: 3-day structured approach
 
 ---
 
@@ -37,6 +48,21 @@
 - Handle variables and functions
 - Support symbolic evaluation
 - Create simplification methods
+
+**Basic Implementation**:
+```python
+from sympy import symbols, simplify, parse_expr
+
+class MathExpressionParser:
+    def parse_expression(self, expr_str):
+        return parse_expr(expr_str, evaluate=False)
+    
+    def evaluate_expression(self, expr_str, variables=None):
+        expr = self.parse_expression(expr_str)
+        if variables:
+            return expr.subs(variables)
+        return expr
+```
 
 ### **Project 2: Tokenization Implementation**
 **Objective**: Build subword tokenizer for LLMs
@@ -97,14 +123,26 @@ print(f"Original: {test_expr}")
 print(f"Tokens: {tokens}")
 print(f"Token IDs: {token_ids}")
 print(f"Decoded: {decoded}")
-```
 
-**Deliverables**:
-- [ ] Custom BPE tokenizer implementation
-- [ ] Training dataset of 100+ math expressions
-- [ ] Evaluation metrics (tokenization accuracy, compression ratio)
-- [ ] Comparison with standard tokenizers
-- [ ] Documentation and usage examples
+---
+
+## 📊 **Learning Outcomes**
+
+Upon completing weeks 5-6, you will be able to:
+1. **Programming**: Master memory management and data structures
+2. **Parsing**: Build sophisticated expression processors
+3. **Tokenization**: Implement LLM text processing
+4. **Statistics**: Apply advanced statistical methods
+5. **Research**: Understand automated mathematical reasoning
+
+---
+
+## 🚀 **Next Steps**
+
+**Weeks 7-8 Preview**:
+- LLM fundamentals and attention mechanisms
+- Neural network implementation
+- Mathematical reasoning applications
 
 ---
 
