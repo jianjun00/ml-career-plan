@@ -12,7 +12,7 @@
 
 ### **Mathematics Foundation**
 **Primary Resources**:
-- [MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/)
+- [MIT 18.06 Linear Algebra](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
 - [Stanford CS229 Machine Learning](http://cs229.stanford.edu/)
 - [3Blue1Brown Linear Algebra](https://www.youtube.com/c/3blue1brown)
 
