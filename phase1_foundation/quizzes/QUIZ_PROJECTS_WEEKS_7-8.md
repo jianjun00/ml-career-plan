@@ -1,33 +1,28 @@
 # Weeks 7-8: Integration & Application - Quiz & Projects
 
-## 📋 **Bi-Weekly Assessment Overview**
+## 📋 **Bi-Weekly Overview**
 **Duration**: Weeks 7-8 (Integration & Application)
 **Focus**: LLM fundamentals, attention mechanisms, neural networks
-**Assessment Type**: Quiz + Practical Project
+**Activities**: Quiz + Practical Projects
 
 ---
 
-## 🧮 **Weeks 7-8 Quiz: LLM Fundamentals Assessment**
+## 🧮 **Weeks 7-8 Quiz: LLM Fundamentals**
 
-### **Section 1: Neural Network Foundations (40%)**
-
+### **Section 1: Neural Network Foundations**
 #### **Question 1: Neural Network Architecture**
 **Problem**: Design a neural network for mathematical reasoning with:
 1. Input layer for mathematical expressions
 2. Hidden layers with appropriate activation functions
 3. Output layer for mathematical results
-4. Explain the choice of architecture and activation functions
-
-**Scoring**: 10 points (2.5 points each component)
+4. Explain choice of architecture and activation functions
 
 #### **Question 2: Backpropagation Mathematics**
-**Problem**: Derive the backpropagation algorithm for:
+**Problem**: Derive backpropagation algorithm for:
 1. Single hidden layer network
 2. Multi-layer network with chain rule
 3. Gradient computation for each layer
 4. Weight update rules with learning rate
-
-**Scoring**: 10 points (2.5 points each component)
 
 #### **Question 3: Activation Functions**
 **Problem**: Analyze and compare:
@@ -36,8 +31,6 @@
 3. Tanh function properties
 4. Suitability for mathematical reasoning tasks
 
-**Scoring**: 10 points (2.5 points each function)
-
 #### **Question 4: Loss Functions**
 **Problem**: Design and analyze loss functions for:
 1. Mathematical expression evaluation
@@ -45,18 +38,13 @@
 3. Step-by-step reasoning quality
 4. Multi-task learning scenarios
 
-**Scoring**: 10 points (2.5 points each loss function)
-
-### **Section 2: Attention Mechanisms (30%)**
-
+### **Section 2: Attention Mechanisms**
 #### **Question 5: Self-Attention Mathematics**
 **Problem**: Derive the self-attention mechanism:
 1. Query, Key, Value transformations
 2. Attention weight computation
 3. Context vector calculation
 4. Computational complexity analysis
-
-**Scoring**: 10 points (2.5 points each component)
 
 #### **Question 6: Multi-Head Attention**
 **Problem**: Explain multi-head attention:
@@ -65,8 +53,6 @@
 3. Benefits over single-head attention
 4. Implementation considerations
 
-**Scoring**: 10 points (2.5 points each aspect)
-
 #### **Question 7: Positional Encoding**
 **Problem**: Design and analyze positional encoding:
 1. Sinusoidal positional encoding
@@ -74,18 +60,13 @@
 3. Comparison of approaches
 4. Importance for mathematical sequences
 
-**Scoring**: 10 points (2.5 points each approach)
-
-### **Section 3: Mathematical Reasoning Applications (30%)**
-
+### **Section 3: Mathematical Reasoning Applications**
 #### **Question 8: Sequence-to-Sequence Models**
 **Problem**: Design a seq2seq model for:
 1. Mathematical problem solving
 2. Step-by-step solution generation
 3. Teacher forcing during training
 4. Beam search for inference
-
-**Scoring**: 10 points (2.5 points each component)
 
 #### **Question 9: Transformer Architecture**
 **Problem**: Analyze transformer components:
@@ -94,8 +75,6 @@
 3. Layer normalization and residual connections
 4. Mathematical reasoning applications
 
-**Scoring**: 10 points (2.5 points each component)
-
 #### **Question 10: Training Strategies**
 **Problem**: Design training strategies for:
 1. Curriculum learning for mathematics
@@ -103,11 +82,9 @@
 3. Transfer learning from general text
 4. Evaluation metrics for mathematical reasoning
 
-**Scoring**: 10 points (2.5 points each strategy)
-
 ---
 
-## 🚀 **Weeks 7-8 Project: Attention Mechanism Visualization**
+## 🚀 **Weeks 7-8 Projects: Attention & Neural Networks**
 
 ### **Project Overview**
 **Objective**: Implement and visualize transformer attention mechanisms for mathematical reasoning
