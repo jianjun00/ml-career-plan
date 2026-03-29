@@ -13,14 +13,15 @@
 
 ### **Programming**
 **Primary Resources**:
-- [Harvard CS50 Advanced](https://cs50.harvard.edu/x/2023/)
-- [C Programming Language](https://www.amazon.com/C-Programming-Language-2nd/dp/0131103628)
-- [Algorithms](https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X)
+- [MIT 6.006 Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
+- [Algorithms Textbook](https://www.amazon.com/Algorithms-4th-Robert-Sedgewick/dp/032157351X)
+- [Python for Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
 **Specific Topics**:
-- Memory management and pointers
-- Data structures (linked lists, trees, hash tables)
-- Advanced algorithms
+- Algorithm analysis and design
+- Data structures and complexity
+- Sorting and searching algorithms
+- Graph algorithms and tree structures
 
 ### **Mathematical Computing**
 **Primary Resources**:

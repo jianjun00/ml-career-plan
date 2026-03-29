@@ -11,16 +11,18 @@
 
 ## 📚 **Core Resources**
 
-### **MIT Machine Learning**
+### **MIT Algorithms and Implementation**
 **Primary Resources**:
+- [MIT 6.006 Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
 - [MIT 6.036 Introduction to Machine Learning](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/)
-- [Lecture Notes](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/pages/lecture-notes/)
-- [Problem Sets](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/pages/assignments/)
+- [Lecture Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/pages/lecture-notes/)
+- [Problem Sets](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/pages/assignments/)
 
 **Key Topics**:
-- Linear classification
-- Perceptron algorithm
-- Mathematical foundations of ML
+- Algorithm analysis and design
+- Data structures and complexity
+- Sorting and searching algorithms
+- Graph algorithms and tree structures
 
 ### **PyTorch Implementation**
 **Primary Resources**:
