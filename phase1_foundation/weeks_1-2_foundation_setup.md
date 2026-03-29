@@ -350,6 +350,11 @@ if __name__ == "__main__":
 ### **Additional Resources**:
 - [MIT 18.06 Linear Algebra Full Course](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/)
 - [Stanford CS229 Lecture Notes](http://cs229.stanford.edu/notes.html)
+- [3Blue1Brown - Advanced Visual Mathematics](https://www.youtube.com/c/3blue1brown)
+- [Abdul Bari - Algorithms & Data Structures](https://www.youtube.com/c/abdul_bari)
+- [MIT OpenCourseWare - Algorithms](https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY_ab)
+- [freeCodeCamp - Programming Fundamentals](https://www.youtube.com/c/freecodecamp)
+- [Caleb Curry - Programming Concepts](https://www.youtube.com/c/caleb_curry)
 - [Advanced Mathematics - MathWorld](https://mathworld.wolfram.com/)
 - [Computational Mathematics - NumPy Documentation](https://numpy.org/doc/stable/)
 - [Mathematical Computing - SciPy Documentation](https://docs.scipy.org/doc/scipy/)
