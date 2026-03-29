@@ -12,26 +12,49 @@
 ## 📚 **Core Resources**
 
 ### **Mathematics**
-**Primary Topics**:
-- Eigenvalues, eigenvectors, and basis transformations
-- Orthogonal complements and coordinate systems
-- Probability theory and compound events
+**Primary Resources**:
+- [MIT 18.06 Linear Algebra (Advanced Topics)](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/)
+- [Stanford CS229 Machine Learning](https://see.stanford.edu/course/cs229)
+- [3Blue1Brown Linear Algebra Series](https://www.3blue1brown.com/topics/linear-algebra)
 
-**Key Resources**:
-- MIT 18.06 Linear Algebra (advanced topics)
-- Stanford CS229 Machine Learning
-- 3Blue1Brown visualizations
+**Specific Topics with Links**:
+- **Eigenvalues and Eigenvectors**: [MIT Lecture 21](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/video_galleries/lecture-videos/lecture-21/)
+- **Orthogonal Complements**: [MIT Lecture 22](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/video_galleries/lecture-videos/lecture-22/)
+- **Alternate Coordinate Systems**: [MIT Lecture 23](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/video_galleries/lecture-videos/lecture-23/)
+- **Matrix Transformations**: [MIT Lecture 24](https://ocw.mit.edu/courses/18-06sc-linear-algebra-spring-2010/video_galleries/lecture-videos/lecture-24/)
 
 ### **Programming**
-**Focus Areas**:
-- Data structures and algorithms
-- Memory management in C/Python
-- Mathematical computing with NumPy/SymPy
+**Primary Resources**:
+- [Python for Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [Harvard CS50](https://cs50.harvard.edu/x/2023/)
+- [MIT 6.006 Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/)
+
+**Specific Topics with Links**:
+- **Data Structures**: [CS50 Week 2: Arrays](https://cs50.harvard.edu/x/2023/weeks/2/)
+- **Algorithms**: [MIT 6.006 Problem Sets](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/pages/assignments/)
+- **Memory Management**: [CS50 Week 4: Memory](https://cs50.harvard.edu/x/2023/weeks/4/)
+
+### **Probability Theory**
+**Primary Resources**:
+- [Khan Academy Probability](https://www.khanacademy.org/math/statistics-probability/probability)
+- [StatQuest Probability](https://www.youtube.com/c/statquest)
+- [Think Stats](https://greenteapress.com/wp/think-stats-2e/)
+
+**Specific Topics with Links**:
+- **Basic Probability**: [Khan Academy Probability Basics](https://www.khanacademy.org/math/statistics-probability/probability)
+- **Compound Events**: [Khan Academy Compound Events](https://www.khanacademy.org/math/statistics-probability/compound-events-and-probability)
+- **Statistical Reasoning**: [StatQuest Statistical Reasoning](https://www.youtube.com/watch?v=0oc49DyA3hU)
 
 ### **Research**
-**Key Papers**:
-- Toolformer (tool integration in LLMs)
-- MathCoder (mathematical reasoning)
+**Primary Resources**:
+- [Toolformer Paper](https://arxiv.org/abs/2302.04761)
+- [MathCoder Paper](https://arxiv.org/abs/2410.01985)
+- [Papers with Code](https://paperswithcode.com/task/mathematical-reasoning)
+
+**Reading Strategy**:
+- **Day 1**: Abstract, Introduction, Related Work
+- **Day 2**: Methodology, Experiments
+- **Day 3**: Results, Discussion, Future Work
 
 ---
 
