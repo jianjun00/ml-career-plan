@@ -1,43 +1,66 @@
-# Weeks 7-8: Integration & Application (April 12-25, 2026)
+# Weeks 7-8: Integration & Application
 
 ## 🎯 **Learning Objectives**
-- Complete Harvard CS50 with LLM-focused final project
-- Build attention mechanism demonstration using NumPy
-- Apply to Inspirit AI (deadline April 15) ⚠️
-- Submit to mathematical competition
-- Follow and engage with Math LLM researchers
-- Implement basic statistics evaluation metrics for math LLMs
+- Complete CS50 with LLM-focused project
+- Build attention mechanism demonstration
+- Apply mathematical concepts to LLMs
+- Implement basic neural networks
 
 ---
 
-## 📚 **Content & Resources**
+## 📚 **Core Resources**
 
-### **Harvard CS50 Final Project**
-**Resource**: [Harvard CS50](https://cs50.harvard.edu/x/2023/)
-- **Final Project**: [CS50 Final Project](https://cs50.harvard.edu/x/2023/final/)
-- **Time Commitment**: 3 hours/day, 5 days/week
-- **Focus**: LLM-focused application demonstrating all learned concepts
+### **Programming**
+**Focus Areas**:
+- LLM-focused final project
+- Attention mechanisms
+- Neural network basics
 
-**Project Ideas**:
-- Mathematical expression evaluator
-- Simple LLM text generator
-- Mathematical problem solver
-- Tokenization and attention visualizer
+### **Mathematics**
+**Key Topics**:
+- Attention mathematics
+- Linear algebra for neural networks
+- Statistical evaluation metrics
 
-### **Attention Mechanism Implementation**
-**Primary Resource**: [Andrej Karpathy's Neural Networks Zero to Hero](https://github.com/karpathy/nn-zero-to-hero)
-- **Key Videos**:
-  - [Let's build GPT: from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
-  - [Let's build GPT: visualizing attention](https://www.youtube.com/watch?v=wjZofKYMA_U)
+---
 
-**Implementation Resources**:
-- [Attention Is All You Need Paper](https://arxiv.org/abs/1706.03762)
-- [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
-- [NumPy Documentation](https://numpy.org/doc/stable/)
+## 🛠️ **Core Projects**
 
-### **Inspirit AI Application**
-**Resource**: [Inspirit AI Scholars](https://www.inspiritai.com/)
-- **Deadline**: April 15, 2026 (URGENT)
+### **Project 1: Attention Mechanism**
+**Objective**: Implement scaled dot-product attention
+
+**Core Components**:
+- Query, Key, Value matrices
+- Attention weight computation
+- Context vector generation
+
+### **Project 2: LLM Application**
+**Objective**: Build simple text generation model
+
+**Core Features**:
+- Basic transformer architecture
+- Text processing pipeline
+- Simple training loop
+
+---
+
+## 📊 **Learning Outcomes**
+
+Upon completing weeks 7-8, you will be able to:
+1. **Attention**: Implement and understand attention mechanisms
+2. **Neural Networks**: Build basic neural architectures
+3. **Integration**: Apply mathematical concepts to LLMs
+4. **Applications**: Create practical LLM projects
+5. **Evaluation**: Understand model assessment techniques
+
+---
+
+## 🚀 **Next Steps**
+
+**Weeks 9-10 Preview**:
+- Advanced mathematics and optimization
+- Statistical inference methods
+- Research paper implementation
 - **Track**: Mathematical Reasoning AI
 - **Requirements**: 
   - Application essays
