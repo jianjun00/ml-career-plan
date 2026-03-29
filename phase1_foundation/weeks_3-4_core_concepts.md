@@ -68,18 +68,10 @@
 - [Orthogonality Quiz](https://www.khanacademy.org/math/linear-algebra/orthogonality/quiz/orthogonality-quiz)
 
 **Practical Assessment**:
-```python
-# Eigenvalue calculation test
-import numpy as np
-
-def test_eigenvalues():
-    matrix = np.array([[3, 1], [1, 3]])
-    eigenvalues, eigenvectors = np.linalg.eig(matrix)
-    print(f"Eigenvalues: {eigenvalues}")
-    print(f"Eigenvectors: {eigenvectors}")
-    
-test_eigenvalues()
-```
+- [ ] Compute eigenvalues for 3x3 matrix
+- [ ] Find eigenvectors and verify properties
+- [ ] Explain geometric interpretation
+- [ ] Apply eigenvalues to real problems
 
 **Success Criteria**:
 - [ ] Score 85%+ on eigenvalues quiz
@@ -104,19 +96,16 @@ test_eigenvalues()
 - [Compound Events Quiz](https://www.khanacademy.org/math/statistics-probability/compound-events-and-probability/quiz/compound-events-quiz)
 
 **Practical Assessment**:
-```python
-# Probability simulation
-import numpy as np
-import matplotlib.pyplot as plt
+- [ ] Simulate coin flips and calculate probabilities
+- [ ] Create probability distributions
+- [ ] Test compound events
+- [ ] Visualize probability outcomes
 
-def simulate_coin_flips(n_flips=1000):
-    results = np.random.choice(['H', 'T'], n_flips)
-    heads_count = np.sum(results == 'H')
-    probability = heads_count / n_flips
-    return probability, results
-
-prob, results = simulate_coin_flips()
-print(f"Probability of heads: {prob}")
+**Success Criteria**:
+- [ ] Score 85%+ on probability quiz
+- [ ] Score 85%+ on compound events quiz
+- [ ] Simulate probability experiments
+- [ ] Explain probability concepts
 ```
 
 **Success Criteria**:
@@ -228,27 +217,7 @@ class ProbabilitySimulator:
         plt.title(title)
         plt.xlabel('Value')
         plt.ylabel('Probability Density')
-        plt.show()
-    
-    def calculate_statistics(self, samples):
-        """Calculate descriptive statistics"""
-        return {
-            'mean': np.mean(samples),
-            'std': np.std(samples),
-            'median': np.median(samples),
-            'min': np.min(samples),
-            'max': np.max(samples)
-        }
-
-# Example usage
-simulator = ProbabilitySimulator()
-normal_samples = simulator.simulate_distribution('normal', {'mean': 0, 'std': 1})
-simulator.plot_distribution(normal_samples, "Normal Distribution")
-stats = simulator.calculate_statistics(normal_samples)
-print(f"Statistics: {stats}")
-```
-
-**Deliverables**:
+        **Deliverables**:
 - [ ] Complete simulator class
 - [ ] Interactive Jupyter notebook
 - [ ] Documentation of distributions

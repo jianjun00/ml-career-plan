@@ -85,68 +85,14 @@
 - [Problem Set 1: Introduction](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/resources/mit6_036f20_ps1/)
 - [Problem Set 2: Linear Classification](https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/resources/mit6_036f20_ps2/)
 
-**Quiz Implementation**:
-```python
-# MIT ML Quiz Helper
-import numpy as np
-from sklearn.linear_model import Perceptron
-from sklearn.datasets import make_classification
-
-def test_perceptron():
-    """Test perceptron algorithm understanding"""
-    # Create sample data
-    X, y = make_classification(n_samples=100, n_features=2, n_redundant=0, random_state=42)
-    
-    # Implement perceptron
-    perceptron = Perceptron(random_state=42)
-    perceptron.fit(X, y)
-    
-    # Test accuracy
-    accuracy = perceptron.score(X, y)
-    print(f"Perceptron accuracy: {accuracy:.2f}")
-    
-    return accuracy > 0.8
-
-def test_linear_classification():
-    """Test linear classification concepts"""
-    # Create linearly separable data
-    np.random.seed(42)
-    class1 = np.random.randn(50, 2) + [2, 2]
-    class2 = np.random.randn(50, 2) + [-2, -2]
-    
-    X = np.vstack([class1, class2])
-    y = np.array([1]*50 + [0]*50)
-    
-    # Simple linear classifier
-    perceptron = Perceptron()
-    perceptron.fit(X, y)
-    
-    # Test on training data
-    accuracy = perceptron.score(X, y)
-    print(f"Linear classification accuracy: {accuracy:.2f}")
-    
-    return accuracy > 0.9
-
-# Run tests
-if __name__ == "__main__":
-    print("Testing MIT ML concepts...")
-    perceptron_test = test_perceptron()
-    linear_test = test_linear_classification()
-    
-    print(f"Perceptron test passed: {perceptron_test}")
-    print(f"Linear classification test passed: {linear_test}")
-```
-
-**Success Criteria**:
-- [ ] Complete first 3 MIT lectures with notes
-- [ ] Solve Problem Set 1 with 80%+ accuracy
-- [ ] Implement perceptron algorithm from scratch
-- [ ] Explain mathematical foundations of ML
+**Test Cases**:
+- [ ] Implement perceptron algorithm
+- [ ] Test linear classification
 
 ### **Hugging Face Course Evaluation**
 **Course Exercises**:
-```python
-# Hugging Face Course Exercises
+- [ ] Build transformer pipeline
+- [ ] Test tokenizer and model
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
@@ -184,68 +130,16 @@ def test_tokenizer_and_model():
 if __name__ == "__main__":
     print("Testing Hugging Face concepts...")
     pipeline_test = test_transformer_pipeline()
-    tokenizer_test = test_tokenizer_and_model()
-    
-    print(f"Pipeline test passed: {pipeline_test}")
-    print(f"Tokenizer test passed: {tokenizer_test}")
-```
-
-**Success Criteria**:
-- [ ] Complete Chapters 1-3 of Hugging Face course
-- [ ] Run all example notebooks successfully
-- [ ] Fine-tune a simple model
-- [ ] Explain transformer architecture components
 
 ### **Linear Algebra Evaluation**
 **Attention Mechanism Quiz**:
-```python
-# Linear Algebra for Attention
-import numpy as np
-import matplotlib.pyplot as plt
-
-def test_attention_linear_algebra():
-    """Test linear algebra concepts for attention"""
-    # Create Q, K, V matrices
-    seq_len = 4
-    d_k = 8
-    
-    Q = np.random.randn(seq_len, d_k)
-    K = np.random.randn(seq_len, d_k)
-    V = np.random.randn(seq_len, d_k)
-    
-    # Compute attention scores (Q @ K^T)
-    scores = np.dot(Q, K.T)
-    
-    # Scale by sqrt(d_k)
-    scaled_scores = scores / np.sqrt(d_k)
-    
-    # Apply softmax
-    def softmax(x):
-        exp_x = np.exp(x - np.max(x, axis=-1, keepdims=True))
-        return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
-    
-    attention_weights = softmax(scaled_scores)
-    
-    # Compute output
-    output = np.dot(attention_weights, V)
-    
-    print(f"Q shape: {Q.shape}")
-    print(f"K shape: {K.shape}")
-    print(f"V shape: {V.shape}")
-    print(f"Attention weights shape: {attention_weights.shape}")
-    print(f"Output shape: {output.shape}")
-    
-    # Test properties
-    assert attention_weights.shape == (seq_len, seq_len)
-    assert output.shape == (seq_len, d_k)
-    
-    # Check if attention weights sum to 1
-    row_sums = np.sum(attention_weights, axis=1)
-    assert np.allclose(row_sums, 1.0)
-    
-    return True
-
-# Run test
+- [ ] Compute attention scores (Q @ K^T)
+- [ ] Scale by sqrt(d_k)
+- [ ] Apply softmax function
+- [ ] Compute attention output
+- [ ] Test matrix dimensions
+- [ ] Verify attention weights sum to 1
+- [ ] Visualize attention patterns
 if __name__ == "__main__":
     print("Testing linear algebra for attention...")
     test_passed = test_attention_linear_algebra()
@@ -329,92 +223,35 @@ if __name__ == "__main__":
 **Objective**: Implement core ML algorithms from mathematical principles
 
 **Implementation**:
-```python
-# Mathematical ML Implementation
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
+- Implement perceptron learning rule
+- Build linear classifier from scratch
+- Create attention mechanism
+- Implement position encoding
+- Test mathematical ML concepts
 
-class MathematicalML:
-    def __init__(self):
-        self.weights = None
-        self.bias = None
-    
-    def perceptron_learning_rule(self, X, y, learning_rate=0.01, epochs=100):
-        """Implement perceptron learning rule"""
-        n_samples, n_features = X.shape
-        
-        # Initialize weights and bias
-        self.weights = np.zeros(n_features)
-        self.bias = 0
-        
-        # Training loop
-        for epoch in range(epochs):
-            for i in range(n_samples):
-                # Forward pass
-                linear_output = np.dot(X[i], self.weights) + self.bias
-                prediction = 1 if linear_output > 0 else 0
-                
-                # Update weights if misclassified
-                if prediction != y[i]:
-                    update = learning_rate * (y[i] - prediction)
-                    self.weights += update * X[i]
-                    self.bias += update
-        
-        return self.weights, self.bias
-    
-    def predict(self, X):
-        """Make predictions"""
-        linear_output = np.dot(X, self.weights) + self.bias
-        return np.where(linear_output > 0, 1, 0)
-    
-    def calculate_margin(self, X, y):
-        """Calculate margin for linear classifier"""
-        margins = []
-        for i in range(len(X)):
-            margin = y[i] * (np.dot(X[i], self.weights) + self.bias)
-            margins.append(margin)
-        return np.array(margins)
-
-# Test implementation
-def test_mathematical_ml():
-    """Test mathematical ML implementation"""
-    # Generate linearly separable data
-    X, y = make_classification(n_samples=200, n_features=2, n_redundant=0, 
-                              n_clusters_per_class=1, random_state=42)
-    
-    # Split data
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    # Train perceptron
-    ml_model = MathematicalML()
-    weights, bias = ml_model.perceptron_learning_rule(X_train, y_train)
-    
-    # Make predictions
-    y_pred = ml_model.predict(X_test)
-    
-    # Calculate accuracy
-    accuracy = np.mean(y_pred == y_test)
-    
-    print(f"Perceptron accuracy: {accuracy:.3f}")
-    print(f"Weights: {weights}")
-    print(f"Bias: {bias}")
-    
-    # Calculate margins
-    margins = ml_model.calculate_margin(X_test, y_test)
-    print(f"Average margin: {np.mean(margins):.3f}")
-    
-    return accuracy > 0.8
-
-# Run test
-if __name__ == "__main__":
-    print("Testing mathematical ML implementation...")
-    test_passed = test_mathematical_ml()
-    print(f"Mathematical ML test passed: {test_passed}")
-```
-
-**Deliverables**:
+**Success Criteria**:
 - [ ] Working perceptron implementation
+- [ ] Linear classifier with mathematical foundation
+- [ ] Attention mechanism from scratch
+- [ ] Position encoding implementation
+- [ ] Mathematical ML test suite
+
+### **Project 2: Transformer Mathematics**
+**Objective**: Implement mathematical foundations of transformers
+
+**Implementation**:
+- Build scaled dot-product attention
+- Implement multi-head attention
+- Create position encoding
+- Test transformer components
+- Document mathematical derivations
+
+**Success Criteria**:
+- [ ] Working attention mechanism
+- [ ] Multi-head attention implementation
+- [ ] Position encoding formulas
+- [ ] Transformer component tests
+- [ ] Mathematical documentation
 - [ ] Mathematical explanation of learning rule
 - [ ] Performance comparison with sklearn
 - [ ] Margin analysis and visualization

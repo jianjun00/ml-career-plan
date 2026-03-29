@@ -273,6 +273,18 @@
   - Show publication-quality work potential
   - **Success Criteria**: Research standards understood, experimental design mastered
 
+- **Original Research Evaluation** (20%):
+  - Identify research gaps in mathematical reasoning
+  - Develop novel research approach or contribution
+  - Create research prototype demonstrating innovation
+  - **Success Criteria**: Research gap identified, novel approach developed
+
+- **Competition Performance** (20%):
+  - Participate in prestigious mathematics competitions
+  - Demonstrate advanced problem-solving skills
+  - Show progress in competition rankings
+  - **Success Criteria**: Competition participation, problem-solving advanced, progress shown
+
 **Evaluation Format**:
 - ✅ MIT assessment (course completion and accuracy)
 - ✅ Stanford/CMU evaluation (advanced problem solving)
@@ -292,12 +304,19 @@
 - **Project Completion**: 100% of projects completed and functional
 - **Code Quality**: 90%+ of code passes automated testing
 - **Documentation**: 100% of projects have complete documentation
+- **Stanford/CMU Level**: Demonstrate advanced problem-solving ability
+- **Research Contribution**: Original research contribution or prototype
+- **Competition Performance**: Participation in prestigious mathematics competitions
+- **Mentorship Engagement**: Active participation in mentorship program
 
 ### **Qualitative Metrics**
 - **Problem Solving**: Ability to tackle increasingly complex mathematical problems
 - **Technical Skills**: Proficiency in Python, NumPy, SymPy, and mathematical computing
 - **Research Understanding**: Ability to read and analyze research papers
 - **Portfolio Quality**: Professional presentation of work and achievements
+- **Original Research**: Novel contribution to mathematical reasoning or LLMs
+- **Competition Excellence**: Advanced problem-solving in prestigious competitions
+- **Mentorship Growth**: Demonstrated growth through mentorship guidance
 
 ### **Progression Tracking**
 - **Weekly Check-ins**: Self-assessment with mentor feedback

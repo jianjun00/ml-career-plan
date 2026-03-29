@@ -118,81 +118,20 @@ int main() {
 - [ ] Demonstrate proper memory management
 - [ ] Create hash table implementation
 
-### **Mathematical Expression Parser Evaluation**
-**Test Suite**:
-```python
-from sympy import symbols, simplify, parse_expr, Eq, solve
-import unittest
-
-class TestMathParser(unittest.TestCase):
-    def setUp(self):
-        self.parser = MathExpressionParser()
-    
-    def test_basic_arithmetic(self):
-        result = self.parser.evaluate_expression("2+3*4")
-        self.assertEqual(result, 14)
-    
-    def test_variables(self):
-        result = self.parser.evaluate_expression("x^2", {"x": 3})
-        self.assertEqual(result, 9)
-    
-    def test_functions(self):
-        result = self.parser.evaluate_expression("sin(pi/2)")
-        self.assertAlmostEqual(float(result), 1.0, places=5)
-    
-    def test_simplification(self):
-        result = self.parser.simplify_expression("x^2 + 2*x + 1 - (x+1)^2")
-        self.assertEqual(result, 0)
-    
-    def test_equation_solving(self):
-        x = symbols('x')
-        equation = Eq(x**2 - 4, 0)
-        solutions = solve(equation, x)
-        self.assertEqual(len(solutions), 2)
-
-if __name__ == '__main__':
-    unittest.main()
-```
-
 **Success Criteria**:
-- [ ] Pass all unit tests (100% pass rate)
-- [ ] Handle 10+ mathematical operations
-- [ ] Support variable substitution
+- [ ] Parse mathematical expressions correctly
+- [ ] Handle variables and functions
+- [ ] Support basic arithmetic operations
 - [ ] Implement equation solving
 - [ ] Create comprehensive documentation
 
 ### **Tokenization Implementation Evaluation**
 **Test Cases**:
-```python
-from tokenizers import Tokenizer
-import json
-
-def test_tokenizer():
-    # Test mathematical expressions
-    tokenizer = Tokenizer.from_pretrained("bert-base-uncased")
-    
-    math_expressions = [
-        "2x + 3y = 7",
-        "sin(x) + cos(y)",
-        "∫(x^2)dx",
-        "a^2 + b^2 = c^2"
-    ]
-    
-    for expr in math_expressions:
-        tokens = tokenizer.tokenize(expr)
-        print(f"Expression: {expr}")
-        print(f"Tokens: {tokens}")
-        print("---")
-
-test_tokenizer()
-```
-
-**Success Criteria**:
-- [ ] Implement BPE tokenization from scratch
-- [ ] Handle mathematical symbols correctly
-- [ ] Create vocabulary for math expressions
-- [ ] Tokenize 20+ mathematical expressions
-- [ ] Compare with Hugging Face tokenizers
+- [ ] Tokenize mathematical expressions
+- [ ] Handle special math symbols
+- [ ] Support variable tokenization
+- [ ] Create vocabulary mapping
+- [ ] Test with sample expressions
 
 ### **Statistics Understanding Evaluation**
 **Quiz Links**:
@@ -200,20 +139,11 @@ test_tokenizer()
 - [Khan Academy Hypothesis Testing](https://www.khanacademy.org/math/statistics-probability/significance-tests/quiz/hypothesis-testing-quiz)
 
 **Practical Assessment**:
-```python
-import numpy as np
-from scipy import stats
-
-def hypothesis_test_example():
-    # A/B test example
-    group_a = np.random.normal(100, 15, 100)  # Control group
-    group_b = np.random.normal(105, 15, 100)  # Test group
-    
-    # Perform t-test
-    t_stat, p_value = stats.ttest_ind(group_a, group_b)
-    
-    print(f"T-statistic: {t_stat}")
-    print(f"P-value: {p_value}")
+- [ ] Perform hypothesis testing
+- [ ] Calculate confidence intervals
+- [ ] Interpret p-values correctly
+- [ ] Apply statistical tests to real data
+- [ ] Document statistical reasoning process
     
     if p_value < 0.05:
         print("Reject null hypothesis - significant difference")

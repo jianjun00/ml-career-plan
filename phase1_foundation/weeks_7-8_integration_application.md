@@ -179,62 +179,6 @@ def attention(Q, K, V):
     """Compute attention mechanism"""
     # Q, K, V shape: (batch_size, seq_len, d_k)
     d_k = Q.shape[-1]
-    
-    # Scaled dot-product attention
-    scores = np.matmul(Q, K.transpose(-2, -1)) / np.sqrt(d_k)
-    attention_weights = softmax(scores)
-    output = np.matmul(attention_weights, V)
-    
-    return output, attention_weights
-
-def test_attention():
-    """Test attention mechanism"""
-    # Simple test case
-    seq_len = 4
-    d_k = 8
-    batch_size = 1
-    
-    # Create random Q, K, V
-    Q = np.random.randn(batch_size, seq_len, d_k)
-    K = np.random.randn(batch_size, seq_len, d_k)
-    V = np.random.randn(batch_size, seq_len, d_k)
-    
-    # Compute attention
-    output, attention_weights = attention(Q, K, V)
-    
-    print(f"Q shape: {Q.shape}")
-    print(f"K shape: {K.shape}")
-    print(f"V shape: {V.shape}")
-    print(f"Output shape: {output.shape}")
-    print(f"Attention weights shape: {attention_weights.shape}")
-    
-    # Visualize attention weights
-    plt.figure(figsize=(10, 6))
-    plt.imshow(attention_weights[0], cmap='Blues')
-    plt.title('Attention Weights')
-    plt.xlabel('Key Position')
-    plt.ylabel('Query Position')
-    plt.colorbar()
-    plt.show()
-    
-    return output, attention_weights
-
-# Test the implementation
-if __name__ == "__main__":
-    output, weights = test_attention()
-    print("Attention mechanism test passed!")
-
-# Unit tests
-import unittest
-
-class TestAttention(unittest.TestCase):
-    def test_attention_shapes(self):
-        Q = np.random.randn(2, 3, 4)
-        K = np.random.randn(2, 3, 4)
-        V = np.random.randn(2, 3, 4)
-        
-        output, weights = attention(Q, K, V)
-        
         self.assertEqual(output.shape, (2, 3, 4))
         self.assertEqual(weights.shape, (2, 3, 3))
     
@@ -253,7 +197,6 @@ if __name__ == '__main__':
 
 **Success Criteria**:
 - [ ] Implement scaled dot-product attention
-- [ ] Pass all unit tests (100% pass rate)
 - [ ] Visualize attention weights correctly
 - [ ] Explain attention mechanism intuitively
 - [ ] Compare with PyTorch implementation
@@ -261,39 +204,11 @@ if __name__ == '__main__':
 
 ### **Inspirit AI Application Evaluation**
 **Application Checklist**:
-```python
-# Application Progress Tracker
-class InspiritAIApplication:
-    def __init__(self):
-        self.components = {
-            'personal_statement': False,
-            'project_portfolio': False,
-            'academic_transcripts': False,
-            'letters_of_recommendation': False,
-            'application_form': False
-        }
-    
-    def update_component(self, component, completed=True):
-        self.components[component] = completed
-        self.check_progress()
-    
-    def check_progress(self):
-        completed = sum(self.components.values())
-        total = len(self.components)
-        percentage = (completed / total) * 100
-        print(f"Application Progress: {percentage:.1f}% ({completed}/{total})")
-        
-        if percentage == 100:
-            print("Application ready to submit!")
-    
-    def missing_components(self):
-        return [k for k, v in self.components.items() if not v]
-
-# Track application progress
-app = InspiritAIApplication()
-app.update_component('personal_statement', True)
-app.update_component('project_portfolio', True)
-```
+- [ ] Personal statement draft
+- [ ] Project portfolio completion
+- [ ] Academic transcripts
+- [ ] Letters of recommendation
+- [ ] Application form completion
 
 **Success Criteria**:
 - [ ] Complete personal statement (500+ words)
@@ -305,31 +220,11 @@ app.update_component('project_portfolio', True)
 
 ### **Math Competition Evaluation**
 **Competition Submission**:
-```python
-# Math Problem Solver for Competition
-import json
-from sympy import symbols, solve, simplify, Eq
-
-class MathCompetitionSolver:
-    def __init__(self):
-        self.solved_problems = []
-        self.correct_solutions = 0
-        self.total_problems = 0
-    
-    def solve_problem(self, problem_text, expected_answer=None):
-        """Solve mathematical problem"""
-        try:
-            # Extract equation from problem text
-            # This is a simplified version - real implementation would need NLP
-            solution = self.extract_and_solve(problem_text)
-            
-            self.total_problems += 1
-            
-            if expected_answer and solution == expected_answer:
-                self.correct_solutions += 1
-                status = "CORRECT"
-            else:
-                status = "ATTEMPTED"
+- [ ] Submit to Kaggle MATH competition
+- [ ] Solve mathematical problems
+- [ ] Create submission file
+- [ ] Document methodology
+- [ ] Compare with baseline models
             
             result = {
                 'problem': problem_text,
@@ -376,68 +271,48 @@ solver = MathCompetitionSolver()
 # Sample problems
 problems = [
     ("What is x if x + 3 = 7?", 4),
-    ("What is x if 2x - 5 = 11?", 8),
-    ("What is x if x^2 = 16?", 4)  # Multiple solutions possible
-]
 
-for problem, answer in problems:
-    result = solver.solve_problem(problem, answer)
-    print(f"Problem: {problem}")
-    print(f"Result: {result}")
-    print("---")
+            **Implementation Structure**:
+            ```python
+            # main.py - Final Project
+            import sys
+            import numpy as np
+            import matplotlib.pyplot as plt
+            from sympy import symbols, solve, parse_expr, Eq
+            import json
+            import time
 
-print(f"Final Accuracy: {solver.calculate_accuracy():.1f}%")
-```
-
-**Success Criteria**:
-- [ ] Submit to Kaggle MATH competition
-- [ ] Solve 10+ mathematical problems
-- [ ] Achieve 50%+ accuracy on test set
-- [ ] Create submission file in correct format
-- [ ] Document methodology
-- [ ] Compare with baseline models
-
----
-
-## 🛠️ **Projects & Applications**
-
-### **Project 1: CS50 Final Project - Math LLM Assistant**
-**Objective**: Create comprehensive Math LLM application demonstrating all CS50 concepts
-
-**Features**:
-1. Mathematical equation solver
-2. Expression evaluator
-3. Simple attention visualization
-4. Tokenization demonstration
-5. Statistical evaluation metrics
-
-**Implementation Structure**:
-```python
-# main.py - Final Project
-import sys
-import numpy as np
-import matplotlib.pyplot as plt
-from sympy import symbols, solve, parse_expr, Eq
-import json
-import time
-
-class MathLLMAssistant:
-    def __init__(self):
-        self.history = []
-        self.attention_weights = None
-    
-    def solve_equation(self, equation_str):
-        """Solve mathematical equation with step-by-step explanation"""
-        try:
-            if '=' in equation_str:
-                left, right = equation_str.split('=')
-                x = symbols('x')
-                equation = Eq(parse_expr(left), parse_expr(right))
-                solutions = solve(equation, x)
+            class MathLLMAssistant:
+                def __init__(self):
+                    self.history = []
+                    self.attention_weights = None
                 
-                result = {
-                    'equation': equation_str,
-                    'solutions': [float(sol) for sol in solutions],
+                def solve_equation(self, equation_str):
+                    """Solve mathematical equation with step-by-step explanation"""
+                    try:
+                        if '=' in equation_str:
+                            left, right = equation_str.split('=')
+                            x = symbols('x')
+                            equation = Eq(parse_expr(left), parse_expr(right))
+                            solutions = solve(equation, x)
+                            
+                            result = {
+                                'equation': equation_str,
+                                'solutions': [float(sol) for sol in solutions],
+                                'steps': [
+                                    f"Original equation: {equation_str}",
+                                    f"Standard form: {equation}",
+                                    f"Solutions: {solutions}"
+                                ],
+                                'timestamp': time.time()
+                            }
+                            
+                            self.history.append(result)
+                            return result
+                        else:
+                            return {'error': 'Invalid equation format'}
+                    except Exception as e:
+                        return {'error': str(e)}
                     'steps': [
                         f"Original equation: {equation_str}",
                         f"Standard form: {equation}",
@@ -589,88 +464,79 @@ if __name__ == "__main__":
     main()
 ```
 
-**Deliverables**:
-- [ ] Complete CS50 final project
-- [ ] Source code with proper documentation
-- [ ] Test suite with 90%+ coverage
-- [ ] User manual and README
-- [ ] Presentation slides
-- [ ] Demo video (2-3 minutes)
+            **Deliverables**:
+            - [ ] Complete CS50 final project
+            - [ ] Source code with proper documentation
+            - [ ] Test suite with 90%+ coverage
+            - [ ] User manual and README
+            - [ ] Presentation slides
+            - [ ] Demo video (2-3 minutes)
 
-### **Project 2: Inspirit AI Application Portfolio**
-**Objective**: Create comprehensive portfolio for Inspirit AI application
+            ### **Project 2: Inspirit AI Application Portfolio**
+            **Objective**: Create comprehensive portfolio for Inspirit AI application
 
-**Portfolio Components**:
-```python
-# Portfolio Generator
-import json
-from datetime import datetime
+            **Portfolio Components**:
+            ```python
+            # Portfolio Generator
+            import json
+            from datetime import datetime
 
-class InspiritAIPortfolio:
-    def __init__(self):
-        self.applicant_info = {
-            'name': 'Your Name',
-            'grade': '9th Grade',
-            'school': 'Your School',
-            'interests': ['Mathematical Reasoning', 'AI/ML', 'Computer Science']
-        }
-        self.projects = []
-        self.achievements = []
-    
-    def add_project(self, title, description, technologies, outcomes):
-        """Add project to portfolio"""
-        project = {
-            'title': title,
-            'description': description,
-            'technologies': technologies,
-            'outcomes': outcomes,
-            'date': datetime.now().strftime('%Y-%m-%d')
-        }
-        self.projects.append(project)
-    
-    def add_achievement(self, title, description, date):
-        """Add achievement to portfolio"""
-        achievement = {
-            'title': title,
-            'description': description,
-            'date': date
-        }
-        self.achievements.append(achievement)
-    
-    def generate_personal_statement(self):
-        """Generate personal statement draft"""
-        statement = f"""
-        Personal Statement for Inspirit AI Scholars Program
-        
-        My name is {self.applicant_info['name']}, and I am a {self.applicant_info['grade']} student at {self.applicant_info['school']}. 
-        I am passionate about {', '.join(self.applicant_info['interests'])}, particularly in the intersection of 
-        mathematics and artificial intelligence.
-        
-        Through my self-directed learning journey, I have completed {len(self.projects)} significant projects, 
-        including {self.projects[0]['title'] if self.projects else 'various mathematical computing projects'}. 
-        These projects have given me hands-on experience with technologies like Python, NumPy, and machine learning frameworks.
-        
-        I am particularly interested in Inspirit AI's Mathematical Reasoning track because I believe that 
-        the future of AI lies in its ability to understand and solve complex mathematical problems. 
-        My experience with mathematical expression parsing and attention mechanisms has prepared me to 
-        contribute meaningfully to research in this area.
-        
-        I am excited about the opportunity to work with mentors and peers who share my passion for 
-        mathematical AI, and I believe that the Inspirit AI program will provide me with the skills 
-        and knowledge needed to pursue my goals in this field.
-        """
-        return statement.strip()
-    
-    def generate_portfolio_json(self):
-        """Generate complete portfolio in JSON format"""
-        portfolio = {
-            'applicant_info': self.applicant_info,
-            'personal_statement': self.generate_personal_statement(),
-            'projects': self.projects,
-            'achievements': self.achievements,
-            'skills': [
-                'Python Programming',
-                'Mathematical Computing',
+            class InspiritAIPortfolio:
+                def __init__(self):
+                    self.applicant_info = {
+                        'name': 'Your Name',
+                        'grade': '9th Grade',
+                        'school': 'Your School',
+                        'interests': ['Mathematical Reasoning', 'AI/ML', 'Computer Science']
+                    }
+                    self.projects = []
+                    self.achievements = []
+                
+                def add_project(self, title, description, technologies, outcomes):
+                    """Add project to portfolio"""
+                    project = {
+                        'title': title,
+                        'description': description,
+                        'technologies': technologies,
+                        'outcomes': outcomes,
+                        'date': datetime.now().strftime('%Y-%m-%d')
+                    }
+                    self.projects.append(project)
+                
+                def add_achievement(self, title, description, date):
+                    """Add achievement to portfolio"""
+                    achievement = {
+                        'title': title,
+                        'description': description,
+                        'date': date
+                    }
+                    self.achievements.append(achievement)
+                
+                def generate_personal_statement(self):
+                    """Generate personal statement draft"""
+                    statement = f"""
+                    Personal Statement for Inspirit AI Scholars Program
+                    
+                    My name is {self.applicant_info['name']}, and I am a {self.applicant_info['grade']} student at {self.applicant_info['school']}. 
+                    I am passionate about {', '.join(self.applicant_info['interests'])}, particularly in the intersection of 
+                    mathematics and artificial intelligence.
+                    
+                    Through my self-directed learning journey, I have completed {len(self.projects)} significant projects, 
+                    including {self.projects[0]['title'] if self.projects else 'various mathematical computing projects'}. 
+                    These projects have given me hands-on experience with technologies like Python, NumPy, and machine learning frameworks.
+                    
+                    I am particularly interested in Inspirit AI's Mathematical Reasoning track because I believe that 
+                    the future of AI lies in its ability to understand and solve complex mathematical problems. 
+                    My experience with mathematical expression parsing and attention mechanisms has prepared me to 
+                    contribute meaningfully to research in this area.
+                    
+                    I am excited about the opportunity to work with mentors and peers who share my passion for 
+                    mathematical AI, and I believe that the Inspirit AI program will provide me with the skills 
+                    and knowledge needed to pursue my goals in this field.
+                    """
+                    return statement.strip()
+                
+                def generate_portfolio_json(self):
                 'Linear Algebra',
                 'Statistics',
                 'Machine Learning Basics',
