@@ -31,6 +31,21 @@ Build specialized foundations for Math LLM research and development with top-tie
 
 ---
 
+#### **World-Class Statistics & Optimization**
+**Course**: [MIT 6.041 Probabilistic Systems Analysis](https://ocw.mit.edu/courses/6-041sc-introduction-to-probability-fall-2013/) + [MIT 6.006 Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
+- **Why**: MIT's world-class probability and optimization theory
+- **Focus**: Statistical analysis, optimization theory, algorithmic thinking
+- **Time Commitment**: 3 hours/week
+- **Milestone**: Complete MIT probability and optimization modules
+
+**Advanced Topics**:
+- **Probability Theory**: Random variables, distributions, limit theorems
+- **Statistical Inference**: Bayesian methods, hypothesis testing
+- **Optimization Theory**: Convex optimization, linear programming
+- **Stochastic Processes**: Markov chains, queueing theory
+
+---
+
 ### Statistics Foundation
 
 #### **Primary Resource: Khan Academy Statistics**

@@ -15,18 +15,18 @@ Develop advanced mathematical reasoning capabilities in LLMs with specialized pr
 
 ### **Advanced Mathematical Reasoning**
 
-#### **Primary Resource: UC Berkeley CS285**
-**Course**: [Berkeley Deep Reinforcement Learning](http://rail.eecs.berkeley.edu/deeprlcourse/)
-- **Why**: Mathematical foundations of RL for reasoning
-- **Focus**: Mathematical problem solving as RL
+#### **Primary Resource: Stanford CS229 + CMU 15-780**
+**Course**: [Stanford CS229 Machine Learning](http://cs229.stanford.edu/) + [CMU 15-780 Advanced Algorithms](https://www.cs.cmu.edu/~15780/15-780/)
+- **Why**: Stanford's world-class ML + CMU's advanced algorithms
+- **Focus**: Machine learning theory, advanced algorithms, optimization
 - **Time Commitment**: 6 hours/week
-- **Milestone**: Complete reasoning modules
+- **Milestone**: Complete Stanford ML + CMU algorithms
 
-#### **Mathematical Reasoning Research**:
-- **Chain-of-Thought**: Mathematical step-by-step reasoning
-- **Tool Integration**: Calculators, symbolic math
-- **Proof Generation**: Automated theorem proving
-- **Problem Decomposition**: Breaking down complex problems
+#### **Advanced Mathematical Reasoning Research**:
+- **Machine Learning Theory**: Neural networks, deep learning, optimization
+- **Advanced Algorithms**: Approximation algorithms, randomized algorithms
+- **Optimization Theory**: Convex optimization, optimal control
+- **Statistical Learning Theory**: PAC learning, VC dimension
 
 ---
 
@@ -49,6 +49,52 @@ Develop advanced mathematical reasoning capabilities in LLMs with specialized pr
 
 ### **Specialized Math LLM Projects**
 
+#### **Primary Resource: Hands-on Projects**
+- **Why**: Apply mathematical reasoning to real-world problems
+- **Focus**: Mathematical applications and competitions
+- **Time Commitment**: 6 hours/week
+- **Milestone**: Complete 2 specialized projects
+
+---
+
+### **Robotics Excellence & Competitions**
+
+#### **Primary Resource: FIRST Robotics + USACO Training**
+**Competition**: [FIRST Robotics Competition](https://www.firstinspires.org/robotics/frc) + [USACO Training](https://usaco.guide/)
+- **Why**: National-level robotics and coding competitions with college recognition
+- **Focus**: Team leadership, technical innovation, competitive programming
+- **Time Commitment**: 5 hours/week
+- **Milestone**: Qualify for state/national competitions
+
+#### **USACO Competitive Programming**
+**Resource**: [USACO Training](https://usaco.guide/) + [ML for Competitive Programming](https://www.kaggle.com/learn/competitive-data-science)
+- **Core Concepts**:
+  - [Algorithms and Data Structures](https://usaco.guide/general/algos)
+  - [Problem-Solving Strategies](https://usaco.guide/general/strategy)
+  - [Contest Preparation](https://usaco.guide/general/contests)
+  - [ML in Competitive Programming](https://www.kaggle.com/learn/competitive-data-science)
+
+**ML-Enhanced Problem Solving**:
+- **Pattern Recognition**: Neural networks for pattern matching
+- **Optimization**: Gradient descent for optimization problems
+- **Heuristic Development**: ML-based heuristic generation
+- **Statistical Learning**: Statistical analysis for problem insights
+
+**Time Commitment**: 3 hours/week
+- **Milestone**: Qualify for state/national competitions
+
+#### **Robotics & Coding Components**:
+- **Mechanical Design**: CAD, prototyping, engineering principles
+- **Programming**: C++, Python, robot control systems
+- **Team Leadership**: Project management, collaboration, mentorship
+- **Competition Strategy**: Innovation, problem-solving, performance optimization
+
+#### **Implementation Projects**:
+- **Competition Robot**: Build award-winning competition robot
+- **Open Source Contributions**: GitHub portfolio of robotics projects
+- **ML Integration**: Apply machine learning to robotics challenges
+- **Community Outreach**: Teach robotics to younger students
+
 #### **Project 1: Chain-of-Thought Math Solver**
 **Objective**: Build LLM that shows step-by-step mathematical reasoning
 - **Technologies**: PyTorch, Hugging Face, SymPy
@@ -60,6 +106,37 @@ Develop advanced mathematical reasoning capabilities in LLMs with specialized pr
 - **Technologies**: Python APIs, SymPy, NumPy
 - **Features**: Tool calling, result verification, error handling
 - **Timeline**: Weeks 7-12
+
+#### **Project 3: Competition Robot Development**
+**Objective**: Build award-winning FIRST Robotics competition robot
+- **Technologies**: C++, Python, CAD software, ROS
+- **Features**: Autonomous navigation, computer vision, team coordination
+- **Timeline**: Weeks 13-18
+
+#### **Project 4: USACO Competitive Programming with ML**
+**Objective**: Achieve USACO Gold/Platinum division using ML-enhanced solutions
+- **Technologies**: C++, Python, PyTorch, TensorFlow, scikit-learn
+- **Features**: Traditional algorithms + ML optimization, pattern recognition, heuristic development
+- **Timeline**: Weeks 19-24
+- **ML Focus**: Apply neural networks, gradient descent, and statistical learning to USACO problems
+
+---
+
+## 📅 **Updated Time Allocation (25 hours/week total)**
+
+### **Q1: September - November 2026**
+- **Berkeley RL Course**: 5 hours/week (reduced from 6)
+- **Transformer Implementation**: 6 hours/week (reduced from 8)
+- **Math LLM Projects**: 6 hours/week
+- **Robotics & Coding**: 5 hours/week
+- **Research & Competition**: 3 hours/week
+
+### **Q2: December 2026 - February 2027**
+- **Advanced Mathematics**: 5 hours/week
+- **Research Projects**: 8 hours/week
+- **Robotics Competitions**: 6 hours/week
+- **USACO Training**: 3 hours/week
+- **Athletic Development**: 3 hours/week
 
 ---
 
