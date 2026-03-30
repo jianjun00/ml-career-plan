@@ -19,9 +19,9 @@
   - [Lecture 6: Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec6.pdf)
 
 **Course Materials**:
-- [Assignment 2: Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/assignments/assignment2/)
-- [Lecture Videos](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/lectures/)
-- [Course Notes](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/notes/)
+- [Lecture Videos](https://rail.eecs.berkeley.edu/deeprlcourse/)
+- [Course Notes](https://rail.eecs.berkeley.edu/deeprlcourse/)
+- [Assignments](https://rail.eecs.berkeley.edu/deeprlcourse/)
 
 **Time Commitment**: 6 hours/week
 **Focus**: Actor-critic methods and advanced policy gradients

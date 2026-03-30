@@ -18,10 +18,10 @@
   - [Lecture 2: Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec2.pdf)
   - [Lecture 3: Q-Learning and Function Approximation](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec3.pdf)
 
-**Course Materials**:
-- [Lecture Videos](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/lectures/)
-- [Assignments](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/assignments/)
-- [Course Notes](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/notes/)
+- **Course Materials**:
+- [Lecture Videos](https://rail.eecs.berkeley.edu/deeprlcourse/)
+- [Assignments](https://rail.eecs.berkeley.edu/deeprlcourse/)
+- [Course Notes](https://rail.eecs.berkeley.edu/deeprlcourse/)
 
 **Time Commitment**: 6 hours/week
 **Focus**: Mathematical reasoning as reinforcement learning
