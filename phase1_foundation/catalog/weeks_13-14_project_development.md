@@ -13,41 +13,56 @@
 ## 📚 **Content & Resources**
 
 ### **Transformer from Scratch Implementation**
-**Resource**: [minGPT Repository](https://github.com/karpathy/minGPT)
-- **Key Components**:
-  - [GPT Model Architecture](https://github.com/karpathy/minGPT/blob/master/mingpt/model.py)
-  - [Training Loop](https://github.com/karpathy/minGPT/blob/master/mingpt/trainer.py)
-  - [Data Loading](https://github.com/karpathy/minGPT/blob/master/mingpt/data.py)
-
-**Implementation Resources**:
+**Primary Resources**:
+- [minGPT Repository](https://github.com/karpathy/minGPT)
 - [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
-- [Building GPT: From Scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
+- [Building GPT from Scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 
-**Time Commitment**: 3 hours/day, 5 days/week
-**Focus**: Complete GPT-style transformer implementation
+**Key Components with Links**:
+- **GPT Model Architecture**: [minGPT Model](https://github.com/karpathy/minGPT/blob/master/mingpt/model.py)
+- **Training Loop**: [minGPT Trainer](https://github.com/karpathy/minGPT/blob/master/mingpt/trainer.py)
+- **Data Loading**: [minGPT Data](https://github.com/karpathy/minGPT/blob/master/mingpt/data.py)
+- **Positional Encoding**: [Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/#positional-encoding)
+
+**Implementation Resources**:
+- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
+- [Transformer Architecture Guide](http://jalammar.github.io/illustrated-transformer/)
+- [Andrej Karpathy's Videos](https://www.youtube.com/playlist?list=PLA89DCFA6ADACE599)
 
 ### **Math Problem Solver Development**
-**Resource**: [Mathematical Reasoning Datasets](https://paperswithcode.com/task/mathematical-reasoning)
-- **Key Datasets**:
-  - [GSM8K](https://github.com/openai/grade-school-math)
-  - [MATH Dataset](https://github.com/google-research/datasets/blob/master/math_dataset/README.md)
-  - [MathQA](https://github.com/google-research/mathqa)
-
-**Problem-Solving Resources**:
+**Primary Resources**:
+- [GSM8K Dataset](https://github.com/openai/grade-school-math)
+- [Mathematical Reasoning Papers](https://paperswithcode.com/task/mathematical-reasoning)
 - [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903)
 - [Program-Aided Language Models](https://arxiv.org/abs/2211.10435)
-- [Toolformer](https://arxiv.org/abs/2302.04761)
 
-**Time Commitment**: 2 hours/day, 4 days/week
-**Focus**: Building prototype for mathematical problem solving
+**Key Datasets with Links**:
+- **GSM8K**: [OpenAI Math Dataset](https://github.com/openai/grade-school-math)
+- **MATH Dataset**: [Google Research Math](https://github.com/google-research/datasets/blob/master/math_dataset/README.md)
+- **MathQA**: [Google MathQA](https://github.com/google-research/mathqa)
+
+**Problem-Solving Resources**:
+- **Chain-of-Thought**: [CoT Paper](https://arxiv.org/abs/2201.11903)
+- **Toolformer**: [Tool Integration](https://arxiv.org/abs/2302.04761)
+- **AutoMath**: [Automated Reasoning](https://arxiv.org/abs/2402.07145)
 
 ### **Open Source Contribution**
-**Resource**: [Open Source Guides](https://opensource.guide/)
-- **Target Repositories**:
-  - [EleutherAI](https://github.com/EleutherAI)
-  - [Hugging Face Transformers](https://github.com/huggingface/transformers)
-  - [MathLLM/MathCoder](https://github.com/mathllm)
+**Primary Resources**:
+- [Open Source Guides](https://opensource.guide/)
+- [GitHub Contribution Guide](https://docs.github.com/en/get-started/quickstart/contributing)
+- [First Contributions](https://www.firsttimersonly.com/)
+
+**Target Repositories with Links**:
+- **EleutherAI**: [EleutherAI GitHub](https://github.com/EleutherAI)
+- **Hugging Face Transformers**: [Transformers Repo](https://github.com/huggingface/transformers)
+- **MathLLM/MathCoder**: [MathLLM Organization](https://github.com/mathllm)
+
+**Contribution Strategy**:
+- **Documentation**: Improve README and code comments
+- **Bug Fixes**: Address open issues
+- **Features**: Add small, well-defined features
+- **Tests**: Improve test coverage
 
 **Contribution Resources**:
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
@@ -80,13 +95,140 @@
 
 ## 🛠️ **Projects & Applications**
 
-### **Project 1: Complete Math LLM Implementation**
-**Objective**: Build complete GPT-style transformer with mathematical reasoning capabilities
+### **Project 1: Transformer from Scratch**
+**Objective**: Complete GPT-style transformer implementation
 
-**Implementation**:
-- Use PyTorch for neural network implementation
-- Implement multi-head attention mechanism
-- Add mathematical reasoning capabilities
+**Core Implementation**:
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class TransformerBlock(nn.Module):
+    def __init__(self, d_model=512, n_heads=8, dropout=0.1):
+        super().__init__()
+        self.attention = MultiHeadAttention(d_model, n_heads)
+        self.norm1 = nn.LayerNorm(d_model)
+        self.ffn = nn.Sequential(
+            nn.Linear(d_model, 4 * d_model),
+            nn.ReLU(),
+            nn.Linear(4 * d_model, d_model),
+            nn.Dropout(dropout)
+        )
+        self.norm2 = nn.LayerNorm(d_model)
+    
+    def forward(self, x, mask=None):
+        # Self-attention
+        attn_output = self.attention(x, x, x, mask)
+        
+        # Add & norm
+        x = self.norm1(x + attn_output)
+        
+        # Feed-forward
+        ffn_output = self.ffn(x)
+        
+        # Add & norm
+        output = self.norm2(x + ffn_output)
+        
+        return output
+
+class GPT(nn.Module):
+    def __init__(self, vocab_size=1000, d_model=512, n_heads=8, n_layers=6):
+        super().__init__()
+        self.token_embedding = nn.Embedding(vocab_size, d_model)
+        self.positional_encoding = PositionalEncoding(d_model)
+        self.blocks = nn.ModuleList([
+            TransformerBlock(d_model, n_heads) for _ in range(n_layers)
+        ])
+        self.ln_f = nn.LayerNorm(d_model)
+        self.lm_head = nn.Linear(d_model, vocab_size)
+    
+    def forward(self, x, mask=None):
+        # Token and position embeddings
+        x = self.token_embedding(x) + self.positional_encoding(x)
+        
+        # Pass through transformer blocks
+        for block in self.blocks:
+            x = block(x, mask)
+        
+        # Final layer norm and projection
+        x = self.ln_f(x)
+        logits = self.lm_head(x)
+        
+        return logits
+```
+
+### **Project 2: Mathematical Problem Solver**
+**Objective**: Build math reasoning system with CoT
+
+**Core Implementation**:
+```python
+import re
+import sympy as sp
+
+class MathProblemSolver:
+    def __init__(self):
+        self.variables = {}
+    
+    def solve_step_by_step(self, problem):
+        """Solve math problem with step-by-step reasoning"""
+        # Parse the problem
+        parsed = self.parse_problem(problem)
+        
+        # Generate reasoning steps
+        steps = self.generate_reasoning_steps(parsed)
+        
+        # Solve each step
+        solutions = []
+        for step in steps:
+            solution = self.solve_step(step)
+            solutions.append(solution)
+        
+        # Verify final answer
+        final_answer = self.verify_solution(solutions)
+        
+        return {
+            'problem': problem,
+            'steps': steps,
+            'solutions': solutions,
+            'final_answer': final_answer
+        }
+    
+    def parse_problem(self, problem):
+        """Extract mathematical expressions from problem"""
+        # Use regex to find mathematical patterns
+        equations = re.findall(r'[0-9]+[+\-*/][0-9]+', problem)
+        return equations
+    
+    def generate_reasoning_steps(self, parsed):
+        """Generate chain-of-thought reasoning steps"""
+        steps = []
+        for expr in parsed:
+            # Convert to sympy expression
+            sym_expr = sp.sympify(expr)
+            steps.append(f"Step: Simplify {expr}")
+            steps.append(f"Result: {sym_expr}")
+        return steps
+    
+    def solve_step(self, step):
+        """Solve individual reasoning step"""
+        try:
+            expr = sp.sympify(step)
+            solution = sp.solve(expr, dict(sp.symbols(expr)))
+            return solution
+        except:
+            return "Unable to solve this step"
+    
+    def verify_solution(self, solutions):
+        """Verify the final solution"""
+        if not solutions:
+            return "No solution found"
+        
+        # Check if solution is consistent
+        last_solution = solutions[-1]
+        return last_solution
+```
+
 - Create training and evaluation scripts
 - Document architecture and design decisions
 

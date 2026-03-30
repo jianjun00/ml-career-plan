@@ -11,16 +11,38 @@
 ## 📚 **Core Resources**
 
 ### **Programming**
-**Focus Areas**:
-- LLM-focused final project
-- Attention mechanisms
-- Neural network basics
+**Primary Resources**:
+- [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
+- [PyTorch Neural Network Tutorial](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+- [Andrej Karpathy's Neural Networks](https://github.com/karpathy/nn-zero-to-hero)
+
+**Specific Topics with Links**:
+- **Neural Network Basics**: [PyTorch Tutorial](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
+- **Forward/Backward Propagation**: [Neural Networks Guide](https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html)
+- **Training Loops**: [PyTorch Optimization](https://pytorch.org/tutorials/beginner/basics/optimization_tutorial.html)
 
 ### **Mathematics**
-**Key Topics**:
-- Attention mathematics
-- Linear algebra for neural networks
-- Statistical evaluation metrics
+**Primary Resources**:
+- [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+- [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+- [3Blue1Brown Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
+
+**Specific Topics with Links**:
+- **Scaled Dot-Product Attention**: [Attention Paper](https://arxiv.org/abs/1706.03762)
+- **Multi-Head Attention**: [Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/#multi-head-attention)
+- **Positional Encoding**: [Transformer Architecture](http://jalammar.github.io/illustrated-transformer/#the-encoder-and-decoder-stack)
+- **Linear Algebra for NN**: [3Blue1Brown Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
+
+### **Research**
+**Primary Resources**:
+- [Attention Mechanism Papers](https://paperswithcode.com/task/attention)
+- [Transformer Architecture Survey](https://arxiv.org/abs/2301.07061)
+- [Mathematical Reasoning in LLMs](https://arxiv.org/abs/2201.11903)
+
+**Reading Strategy**:
+- **Day 1**: Attention Is All You Need paper
+- **Day 2**: Illustrated Transformer guide
+- **Day 3**: Mathematical reasoning applications
 
 ---
 
@@ -34,6 +56,36 @@
 - Attention weight computation
 - Context vector generation
 
+**Basic Implementation**:
+```python
+import torch
+import torch.nn.functional as F
+
+class ScaledDotProductAttention(torch.nn.Module):
+    def __init__(self, d_model=512):
+        super().__init__()
+        self.d_model = d_model
+    
+    def forward(self, Q, K, V, mask=None):
+        # Q, K, V shape: (batch_size, seq_len, d_model)
+        d_k = Q.size(-1)
+        
+        # Calculate attention scores
+        scores = torch.matmul(Q, K.transpose(-2, -1)) / torch.sqrt(torch.tensor(d_k, dtype=torch.float32))
+        
+        # Apply mask if provided
+        if mask is not None:
+            scores = scores.masked_fill(mask == 0, -1e9)
+        
+        # Apply softmax
+        attention_weights = F.softmax(scores, dim=-1)
+        
+        # Calculate output
+        output = torch.matmul(attention_weights, V)
+        
+        return output, attention_weights
+```
+
 ### **Project 2: LLM Application**
 **Objective**: Build simple text generation model
 
@@ -41,6 +93,31 @@
 - Basic transformer architecture
 - Text processing pipeline
 - Simple training loop
+
+**Basic Implementation**:
+```python
+import torch
+import torch.nn as nn
+
+class SimpleLLM(nn.Module):
+    def __init__(self, vocab_size=1000, d_model=512, n_heads=8):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, d_model)
+        self.attention = ScaledDotProductAttention(d_model)
+        self.output_layer = nn.Linear(d_model, vocab_size)
+    
+    def forward(self, x):
+        # Embedding
+        embedded = self.embedding(x)
+        
+        # Self-attention
+        attended, _ = self.attention(embedded, embedded, embedded)
+        
+        # Output projection
+        output = self.output_layer(attended)
+        
+        return output
+```
 
 ---
 
