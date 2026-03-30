@@ -1,4 +1,4 @@
-# Weeks 25-26: Tool Integration (October 1-14, 2026)
+# Weeks 25-26: Tool Integration & USACO Training (October 1-14, 2026)
 
 ## 🎯 **Learning Objectives**
 - Complete Berkeley RL course with remaining lectures
@@ -6,6 +6,8 @@
 - Implement tool-augmented LLM with SymPy calculator
 - Test tool integration effectiveness on mathematical problems
 - Create comprehensive tool calling framework
+- Continue USACO competitive programming training
+- Develop robotics competition skills and team leadership
 
 ---
 
@@ -25,7 +27,52 @@
 - [Video Playlist](https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps)
 
 **Time Commitment**: 6 hours/week
+- **Berkeley RL**: 3 hours/week (lectures, assignments, notes)
+- **MathCoder Research**: 2 hours/week (paper analysis, implementation)
+- **Tool Implementation**: 1 hour/week (coding, testing)
 **Focus**: Complete Berkeley RL course with mathematical reasoning applications
+
+### **Robotics Competition Training**
+**Resource**: [FIRST Robotics Competition](https://www.firstinspires.org/robotics/frc) + [VEX Robotics](https://www.vexrobotics.com/)
+- **Core Concepts**:
+  - [Robot Design Principles](https://www.firstinspires.org/robotics/frc/resources)
+  - [CAD Software Training](https://www.autodesk.com/education/edu-software) (Fusion 360, SolidWorks)
+  - [Programming Fundamentals](https://www.wpilib.org/) (C++, Python)
+  - [Team Management & Leadership](https://www.firstinspires.org/robotics/frc/team-management)
+
+**Implementation Steps**:
+1. **Design Phase**: Concept development and CAD modeling
+2. **Build Phase**: Mechanical construction and electronics
+3. **Program Phase**: Software development and testing
+4. **Competition Phase**: Strategy development and execution
+
+**Time Commitment**: 3 hours/week
+- **Robotics**: 2 hours/week (design, build, program)
+- **Team Management**: 1 hour/week (meetings, strategy, documentation)
+
+### **USACO Competitive Programming**
+**Resource**: [USACO Guide](https://usaco.guide/) + [ML for Competitive Programming](https://www.kaggle.com/learn/competitive-data-science)
+- **Core Concepts**:
+  - [Algorithms and Data Structures](https://usaco.guide/general/algos)
+  - [Problem-Solving Strategies](https://usaco.guide/general/strategy)
+  - [Contest Preparation](https://usaco.guide/general/contests)
+  - [ML in Competitive Programming](https://www.kaggle.com/learn/competitive-data-science)
+
+**USACO Skill Progression**:
+1. **Bronze Level**: Basic algorithms, simple data structures
+2. **Silver Level**: Advanced algorithms, problem patterns
+3. **Gold Level**: Complex algorithms, optimization techniques
+4. **Platinum Level**: Advanced problem-solving, research-level
+
+**Implementation Strategy**:
+- **Weekly Practice**: 2-3 USACO problems with ML assistance
+- **Algorithm Mastery**: Focus on one algorithm type per week
+- **Contest Simulation**: Timed practice contests monthly
+- **ML Integration**: Apply ML techniques to 20% of problems
+
+**Time Commitment**: 2 hours/week
+- **USACO Practice**: 1.5 hours/week (problems, algorithms, contests)
+- **ML Integration**: 0.5 hours/week (pattern recognition, optimization)
 
 ### **MathCoder Research**
 **Paper**: [MathCoder: Seamless Code Integration in LLMs for Mathematical Reasoning](https://arxiv.org/abs/2310.12345)

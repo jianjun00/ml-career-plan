@@ -1,4 +1,4 @@
-# Weeks 27-28: Competition Preparation (October 15-28, 2026)
+# Weeks 27-28: Competition Preparation & Advanced Robotics (December 15-28, 2026)
 
 ## 🎯 **Learning Objectives**
 - Read and analyze "AutoMath" paper for automated mathematical reasoning
@@ -6,6 +6,9 @@
 - Optimize models for competition performance
 - Analyze competition strategies and approaches
 - Document competition preparation process
+- Master advanced robotics competition strategies and innovation
+- Achieve USACO Silver/Gold division qualification
+- Develop team leadership and project management skills
 
 ---
 
@@ -72,6 +75,49 @@
 **Time Commitment**: 8 hours/week
 - **Kaggle Competition**: 5 hours/week (modeling, optimization, submission)
 - **Mathematical Optimization**: 3 hours/week (advanced optimization techniques)
+
+### **Advanced Robotics Competition**
+**Resource**: [FIRST Robotics Advanced](https://www.firstinspires.org/robotics/frc/technical-resources) + [Robotics Innovation](https://www.robotics.org/)
+- **Advanced Concepts**:
+  - [Autonomous Navigation](https://www.firstinspires.org/robotics/frc/programming)
+  - [Computer Vision Integration](https://opencv.org/)
+  - [Sensor Fusion](https://www.sparkfun.com/sensors)
+  - [Advanced Control Systems](https://www.control.com/)
+
+**Technical Skills**:
+- Computer vision and image processing
+- Advanced sensor integration and calibration
+- Autonomous programming and path planning
+- Innovation and creative problem-solving
+
+**Time Commitment**: 3 hours/week
+- **Robotics**: 2 hours/week (advanced systems, vision, control)
+- **Innovation**: 1 hour/week (creative problem-solving, design)
+
+### **USACO Silver/Gold Training**
+**Resource**: [USACO Silver Guide](https://usaco.guide/current/silver/) + [USACO Gold Guide](https://usaco.guide/current/gold/)
+- **Advanced Topics**:
+  - [Dynamic Programming](https://usaco.guide/current/silver/dp/)
+  - [Graph Algorithms](https://usaco.guide/current/silver/graphs/)
+  - [Data Structures](https://usaco.guide/current/gold/ds/)
+  - [Advanced Algorithms](https://usaco.guide/current/gold/adv/)
+
+**Mathematical Optimization for Algorithms**:
+- **Stochastic Optimization**: Randomized algorithms and probabilistic analysis
+- **Numerical Methods**: Optimization techniques for complex problems
+- **Statistical Analysis**: Performance analysis and significance testing
+- **Advanced Mathematics**: Number theory, combinatorics, probability
+
+**Programming Skills**:
+- Advanced dynamic programming techniques
+- Graph traversal and optimization
+- Advanced data structures (segment trees, fenwick trees)
+- Mathematical optimization and number theory
+- Statistical analysis and algorithm performance
+
+**Time Commitment**: 2 hours/week
+- **USACO Training**: 1.5 hours/week (algorithms, data structures, practice)
+- **Mathematical Optimization**: 0.5 hours/week (advanced mathematical techniques)
 
 **Advanced Techniques**:
 - [Learning Rate Scheduling](https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate)
