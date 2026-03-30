@@ -13,8 +13,8 @@
 
 ### **Mathematical Reasoning Foundations**
 **Primary Resources**:
-- [Khan Academy Problem Solving](https://www.khanacademy.org/math/math-gets-real/problem-solving)
-- [Logical Reasoning](https://www.khanacademy.org/math/math-gets-real/logic-and-proofs)
+- [MIT 18.05 Introduction to Probability and Statistics](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/)
+- [Stanford Stats 116 Introduction to Probability](https://web.stanford.edu/class/stats116/syllabus.html)
 - [Brilliant.org Math](https://brilliant.org/)
 
 **Key Topics**:
@@ -24,14 +24,15 @@
 
 ### **Advanced Statistics Applications**
 **Primary Resources**:
+- [MIT 18.650 Statistics for Applications](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/)
+- [Stanford Stats 200 Introduction to Statistical Methods](https://web.stanford.edu/class/stats200/)
 - [StatQuest Applied Statistics](https://www.youtube.com/c/statquest)
-- [Khan Academy Significance Tests](https://www.khanacademy.org/math/statistics-probability/significance-tests)
-- [Statistical Significance in ML](https://arxiv.org/abs/1811.12808)
 
-**Key Topics**:
-- Statistical tests and p-values
-- Effect size and power analysis
-- Confidence intervals
+**Specific Topics with Links**:
+- **Statistical Tests**: [MIT Lecture 1](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/resources/lecture-1-introduction-to-statistics/)
+- **Hypothesis Testing**: [Stanford Stats 200](https://web.stanford.edu/class/stats200/)
+- **Effect Size**: [StatQuest Effect Size](https://www.youtube.com/watch?v=r2i1bZxw3pU)
+- **Power Analysis**: [StatQuest Power Analysis](https://www.youtube.com/watch?v=VX_M5t5tnkU)
 
 ### **Python for Mathematical Computing**
 **Primary Resources**:

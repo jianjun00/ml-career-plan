@@ -36,13 +36,15 @@
 
 ### **Probability Theory**
 **Primary Resources**:
-- [Khan Academy Probability](https://www.khanacademy.org/math/statistics-probability/probability)
-- [StatQuest Probability](https://www.youtube.com/c/statquest)
-- [Think Stats](https://greenteapress.com/wp/think-stats-2e/)
+- [MIT 18.05 Introduction to Probability and Statistics](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/)
+- [Stanford Stats 116 Introduction to Probability](https://web.stanford.edu/class/stats116/syllabus.html)
+- [StatQuest YouTube Channel](https://www.youtube.com/c/statquest)
 
 **Specific Topics with Links**:
-- **Basic Probability**: [Khan Academy Probability Basics](https://www.khanacademy.org/math/statistics-probability/probability)
-- **Compound Events**: [Khan Academy Compound Events](https://www.khanacademy.org/math/statistics-probability/compound-events-and-probability)
+- **Basic Probability**: [MIT Lecture Notes](https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/)
+- **Probability Axioms**: [Stanford Lecture Notes](https://web.stanford.edu/class/stats116/Notes/01.pdf)
+- **Conditional Probability**: [Stanford Lecture Notes](https://web.stanford.edu/class/stats116/Notes/03.pdf)
+- **Random Variables**: [Stanford Lecture Notes](https://web.stanford.edu/class/stats116/Notes/04.pdf)
 - **Statistical Reasoning**: [StatQuest Statistical Reasoning](https://www.youtube.com/watch?v=0oc49DyA3hU)
 
 ### **Research**
