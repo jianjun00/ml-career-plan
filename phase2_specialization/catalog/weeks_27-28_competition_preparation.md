@@ -36,10 +36,16 @@
   - [Leaderboard Analysis](https://www.kaggle.com/competitions/math-competition/leaderboard)
 
 **Competition Strategy**:
-- **Data Analysis**: Understand problem distribution
-- **Model Selection**: Choose appropriate architectures
-- **Optimization**: Hyperparameter tuning
-- **Ensemble Methods**: Combine multiple models
+- **Data Analysis**: Understand problem distribution and difficulty patterns
+- **Model Selection**: Choose appropriate architectures (transformers, PAL, tool-augmented)
+- **Ensemble Methods**: Combine multiple approaches for better performance
+- **Hyperparameter Tuning**: Systematic optimization of model parameters
+
+**Top Performer Strategies**:
+- [Kaggle Gold Tier Guide](https://www.kaggle.com/learn/competitions)
+- [Winning Solutions Analysis](https://www.kaggle.com/code)
+- [Ensemble Techniques](https://www.kaggle.com/learn/ensemble-methods)
+- [Advanced Feature Engineering](https://www.kaggle.com/learn/feature-engineering)
 
 **Time Commitment**: 8 hours/week
 

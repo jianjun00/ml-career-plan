@@ -12,16 +12,17 @@
 ## 📚 **Content & Resources**
 
 ### **Berkeley Deep Reinforcement Learning (Completion)**
-**Resource**: [Berkeley CS285 Deep RL](http://rail.eecs.berkeley.edu/deeprlcourse/)
+**Resource**: [Berkeley CS285 Deep RL](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - **Remaining Lectures**:
-  - [Lecture 7: Advanced Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec7.pdf)
-  - [Lecture 8: Q-Learning and Function Approximation](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec8.pdf)
-  - [Lecture 9: Deep Q-Networks (DQN)](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec9.pdf)
+  - [Lecture 7: Advanced Policy Gradients](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec-7.pdf)
+  - [Lecture 8: Q-Learning and Function Approximation](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec-8.pdf)
+  - [Lecture 9: Deep Q-Networks (DQN)](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec-9.pdf)
 
 **Course Materials**:
-- [Assignment 3: Q-Learning](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/assignments/assignment3/)
-- [Final Project Guidelines](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/projects/)
-- [Course Notes](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/notes/)
+- [Assignment 3: Q-Learning](https://rail.eecs.berkeley.edu/deeprlcourse/static/homeworks/hw3.pdf)
+- [Final Project Guidelines](https://rail.eecs.berkeley.edu/deeprlcourse/static/misc/final_project_outline.pdf)
+- [Course Notes](https://rail.eecs.berkeley.edu/deeprlcourse/)
+- [Video Playlist](https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps)
 
 **Time Commitment**: 6 hours/week
 **Focus**: Complete Berkeley RL course with mathematical reasoning applications

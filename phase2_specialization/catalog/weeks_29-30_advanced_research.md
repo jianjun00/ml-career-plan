@@ -1,11 +1,11 @@
 # Weeks 29-30: Advanced Research (November 1-14, 2026)
 
 ## 🎯 **Learning Objectives**
-- Read and analyze "Program-Aided Language Models" paper
-- Begin advanced research project on novel mathematical reasoning
-- Explore innovative approaches to mathematical problem solving
-- Develop comprehensive research methodology
-- Create experimental framework for testing hypotheses
+- Read and analyze "Program-Aided Language Models" paper with 4-day structured approach
+- Develop novel mathematical reasoning approach combining PAL with chain-of-thought
+- Implement experimental framework for testing PAL effectiveness on GSM8K dataset
+- Create research paper outline with hypothesis, methodology, and evaluation metrics
+- Build PAL prototype with safe Python code execution environment
 
 ---
 
@@ -28,16 +28,22 @@
 **Time Commitment**: 4 hours/week
 
 ### **Advanced Research Methodology**
-**Resource**: [Research Methods Guide](https://www.researchgate.net/publication/)
-- **Research Components**:
-  - [Literature Review](https://www.scholar.google.com/)
-  - [Problem Formulation](https://www.researchgate.net/)
-  - [Hypothesis Development](https://www.overleaf.com/)
-  - [Experimental Design](https://github.com/facebookresearch)
+**Primary Resources**:
+- [Stanford Research Methodology Course](https://online.stanford.edu/courses/ggy-xyc0001-research-methodology)
+- [MIT Research Writing Course](https://ocw.mit.edu/courses/24-901-writing-science/)
+- [CMU Advanced Research Methods](https://www.cs.cmu.edu/~fp/courses/15819-f16/)
+
+**Research Components**:
+  - [Literature Review](https://scholar.google.com/) - Systematic paper analysis
+  - [Problem Formulation](https://arxiv.org/) - Novel research questions
+  - [Hypothesis Development](https://www.overleaf.com/) - Testable research hypotheses
+  - [Experimental Design](https://github.com/facebookresearch) - Reproducible experiments
 
 **Advanced Topics**:
-- Research question formulation
-- Experimental methodology
+- Research question formulation with mathematical rigor
+- Experimental methodology with statistical validation
+- Paper writing for top-tier conferences (NeurIPS, ICML, ICLR)
+- Reproducible research practices and open science
 - Statistical analysis
 - Reproducibility standards
 - Academic writing

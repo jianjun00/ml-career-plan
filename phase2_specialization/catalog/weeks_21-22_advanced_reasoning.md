@@ -24,6 +24,8 @@
 - [Course Notes](https://rail.eecs.berkeley.edu/deeprlcourse/)
 
 **Time Commitment**: 6 hours/week
+- **Berkeley RL Course**: 4 hours/week (lectures, assignments, notes)
+- **Chain-of-Thought Research**: 2 hours/week (paper analysis, implementation)
 **Focus**: Mathematical reasoning as reinforcement learning
 
 ### **Chain-of-Thought Research**
