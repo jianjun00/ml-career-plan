@@ -12,12 +12,12 @@
 ## 📚 **Content & Resources**
 
 ### **Berkeley Deep Reinforcement Learning**
-**Resource**: [Berkeley CS285 Deep RL](http://rail.eecs.berkeley.edu/deeprlcourse/)
+**Resource**: [Berkeley CS285 Deep RL](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - **Specific Lectures**:
-  - [Lecture 1: Introduction to Deep RL](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec1.pdf)
-  - [Lecture 2: Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec2.pdf)
-  - [Lecture 3: Q-Learning and Function Approximation](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec3.pdf)
-
+  - [Lecture 1: Introduction to Deep RL](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec1.pdf)
+  - [Lecture 2: Policy Gradients](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec2.pdf)
+  - [Lecture 3: Q-Learning and Function Approximation](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec3.pdf)
+- **Video Playlist**: [Berkeley Deep RL YouTube](https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps)
 - **Course Materials**:
 - [Lecture Videos](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - [Assignments](https://rail.eecs.berkeley.edu/deeprlcourse/)

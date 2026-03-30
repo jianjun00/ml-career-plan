@@ -12,13 +12,13 @@
 ## 📚 **Content & Resources**
 
 ### **Berkeley Deep Reinforcement Learning (Continued)**
-**Resource**: [Berkeley CS285 Deep RL](http://rail.eecs.berkeley.edu/deeprlcourse/)
+**Resource**: [Berkeley CS285 Deep RL](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - **Specific Lectures**:
-  - [Lecture 4: Actor-Critic Methods](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec4.pdf)
-  - [Lecture 5: Value Function Approximation](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec5.pdf)
-  - [Lecture 6: Policy Gradients](http://rail.eecs.berkeley.edu/deeprlcourse/website/static/slides/lec6.pdf)
-
-**Course Materials**:
+  - [Lecture 4: Actor-Critic Methods](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec4.pdf)
+  - [Lecture 5: Value Function Approximation](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec5.pdf)
+  - [Lecture 6: Policy Gradients](https://rail.eecs.berkeley.edu/deeprlcourse/static/slides/lec6.pdf)
+- **Video Playlist**: [Berkeley Deep RL YouTube](https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps)
+- **Course Materials**:
 - [Lecture Videos](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - [Course Notes](https://rail.eecs.berkeley.edu/deeprlcourse/)
 - [Assignments](https://rail.eecs.berkeley.edu/deeprlcourse/)
