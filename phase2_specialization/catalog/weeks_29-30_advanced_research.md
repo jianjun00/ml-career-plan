@@ -33,6 +33,12 @@
 - [MIT Research Writing Course](https://ocw.mit.edu/courses/24-901-writing-science/)
 - [CMU Advanced Research Methods](https://www.cs.cmu.edu/~fp/courses/15819-f16/)
 
+**Mathematical Research Techniques**:
+- **Stochastic Processes**: Randomized algorithms and probabilistic analysis
+- **Numerical Optimization**: Advanced optimization techniques for complex problems
+- **Statistical Learning**: Mathematical foundations of machine learning
+- **Information Theory**: Entropy, mutual information in mathematical reasoning
+
 **Research Components**:
   - [Literature Review](https://scholar.google.com/) - Systematic paper analysis
   - [Problem Formulation](https://arxiv.org/) - Novel research questions
@@ -44,6 +50,8 @@
 - Experimental methodology with statistical validation
 - Paper writing for top-tier conferences (NeurIPS, ICML, ICLR)
 - Reproducible research practices and open science
+- Mathematical proof techniques and formal verification
+- Algorithm analysis and complexity theory
 - Statistical analysis
 - Reproducibility standards
 - Academic writing

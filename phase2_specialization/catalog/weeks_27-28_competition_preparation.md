@@ -50,12 +50,28 @@
 **Time Commitment**: 8 hours/week
 
 ### **Model Optimization Techniques**
-**Resource**: [PyTorch Optimization](https://pytorch.org/tutorials/advanced/optimization_tutorial.html)
+**Resource**: [PyTorch Optimization](https://pytorch.org/tutorials/advanced/optimization_tutorial.html) + [Numerical Optimization Methods](https://ocw.mit.edu/courses/6-252j-nonlinear-programming-spring-2003/)
 - **Optimization Methods**:
   - [Hyperparameter Tuning](https://pytorch.org/tutorials/advanced/hyperparameter_tuning.html)
   - [Model Ensemble](https://pytorch.org/tutorials/advanced/ensemble.html)
   - [Data Augmentation](https://pytorch.org/tutorials/advanced/data_augmentation.html)
   - [Regularization Techniques](https://pytorch.org/tutorials/advanced/regularization.html)
+
+**Mathematical Optimization for ML**:
+- **Gradient-Based Methods**: Advanced optimization algorithms
+- **Stochastic Optimization**: Randomized optimization techniques
+- **Numerical Methods**: Mathematical optimization for complex problems
+- **Statistical Analysis**: Performance optimization and significance testing
+
+**Competition Mathematics**:
+- **Statistical Analysis**: Performance metrics and significance testing
+- **Algorithm Analysis**: Complexity and efficiency optimization
+- **Mathematical Modeling**: Problem formulation and solution strategies
+- **Numerical Methods**: Advanced computational techniques
+
+**Time Commitment**: 8 hours/week
+- **Kaggle Competition**: 5 hours/week (modeling, optimization, submission)
+- **Mathematical Optimization**: 3 hours/week (advanced optimization techniques)
 
 **Advanced Techniques**:
 - [Learning Rate Scheduling](https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate)

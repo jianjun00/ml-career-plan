@@ -35,13 +35,22 @@
   - [Data Structures](https://usaco.guide/current/gold/ds/)
   - [Advanced Algorithms](https://usaco.guide/current/gold/adv/)
 
+**Mathematical Optimization for Algorithms**:
+- **Stochastic Optimization**: Randomized algorithms and probabilistic analysis
+- **Numerical Methods**: Optimization techniques for complex problems
+- **Statistical Analysis**: Performance analysis and significance testing
+- **Advanced Mathematics**: Number theory, combinatorics, probability
+
 **Programming Skills**:
 - Advanced dynamic programming techniques
 - Graph traversal and optimization
 - Advanced data structures (segment trees, fenwick trees)
 - Mathematical optimization and number theory
+- Statistical analysis and algorithm performance
 
-**Time Commitment**: 3 hours/week
+**Time Commitment**: 4 hours/week
+- **USACO Training**: 3 hours/week (algorithms, data structures, practice)
+- **Mathematical Optimization**: 1 hour/week (advanced mathematical techniques)
 
 ### **Athletic Competition Leadership**
 **Resource**: [Athletic Leadership Development](https://www.nfhs.org/sports/) + [Team Captain Training](https://www.teamcaptain.com/)
