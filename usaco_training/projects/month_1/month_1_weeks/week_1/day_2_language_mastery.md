@@ -78,7 +78,7 @@
 
 ### **USACO Bronze Problems**
 1. **Out of Place** - Array manipulation
-   - **Problem URL**: https://usaco.org/current/problems/outofplace
+   - **Problem URL**: https://usaco.guide/current/bronze/sort-search/
    - **Skills**: Array operations, comparison logic
    - **Focus**: Array processing and ordering
    - **Learning Steps**:
@@ -90,7 +90,7 @@
    - **Solution Approach**: Sort array, compare with original to count swaps
 
 2. **Triangles** - Mathematical computation
-   - **Problem URL**: https://usaco.org/current/problems/triangles
+   - **Problem URL**: https://usaco.guide/current/bronze/math/
    - **Skills**: Mathematical calculations, geometry basics
    - **Focus**: Precision and mathematical logic
    - **Learning Steps**:
@@ -102,7 +102,7 @@
    - **Solution Approach**: Apply triangle inequality, calculate maximum perimeter
 
 3. **Lemonade Line** - Simulation
-   - **Problem URL**: https://usaco.org/current/problems/lemonade
+   - **Problem URL**: https://usaco.guide/current/bronze/implementation/
    - **Skills**: Simulation, queue operations
    - **Focus**: Step-by-step process simulation
    - **Learning Steps**:

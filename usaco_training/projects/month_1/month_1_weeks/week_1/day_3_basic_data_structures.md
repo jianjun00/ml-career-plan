@@ -78,7 +78,7 @@
 
 ### **USACO Bronze Data Structure Problems**
 1. **Stuck in a Rut** - Array processing
-   - **Problem URL**: https://usaco.org/current/problems/stuck
+   - **Problem URL**: https://usaco.guide/current/bronze/implementation/
    - **Skills**: Array manipulation, coordinate processing
    - **Focus**: Array operations and coordinate geometry
    - **Learning Steps**:
@@ -90,7 +90,7 @@
    - **Solution Approach**: Array-based simulation with coordinate updates
 
 2. **Cowntagion** - Mathematical simulation
-   - **Problem URL**: https://usaco.org/current/problems/cowntagion
+   - **Problem URL**: https://usaco.guide/current/bronze/math/
    - **Skills**: Array-based simulation, mathematical modeling
    - **Focus**: Simulation with array storage
    - **Learning Steps**:
@@ -102,7 +102,7 @@
    - **Solution Approach**: Array-based simulation with mathematical calculations
 
 3. **Milk Visits** - Graph basics
-   - **Problem URL**: https://usaco.org/current/problems/milkvisits
+   - **Problem URL**: https://usaco.guide/current/bronze/intro-graph/
    - **Skills**: Basic graph representation, array usage
    - **Focus**: Graph concepts with array storage
    - **Learning Steps**:
@@ -114,7 +114,7 @@
    - **Solution Approach**: Array-based graph representation and traversal
 
 4. **Air Cownditioning** - Array manipulation
-   - **Problem URL**: https://usaco.org/current/problems/airconditioning
+   - **Problem URL**: https://usaco.guide/current/bronze/implementation/
    - **Skills**: Array operations, range processing
    - **Focus**: Array manipulation and range updates
    - **Learning Steps**:
@@ -126,7 +126,7 @@
    - **Solution Approach**: Array manipulation with range operations
 
 5. **Game of Thrones** - String processing
-   - **Problem URL**: https://usaco.org/current/problems/thrones
+   - **Problem URL**: https://usaco.guide/current/bronze/str/
    - **Skills**: String manipulation, character counting
    - **Focus**: String operations and character analysis
    - **Learning Steps**:

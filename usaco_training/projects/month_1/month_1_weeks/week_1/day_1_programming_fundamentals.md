@@ -72,7 +72,7 @@
 
 ### **USACO Bronze Problems**
 1. **Mix Milk** - Basic arithmetic and sorting
-   - **Problem URL**: https://usaco.org/current/problems/mixmilk
+   - **Problem URL**: https://usaco.guide/current/bronze/intro-comp/
    - **Skills**: Basic operations, sorting small arrays
    - **Focus**: Problem understanding and implementation
    - **Learning Steps**:
@@ -85,7 +85,7 @@
    - **Solution Approach**: Read three integers, sort them, output sorted
 
 2. **Diamond Collector** - Greedy approach
-   - **Problem URL**: https://usaco.org/current/problems/diamond
+   - **Problem URL**: https://usaco.guide/current/bronze/sort-search/
    - **Skills**: Array processing, greedy selection
    - **Focus**: Simple algorithm design
    - **Learning Steps**:
