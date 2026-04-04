@@ -17,21 +17,37 @@
 ## Key Concepts
 
 ### PCA from SVD
-```python
-# PCA from scratch — NumPy only
-def pca(X, k):
-    X_centered = X - X.mean(axis=0)
-    cov = X_centered.T @ X_centered / (len(X) - 1)
-    eigenvalues, eigenvectors = np.linalg.eigh(cov)
-    # Sort descending
-    idx = eigenvalues.argsort()[::-1]
-    eigenvalues, eigenvectors = eigenvalues[idx], eigenvectors[:, idx]
-    # Project onto top k components
-    return X_centered @ eigenvectors[:, :k], eigenvectors[:, :k], eigenvalues
 
-# Equivalently via SVD:
-U, S, Vt = np.linalg.svd(X_centered, full_matrices=False)
-# Principal components = Vt[:k].T; scores = U[:, :k] * S[:k]
+**Data leakage warning**: Always fit PCA (compute mean and eigenvectors) on the **training set only**, then apply that same transform to the test set. Fitting on the full dataset leaks test-set distribution information into your model.
+
+```python
+# PCA from scratch — NumPy only (correct train/test split)
+class PCAFromScratch:
+    def fit(self, X_train):
+        self.mean = X_train.mean(axis=0)          # fit mean on TRAIN ONLY
+        X_c = X_train - self.mean
+        cov = X_c.T @ X_c / (len(X_c) - 1)
+        eigenvalues, eigenvectors = np.linalg.eigh(cov)
+        idx = eigenvalues.argsort()[::-1]
+        self.components = eigenvectors[:, idx]    # store principal components
+        self.explained_variance = eigenvalues[idx]
+        return self
+
+    def transform(self, X, k):
+        return (X - self.mean) @ self.components[:, :k]   # apply SAME mean
+
+# Correct usage:
+pca = PCAFromScratch()
+pca.fit(X_train)                      # fit on train only
+X_train_pca = pca.transform(X_train, k=2)
+X_test_pca  = pca.transform(X_test,  k=2)   # reuse train mean — no leakage
+
+# WRONG (leakage): pca.fit(np.vstack([X_train, X_test]))
+
+# Equivalently via SVD (same leakage rule applies):
+X_train_c = X_train - X_train.mean(axis=0)   # center on train
+U, S, Vt = np.linalg.svd(X_train_c, full_matrices=False)
+# To transform test: (X_test - X_train.mean(axis=0)) @ Vt[:k].T
 ```
 
 ### Why SVD matters for ML
@@ -43,9 +59,11 @@ U, S, Vt = np.linalg.svd(X_centered, full_matrices=False)
 
 ## Practice (4h)
 
-- Implement PCA from scratch using only NumPy (compute covariance matrix, eigendecomposition)
-- Verify your PCA matches Scikit-learn's `PCA` on the Iris dataset
+- Implement `PCAFromScratch` class above; verify `.transform(X_train)` matches `sklearn.decomposition.PCA` on Iris
+- Deliberately introduce leakage (fit on full data) and show the numeric difference vs. proper train-only fit — understand why it matters
 - Gold medalist exercise: apply PCA to a dataset, visualize 2D projection, identify cluster structure (IOAI 2025 "Antique Painting" core technique)
+
+**Success criteria**: Your PCA projection matches sklearn's within 1e-5 absolute error (up to sign flip of components).
 
 ---
 

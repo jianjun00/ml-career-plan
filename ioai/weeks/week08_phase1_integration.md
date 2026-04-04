@@ -33,15 +33,44 @@ For each of 3 datasets, complete the full cycle in 90 minutes:
 
 ---
 
-## Self-Assessment Checklist
+## First Speed Drill: The 30-Minute Baseline Rule
 
-After the mock IOAI task:
+Starting this week, every practice session must follow this rule: **a working submission within 30 minutes, or it counts as a failed session.**
 
-- [ ] Did you get a working submission within the first 45 minutes?
-- [ ] Did you iterate at least 3 times after the baseline?
-- [ ] Did you understand what metric was being optimized?
-- [ ] Did you check for data leakage in your pipeline?
-- [ ] Did you finish within 6 hours without running out of time?
+The goal is to build the habit early. Competition speed is a skill that requires 40+ repetitions before it becomes automatic. Starting at Week 26 is too late.
+
+**Minimum viable baseline for tabular (target: 20 min):**
+```python
+import pandas as pd, xgboost as xgb
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import OrdinalEncoder
+
+df = pd.read_csv('train.csv')
+cat = [c for c in df.columns if df[c].dtype == 'object' and c != 'target']
+df[cat] = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1).fit_transform(df[cat])
+X, y = df.drop('target', axis=1).fillna(-999), df['target']
+model = xgb.XGBClassifier(n_estimators=300, random_state=42, n_jobs=-1)
+print(cross_val_score(model, X, y, cv=5, scoring='roc_auc').mean())
+```
+
+Time yourself. If this takes > 20 minutes, practice it again daily until it's automatic.
+
+---
+
+## Self-Assessment Checklist with Success Criteria
+
+After the mock IOAI task, score yourself:
+
+| Criterion | Bronze | Silver | Gold |
+|-----------|--------|--------|------|
+| First working submission | Within 60 min | Within 45 min | Within 30 min |
+| Number of improvement iterations | 1 | 2–3 | 4+ |
+| AUC/metric vs. public baseline | Within 5% | Within 2% | Above |
+| Understood the metric being optimized | Yes | Yes | Yes |
+| Checked for data leakage | Partially | Yes | Yes + fixed |
+| Finished all tasks within time | Yes | Yes, with buffer | Yes, 30 min buffer |
+
+**If you score bronze or below**: do not proceed to Phase 2. Spend an extra week repeating the 90-minute pipeline challenge with different datasets until you reach silver.
 
 ---
 

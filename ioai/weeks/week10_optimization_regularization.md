@@ -53,14 +53,54 @@ class ModelWithDropout(nn.Module):
         return self.fc2(self.drop(torch.relu(self.fc1(x))))
 ```
 
+## Batch Normalization from Scratch (complete implementation)
+
+BatchNorm has **learnable parameters** γ (scale) and β (shift) — many from-scratch implementations omit these and produce incorrect output.
+
+```python
+class BatchNorm1dScratch(nn.Module):
+    def __init__(self, num_features, eps=1e-5, momentum=0.1):
+        super().__init__()
+        self.eps = eps
+        self.momentum = momentum
+        # Learnable parameters — REQUIRED for correctness
+        self.gamma = nn.Parameter(torch.ones(num_features))   # scale
+        self.beta  = nn.Parameter(torch.zeros(num_features))  # shift
+        # Running stats for inference
+        self.register_buffer('running_mean', torch.zeros(num_features))
+        self.register_buffer('running_var',  torch.ones(num_features))
+
+    def forward(self, x):
+        if self.training:
+            mean = x.mean(dim=0)
+            var  = x.var(dim=0, unbiased=False)
+            # Update running stats (used at inference time)
+            self.running_mean = (1 - self.momentum) * self.running_mean + self.momentum * mean.detach()
+            self.running_var  = (1 - self.momentum) * self.running_var  + self.momentum * var.detach()
+        else:
+            mean = self.running_mean
+            var  = self.running_var
+        x_norm = (x - mean) / torch.sqrt(var + self.eps)
+        return self.gamma * x_norm + self.beta   # apply learnable scale and shift
+
+# Verify: output should match nn.BatchNorm1d within 1e-5
+bn_scratch = BatchNorm1dScratch(16)
+bn_torch   = nn.BatchNorm1d(16)
+# Copy weights: bn_torch.weight = bn_scratch.gamma, bn_torch.bias = bn_scratch.beta
+x = torch.randn(32, 16)
+assert torch.allclose(bn_scratch(x), bn_torch(x), atol=1e-5)
+```
+
+**Why gamma and beta matter**: Without them, BatchNorm forces every layer's output to zero-mean unit-variance, which destroys the representational capacity built up during training (e.g., a layer tuned to output large positive values). The learnable parameters let the network recover any distribution it needs.
+
 ---
 
 ## Practice (8h)
 
-- Compare SGD vs. Adam vs. AdamW on the same task; plot loss curves
-- Implement dropout from scratch; verify expected behavior
-- Implement batch normalization from scratch; compare to `torch.nn.BatchNorm1d`
-- Practical: train a model that overfits, then fix it with dropout + weight decay
+- Compare SGD vs. Adam vs. AdamW on the same task; plot loss curves. Record: which converges fastest? which generalizes best?
+- Implement dropout from scratch; verify that at inference time the expected output equals training-time output (disable dropout, verify numerically)
+- Implement `BatchNorm1dScratch` above; run the `assert torch.allclose` check — it must pass
+- Practical: train a model that overfits (val loss diverges), then fix it with dropout + weight decay. Show before/after learning curves.
 
 ---
 

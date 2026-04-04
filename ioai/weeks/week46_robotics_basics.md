@@ -9,6 +9,77 @@
 
 ---
 
+## Reinforcement Learning Basics (required context for robotics team challenges)
+
+IOAI 2025's Galbot challenge required agents to complete manipulation tasks. Understanding RL is essential even if you use classical controllers — you need to understand what a **policy**, **reward signal**, and **episode** are to debug a simulation environment.
+
+```
+Core RL concepts:
+  Agent: the controller (your code)
+  Environment: the simulator (PyBullet)
+  State s_t: robot joint angles + object positions at time t
+  Action a_t: joint torques or target positions
+  Reward r_t: scalar signal (e.g., -1 if not grasped, +10 if object placed correctly)
+  Policy π(a|s): function mapping state to action
+
+Goal: maximize cumulative reward Σ γᵗ rₜ (γ = discount factor, 0 < γ < 1)
+```
+
+### Simplest working approach: PD Controller (no RL needed for basic tasks)
+```python
+# Proportional-Derivative controller for smooth joint movement
+# No ML required — just physics-based control
+def pd_control(current_angle, target_angle, current_vel, kp=100, kd=10):
+    error = target_angle - current_angle
+    return kp * error - kd * current_vel  # proportional + derivative damping
+
+# Apply at each simulation step:
+for step in range(1000):
+    joint_states = p.getJointStates(robotId, range(n_joints))
+    for i in range(n_joints):
+        current_ang = joint_states[i][0]
+        current_vel = joint_states[i][1]
+        torque = pd_control(current_ang, target_angles[i], current_vel)
+        p.setJointMotorControl2(robotId, i, p.TORQUE_CONTROL, force=torque)
+    p.stepSimulation()
+```
+
+### Policy Gradient (if RL is explicitly required)
+```python
+# REINFORCE: simplest policy gradient algorithm
+# policy network: state → action probabilities
+import torch.nn.functional as F
+
+class PolicyNet(nn.Module):
+    def __init__(self, state_dim, action_dim):
+        super().__init__()
+        self.net = nn.Sequential(nn.Linear(state_dim, 64), nn.ReLU(),
+                                  nn.Linear(64, action_dim))
+    def forward(self, s): return F.softmax(self.net(s), dim=-1)
+
+# Training loop: collect episode, compute returns, update with gradient
+def train_episode(policy, optimizer, env):
+    log_probs, rewards = [], []
+    state = env.reset()
+    for _ in range(max_steps):
+        probs = policy(torch.FloatTensor(state))
+        action = torch.multinomial(probs, 1).item()
+        log_probs.append(torch.log(probs[action]))
+        state, reward, done, _ = env.step(action)
+        rewards.append(reward)
+        if done: break
+    # Compute discounted returns
+    G, returns = 0, []
+    for r in reversed(rewards):
+        G = r + 0.99 * G; returns.insert(0, G)
+    returns = torch.FloatTensor(returns)
+    returns = (returns - returns.mean()) / (returns.std() + 1e-8)
+    loss = -torch.stack(log_probs) @ returns
+    optimizer.zero_grad(); loss.backward(); optimizer.step()
+```
+
+---
+
 ## PyBullet Basics
 ```python
 import pybullet as p

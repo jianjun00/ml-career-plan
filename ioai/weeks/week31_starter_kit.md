@@ -10,29 +10,55 @@
 ### 1. Tabular Classification/Regression
 ```python
 import pandas as pd, numpy as np, xgboost as xgb
-from sklearn.model_selection import StratifiedKFold
-from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.preprocessing import OrdinalEncoder
+import warnings; warnings.filterwarnings('ignore')
 
-df = pd.read_csv('train.csv')
-# Encode categoricals
-for col in df.select_dtypes('object').columns:
-    df[col] = LabelEncoder().fit_transform(df[col].astype(str))
-X, y = df.drop('target', axis=1).values, df['target'].values
+df_train = pd.read_csv('train.csv')
+df_test  = pd.read_csv('test.csv')
+
+# Safe categorical encoding: OrdinalEncoder handles unseen categories at test time
+# LabelEncoder.transform() raises ValueError on unseen values — do NOT use for train/test splits
+cat_cols = df_train.select_dtypes('object').columns.tolist()
+if 'target' in cat_cols: cat_cols.remove('target')
+
+enc = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)
+df_train[cat_cols] = enc.fit_transform(df_train[cat_cols].astype(str))  # fit on TRAIN
+df_test[cat_cols]  = enc.transform(df_test[cat_cols].astype(str))        # apply to TEST
+
+X = df_train.drop('target', axis=1).fillna(-999).values
+y = df_train['target'].values
+X_test = df_test.fillna(-999).values
 
 model = xgb.XGBClassifier(n_estimators=500, max_depth=6, learning_rate=0.05,
-                           subsample=0.8, colsample_bytree=0.8, random_state=42)
+                           subsample=0.8, colsample_bytree=0.8, random_state=42, n_jobs=-1)
 cv = StratifiedKFold(5, shuffle=True, random_state=42)
-# OOF predictions + CV score
+scores = cross_val_score(model, X, y, cv=cv, scoring='roc_auc')
+print(f"CV AUC: {scores.mean():.4f} ± {scores.std():.4f}")
+model.fit(X, y)
 ```
 
 ### 2. CV Classification
 ```python
 import torchvision.models as models
-model = models.resnet50(pretrained=True)
+from torchvision.models import ResNet50_Weights
+
+# Use weights= instead of deprecated pretrained=True (torchvision 0.13+)
+model = models.resnet50(weights=ResNet50_Weights.DEFAULT)
 model.fc = nn.Linear(model.fc.in_features, num_classes)
-# Freeze backbone initially, train head for 5 epochs, then unfreeze all
-optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-2)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=20)
+
+# Phase 1: train only the head (backbone frozen)
+for p in model.parameters(): p.requires_grad = False
+for p in model.fc.parameters(): p.requires_grad = True
+optimizer = torch.optim.AdamW(model.fc.parameters(), lr=1e-3, weight_decay=1e-2)
+
+# Phase 2 (after ~5 epochs): unfreeze last block + head with lower LR
+for p in model.layer4.parameters(): p.requires_grad = True
+optimizer = torch.optim.AdamW([
+    {'params': model.layer4.parameters(), 'lr': 1e-5},
+    {'params': model.fc.parameters(),     'lr': 1e-4},
+], weight_decay=1e-2)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=15)
 ```
 
 ### 3. CV Segmentation
