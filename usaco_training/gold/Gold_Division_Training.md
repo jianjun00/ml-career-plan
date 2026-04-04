@@ -1,446 +1,859 @@
 # Gold Division Training Plan
-## 9-Month Path to USACO Platinum
+## 8–12 Month Path to USACO Platinum
 
 ---
 
-## 🎯 **Gold Division Objectives**
-**Target Score**: 700+ points (top 10%)
-**Duration**: 9 months
+## Objectives
+
+**Target Score**: ~750/1000 (promotion threshold)
+**Duration**: 8–12 months
 **Time Commitment**: 20 hours/week
-**Success Rate**: 80%+ accuracy on gold problems
+**Primary Resources**: [USACO Guide Gold](https://usaco.guide/gold/) + [CSES Problem Set](https://cses.fi/problemset/)
+
+### What Gold Tests
+Gold is where competitive programming becomes genuinely difficult. Problems require sophisticated data structures (segment trees with lazy propagation), advanced graph algorithms (Dijkstra, network flow, SCC), and complex DP optimization. Many gold problems combine 2–3 techniques. The gap between Silver and Gold is the largest of any division jump.
+
+**Language**: C++17 is effectively required. Java/Python solutions consistently TLE on Gold problems with n ≤ 200,000.
 
 ---
 
-## 📚 **Expert Algorithm Curriculum**
+## Entry Point
 
-### **Month 1-3: Advanced Dynamic Programming**
+**Coming from Silver**: Start at Module 1 (Segment Trees). This is the single most important Gold data structure — it appears in ~40% of Gold problems.
 
-#### **Month 1: Complex DP Patterns**
-**Learning Objectives**:
-- Master advanced DP state design
-- Optimize DP time and space complexity
-- Handle large DP state spaces
+**Already comfortable with segment trees?** Take this check: can you implement a lazy propagation segment tree (range add, range sum) from memory in under 20 minutes? If yes, start at Module 4 (Shortest Paths).
 
-**Advanced DP Topics**:
-- **DP on Trees**: Tree DP with complex states
-- **DP with Bitmasks**: State compression techniques
-- **Digit DP**: Number digit DP problems
-- **Probability DP**: Expected value DP
-
-**Complex DP Applications**:
-- **Tree DP**: Centroid decomposition, rerooting
-- **Bitmask DP**: Subset optimization, traveling salesman
-- **Digit DP**: Number theory integration
-- **Probability DP**: Markov chains, expected values
-
-**Practice Problems**: 120 advanced DP problems
-**Key Resources**:
-- USACO Guide Advanced DP: https://usaco.guide/current/gold/dp/
-- Codeforces DP Hard: https://codeforces.com/problemset?tags=dp,2500
-
-#### **Month 2: DP Optimization**
-**Learning Objectives**:
-- Master DP optimization techniques
-- Understand mathematical optimization
-- Implement efficient DP solutions
-
-**DP Optimization Techniques**:
-- **Convex Hull Optimization**: CHT for DP transitions
-- **Divide and Conquer DP**: D&C optimization
-- **Matrix Exponentiation**: Fast DP transitions
-- **Monotone Queue Optimization**: Sliding window DP
-
-**Optimization Applications**:
-- **CHT**: Linear function optimization
-- **D&C**: Range DP optimization
-- **Matrix Power**: Recurrence relation DP
-- **Monotone Queue**: Range minimum/maximum DP
-
-**Practice Problems**: 100 DP optimization problems
-**Key Resources**:
-- CP-Algorithms DP Optimization: https://cp-algorithms.com/dynamic_programming/
-- AtCoder DP Hard: https://atcoder.jp/contests/dp/tasks
-
-#### **Month 3: Specialized DP**
-**Learning Objectives**:
-- Master specialized DP variants
-- Understand DP with constraints
-- Implement complex DP solutions
-
-**Specialized DP Topics**:
-- **DP with Graphs**: Graph-based DP problems
-- **DP with Geometry**: Geometric DP problems
-- **DP with Number Theory**: Number theory integration
-- **Multi-dimensional DP**: High-dimensional state spaces
-
-**Practice Problems**: 80 specialized DP problems
-**Key Resources**:
-- TopCoder DP Tutorials: https://www.topcoder.com/community/competitive-programming/tutorials/dynamic-programming-from-novice-to-advanced/
-- Codeforces DP Collections: https://codeforces.com/blog/entry/7619
-
-### **Month 4-6: Advanced Graph Algorithms**
-
-#### **Month 4: Network Flow**
-**Learning Objectives**:
-- Master flow network algorithms
-- Understand flow theory and applications
-- Implement efficient flow solutions
-
-**Network Flow Topics**:
-- **Maximum Flow**: Ford-Fulkerson, Edmonds-Karp, Dinic's
-- **Minimum Cut**: Max-flow min-cut theorem
-- **Bipartite Matching**: Hungarian algorithm, network flow
-- **Flow with Costs**: Minimum cost flow algorithms
-
-**Flow Applications**:
-- **Matching**: Assignment problems, job scheduling
-- **Cut**: Network partitioning, security
-- **Circulation**: Flow with demands
-- **Multi-commodity**: Complex flow problems
-
-**Practice Problems**: 100 flow problems
-**Key Resources**:
-- CP-Algorithms Flows: https://cp-algorithms.com/graph/flow.html
-- MIT 6.046 Network Flow: https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/
-
-#### **Month 5: Advanced Graph Theory**
-**Learning Objectives**:
-- Master advanced graph concepts
-- Understand graph decomposition
-- Implement complex graph algorithms
-
-**Advanced Graph Topics**:
-- **Strongly Connected Components**: Kosaraju, Tarjan
-- **Biconnected Components**: Articulation points, bridges
-- **Eulerian Paths**: Euler tours, Hierholzer's algorithm
-- **Hamiltonian Paths**: Traveling salesman variants
-
-**Graph Decomposition**:
-- **Tree Decomposition**: Tree width, path decomposition
-- **Centroid Decomposition**: Tree centroid algorithms
-- **Heavy-Light Decomposition**: Path queries on trees
-- **Link-Cut Trees**: Dynamic tree connectivity
-
-**Practice Problems**: 90 advanced graph problems
-**Key Resources**:
-- Graph Theory Textbook: https://www.cs.princeton.edu/courses/archive/fall13/cos324/
-- Advanced Graph Algorithms: https://www.cs.cmu.edu/~fp/courses/15819-f16/
-
-#### **Month 6: Geometric Algorithms**
-**Learning Objectives**:
-- Master computational geometry
-- Understand geometric data structures
-- Implement efficient geometric solutions
-
-**Computational Geometry Topics**:
-- **Convex Hull**: Graham scan, Andrew's monotone chain
-- **Line Intersection**: Segment intersection, sweep line
-- **Voronoi Diagrams**: Fortune's algorithm
-- **Delaunay Triangulation**: Triangulation algorithms
-
-**Geometric Data Structures**:
-- **Segment Trees**: Range queries in geometry
-- **KD-Trees**: Multi-dimensional search
-- **Quad Trees**: Spatial partitioning
-- **Range Trees**: Multi-dimensional range queries
-
-**Practice Problems**: 80 geometric problems
-**Key Resources**:
-- Computational Geometry: https://www.cs.ucsb.edu/~suravi/cs235/
-- Geometry Algorithms: https://geomalgorithms.com/
-
-### **Month 7-9: Advanced Data Structures & Mathematics**
-
-#### **Month 7: Advanced Data Structures**
-**Learning Objectives**:
-- Master complex data structures
-- Understand persistent data structures
-- Implement efficient advanced solutions
-
-**Advanced Data Structures**:
-- **Segment Trees**: Lazy propagation, range updates
-- **Fenwick Trees**: 2D BIT, range operations
-- **Persistent Data Structures**: Persistent segment trees
-- **Wavelet Trees**: Range queries and compression
-
-**Data Structure Applications**:
-- **Range Queries**: Sum, min, max, GCD operations
-- **Dynamic Connectivity**: Offline connectivity queries
-- **String Processing**: Suffix arrays, suffix trees
-- **Compression**: Wavelet tree compression
-
-**Practice Problems**: 100 advanced DS problems
-**Key Resources**:
-- Advanced Data Structures: https://cp-algorithms.com/data_structures/
-- MIT Advanced Data Structures: https://ocw.mit.edu/courses/6-851-advanced-data-structures-spring-2017/
-
-#### **Month 8: Advanced Mathematics**
-**Learning Objectives**:
-- Master advanced number theory
-- Understand combinatorial optimization
-- Implement mathematical algorithms
-
-**Advanced Mathematics Topics**:
-- **Modular Arithmetic**: Chinese remainder theorem, discrete logarithm
-- **Group Theory**: Permutation groups, group actions
-- **Linear Algebra**: Matrix operations, eigenvalues
-- **Probability Theory**: Advanced probability, Markov chains
-
-**Mathematical Applications**:
-- **Cryptography**: RSA, Diffie-Hellman, elliptic curves
-- **Combinatorial Optimization**: Assignment problems, matching
-- **Game Theory**: Nim games, Sprague-Grundy theorem
-- **Information Theory**: Entropy, coding theory
-
-**Practice Problems**: 80 mathematical problems
-**Key Resources**:
-- Advanced Number Theory: https://cp-algorithms.com/algebra/
-- Combinatorial Optimization: https://www.cs.cmu.edu/~avrim/451f18/
-
-#### **Month 9: Problem Solving Strategies**
-**Learning Objectives**:
-- Master advanced problem-solving techniques
-- Understand contest strategy
-- Implement optimal solutions
-
-**Problem-Solving Strategies**:
-- **Greedy Algorithms**: Proof of optimality
-- **Divide and Conquer**: Advanced techniques
-- **Randomized Algorithms**: Monte Carlo, Las Vegas
-- **Approximation Algorithms**: NP-hard approximations
-
-**Contest Strategy**:
-- **Problem Selection**: Difficulty assessment
-- **Time Management**: Optimal contest pacing
-- **Implementation Strategy**: Code efficiency
-- **Debugging Techniques**: Systematic error finding
-
-**Practice Problems**: 70 strategy problems
-**Key Resources**:
-- Problem Solving Strategies: https://artofproblemsolving.com/
-- Contest Strategy Guide: https://codeforces.com/blog/entry/7619
+**Codeforces rating 2000+?** Skim Modules 1–4 and start at Module 5 (Advanced Graph Theory).
 
 ---
 
-## 🎯 **Weekly Training Schedule**
+## Topic Priority
 
-### **Daily Routine (3-4 hours)**
-- **Algorithm Study**: 60 minutes advanced theory
-- **Practice Problems**: 4-5 problems (2-3 hours)
-- **Code Review**: Analyze optimal solutions (30 minutes)
-- **Research**: Read papers/tutorials (30 minutes)
+Gold topics are NOT equal in frequency. This order reflects how often each topic appears in USACO Gold problems:
 
-### **Weekly Schedule (20 hours)**
-- **Monday**: Advanced DP + 8 problems
-- **Tuesday**: Advanced Graphs + 8 problems
-- **Wednesday**: Advanced Data Structures + 8 problems
-- **Thursday**: Advanced Mathematics + 8 problems
-- **Friday**: Mixed Practice + 8 problems
-- **Saturday**: Contest Simulation (4 hours) + analysis
-- **Sunday**: Review + Research (4 hours)
+1. **Segment Trees** — ~40% of Gold problems require a segment tree or BIT
+2. **Shortest Paths** (Dijkstra) — ~30% of Gold problems involve weighted graphs
+3. **Advanced DP** — ~35% of Gold problems have a DP component
+4. **Graph Theory** (SCC, bridges, topological sort) — ~25%
+5. **Network Flow** — ~10%, but high-difficulty problems
+6. **String Algorithms** — ~10%
+7. **Monotone Stack / Sparse Table / SQRT** — ~15%
 
-### **Monthly Goals**
-- **Month 1**: 120 Advanced DP problems
-- **Month 2**: 100 DP optimization problems
-- **Month 3**: 80 Specialized DP problems
-- **Month 4**: 100 Network flow problems
-- **Month 5**: 90 Advanced graph problems
-- **Month 6**: 80 Geometric problems
-- **Month 7**: 100 Advanced DS problems
-- **Month 8**: 80 Mathematical problems
-- **Month 9**: 70 Strategy problems
+Start with Modules 1–3 before touching anything else.
 
 ---
 
-## 📊 **Problem Categories & Targets**
+## Gold Curriculum
 
-### **Advanced Dynamic Programming (300 problems)**
-**Difficulty**: Hard to Expert
-**Time Target**: < 60 minutes per problem
-**Accuracy Target**: 80%+
+### Module 1 — Segment Trees (Months 1–2)
 
-**Key DP Categories**:
-- **Tree DP**: Complex tree-based DP
-- **Bitmask DP**: State optimization
-- **DP Optimization**: CHT, D&C, matrix exponentiation
-- **Specialized DP**: Graph, geometry, number theory
+The most important Gold data structure. Master this before anything else.
 
-### **Advanced Graph Algorithms (270 problems)**
-**Difficulty**: Hard to Expert
-**Time Target**: < 65 minutes per problem
-**Accuracy Target**: 80%+
+#### 1A. Basic Segment Tree (Point Update, Range Query)
 
-**Key Graph Categories**:
-- **Network Flow**: Max flow, min cut, matching
-- **Graph Decomposition**: SCC, biconnected components
-- **Geometric Graphs**: Computational geometry
-- **Advanced Trees**: Centroid, HLD, link-cut
+```cpp
+// Iterative segment tree — clean and fast
+struct SegTree {
+    int n;
+    vector<long long> tree;
+    SegTree(int n) : n(n), tree(2*n, 0) {}
 
-### **Advanced Data Structures (100 problems)**
-**Difficulty**: Hard to Expert
-**Time Target**: < 50 minutes per problem
-**Accuracy Target**: 85%+
+    void update(int i, long long val) { // set tree[i] = val (point update)
+        for (tree[i+=n] = val; i > 1; i >>= 1)
+            tree[i>>1] = tree[i] + tree[i^1];
+    }
 
-**Key DS Categories**:
-- **Segment Trees**: Lazy propagation, persistent
-- **Fenwick Trees**: 2D, range operations
-- **Wavelet Trees**: Range queries, compression
-- **Persistent DS**: Version control for data
+    long long query(int l, int r) { // sum query [l, r) — half-open
+        long long res = 0;
+        for (l+=n, r+=n; l < r; l>>=1, r>>=1) {
+            if (l&1) res += tree[l++];
+            if (r&1) res += tree[--r];
+        }
+        return res;
+    }
+};
+// For min/max: replace + with min/max, initialize with INF/0
+```
 
-### **Mathematical Algorithms (80 problems)**
-**Difficulty**: Hard to Expert
-**Time Target**: < 45 minutes per problem
-**Accuracy Target**: 85%+
+#### 1B. Segment Tree with Lazy Propagation (Range Update, Range Query)
 
-**Key Math Categories**:
-- **Number Theory**: Advanced modular arithmetic
-- **Combinatorics**: Complex counting
-- **Linear Algebra**: Matrix operations
-- **Probability Theory**: Advanced probability
+The standard Gold-level segment tree. Supports: add v to all elements in [l,r], query sum of [l,r].
 
----
+```cpp
+struct LazySegTree {
+    int n;
+    vector<long long> tree, lazy;
+    LazySegTree(int n) : n(n), tree(4*n, 0), lazy(4*n, 0) {}
 
-## 🏆 **Contest Strategy**
+    void push_down(int node, int l, int r) {
+        if (lazy[node]) {
+            int mid = (l+r)/2;
+            tree[2*node]   += lazy[node] * (mid-l+1);
+            lazy[2*node]   += lazy[node];
+            tree[2*node+1] += lazy[node] * (r-mid);
+            lazy[2*node+1] += lazy[node];
+            lazy[node] = 0;
+        }
+    }
 
-### **USACO Gold Contest Approach**
-**Time Allocation**: 4 hours total
-**Problem Order**: Easy → Medium → Hard
-**Target**: 3/3 problems solved
+    void update(int node, int l, int r, int ql, int qr, long long val) {
+        if (qr < l || r < ql) return;
+        if (ql <= l && r <= qr) { tree[node] += val*(r-l+1); lazy[node] += val; return; }
+        push_down(node, l, r);
+        int mid = (l+r)/2;
+        update(2*node, l, mid, ql, qr, val);
+        update(2*node+1, mid+1, r, ql, qr, val);
+        tree[node] = tree[2*node] + tree[2*node+1];
+    }
 
-#### **First Hour**
-- **Problem Reading**: All 3 problems (15 minutes)
-- **Easy Problem**: Solve and submit (30 minutes)
-- **Medium Problem**: Start implementation (15 minutes)
+    long long query(int node, int l, int r, int ql, int qr) {
+        if (qr < l || r < ql) return 0;
+        if (ql <= l && r <= qr) return tree[node];
+        push_down(node, l, r);
+        int mid = (l+r)/2;
+        return query(2*node,l,mid,ql,qr) + query(2*node+1,mid+1,r,ql,qr);
+    }
+    // Call: update(1,0,n-1,l,r,val); query(1,0,n-1,l,r);
+};
+```
 
-#### **Second Hour**
-- **Medium Problem**: Complete and debug (45 minutes)
-- **Hard Problem**: Analysis and planning (15 minutes)
+#### 1C. Common Lazy Patterns
 
-#### **Third Hour**
-- **Hard Problem**: Implementation (45 minutes)
-- **Debugging**: Fix issues (15 minutes)
+| Operation | tree stores | lazy stores | push_down rule |
+|-----------|-------------|-------------|----------------|
+| Range add, range sum | sum of range | pending addition | tree[child] += lazy*len; lazy[child] += lazy |
+| Range assign, range sum | sum of range | pending assignment (-1 = none) | tree[child] = lazy*len; lazy[child] = lazy |
+| Range add, range max | max of range | pending addition | tree[child] += lazy; lazy[child] += lazy |
 
-#### **Fourth Hour**
-- **Optimization**: Improve solutions (30 minutes)
-- **Verification**: Final checks (30 minutes)
+**Worked example** — USACO 2016 November Gold "Mowing the Field":
+> Farmer has a field, sprinkler waters intervals. After Q add-water events on [l,r], query which cells were watered at least twice.
+> Maintain a segment tree where tree[i] = number of times cell i was watered. Range-add 1 to [l,r] for each event. Count cells with value ≥ 2.
+> Lazy propagation makes each update O(log n) instead of O(n). Total: O(Q log N).
 
-### **Success Metrics**
-- **Easy Problem**: < 30 minutes, 100% correct
-- **Medium Problem**: < 45 minutes, 95% correct
-- **Hard Problem**: < 75 minutes, 80% correct
-- **Total Score**: 700+ points
+**Where to practice**:
+- USACO Guide Gold → Segment Trees: https://usaco.guide/gold/seg-ext
+- CSES Range Queries section: https://cses.fi/problemset/list/ (all 10 problems)
+  - Start with: "Range Sum Queries II", "Range Minimum Queries II", "Range Update Queries"
+- USACO Gold archive problems tagged "segment tree"
 
----
-
-## 📈 **Progress Tracking**
-
-### **Weekly Metrics**
-- **Problems Solved**: Target 35-40 per week
-- **Accuracy Rate**: Maintain 80%+
-- **Average Time**: < 60 minutes per problem
-- **Algorithm Coverage**: Track concept mastery
-
-### **Monthly Assessment**
-- **Division Readiness**: Gold mastery check
-- **Algorithm Proficiency**: All required algorithms learned
-- **Contest Performance**: Mock contest results
-- **Platinum Preparation**: Begin platinum-level exposure
-
-### **Success Indicators**
-- **Consistent 700+**: 3 consecutive contests
-- **Problem Speed**: < 55 minutes average
-- **Algorithm Mastery**: All gold algorithms mastered
-- **Platinum Readiness**: Ready for advancement
+**Practice target**: 25 segment tree problems
 
 ---
 
-## 🚀 **Platinum Division Preparation**
+### Module 2 — Fenwick Trees / BIT (Month 2)
 
-### **Transition Plan**
-**Month 9 Focus**: Begin platinum-level exposure
-- **Research Problems**: 20% platinum-level problems
-- **New Algorithms**: Introduction to research topics
-- **Contest Simulation**: Platinum-level difficulty
-- **Skill Assessment**: Readiness evaluation
+BIT is faster to code than a segment tree when you only need point updates and prefix sum queries. Learn both — segment tree is more general, BIT is more efficient.
 
-### **Platinum Prerequisites**
-- **DP Mastery**: Complex optimization techniques
-- **Graph Expertise**: Advanced graph theory
-- **Data Structure Knowledge**: Persistent and advanced DS
-- **Mathematical Skills**: Advanced number theory and combinatorics
+```cpp
+struct BIT {
+    int n; vector<long long> tree;
+    BIT(int n) : n(n), tree(n+1, 0) {}
+    void update(int i, long long v) { for (i++; i <= n; i += i&-i) tree[i] += v; }
+    long long query(int i) { long long s=0; for (i++; i > 0; i -= i&-i) s += tree[i]; return s; }
+    long long query(int l, int r) { return query(r) - (l > 0 ? query(l-1) : 0); }
+    // Point update + prefix/range sum: O(log n) per operation
+};
+```
 
----
+**BIT for order statistics** (count of elements ≤ x after coordinate compression):
+```cpp
+// After compressing values to [0, MAXV]:
+// Insert value x: bit.update(x, +1)
+// Count values in [lo, hi]: bit.query(lo, hi)
+// Find k-th smallest: binary search on prefix sums
+```
 
-## 🎯 **Expected Outcomes**
+**2D BIT** for rectangle sum queries with point updates:
+```cpp
+struct BIT2D {
+    int n, m; vector<vector<long long>> tree;
+    BIT2D(int n, int m) : n(n), m(m), tree(n+1, vector<long long>(m+1, 0)) {}
+    void update(int x, int y, long long v) {
+        for (int i=x+1; i<=n; i+=i&-i)
+            for (int j=y+1; j<=m; j+=j&-j) tree[i][j] += v;
+    }
+    long long query(int x, int y) {
+        long long s=0;
+        for (int i=x+1; i>0; i-=i&-i)
+            for (int j=y+1; j>0; j-=j&-j) s += tree[i][j];
+        return s;
+    }
+};
+```
 
-### **After 9 Months**:
-- **Problems Solved**: 750+ gold problems
-- **Algorithm Mastery**: All gold algorithms
-- **Contest Score**: Consistent 700+ points
-- **Platinum Ready**: Prepared for platinum division
+**Worked example** — CSES "Inversion Count":
+> Count pairs (i, j) where i < j and a[i] > a[j].
+> Coordinate-compress a[] to [0, n-1]. Process elements left to right. For each a[i], query BIT for how many values > a[i] have already been inserted (= inversions ending at i). Then insert a[i] into BIT.
+> Each insert/query is O(log n). Total: O(n log n).
 
-### **Key Skills Developed**:
-- **Advanced DP**: Complex optimization techniques
-- **Graph Theory**: Network flow, decomposition
-- **Data Structures**: Persistent and advanced structures
-- **Mathematical Reasoning**: Advanced problem solving
+**Where to practice**:
+- CSES "Dynamic Range Sum Queries": https://cses.fi/problemset/task/1648
+- CSES "Inversion Count" (coordinate compress + BIT): https://cses.fi/problemset/task/1082
+- USACO Guide Gold → Point Update Range Sum: https://usaco.guide/gold/PURS
 
-### **Confidence Level**:
-- **Gold Problems**: 80% confidence
-- **Contest Performance**: Consistent success
-- **Learning Ability**: Rapid algorithm acquisition
-- **Advancement Ready**: Prepared for platinum level
-
----
-
-## 📚 **Expert Learning Resources**
-
-### **Primary Learning**
-- **USACO Guide Gold**: https://usaco.guide/current/gold/
-- **Codeforces Hard**: https://codeforces.com/problemset?difficulty=2400
-- **AtCoder ARC**: https://atcoder.jp/contests/arc
-
-### **Advanced References**
-- **CLRS Textbook**: Introduction to Algorithms (MIT Press)
-- **Competitive Programming 3**: Steven Halim
-- **Algorithm Design**: Kleinberg & Tardos
-- **The Art of Computer Programming**: Donald Knuth
-
-### **Research Resources**
-- **ArXiv CS**: https://arxiv.org/list/cs.DS/recent
-- **IEEE Xplore**: https://ieeexplore.ieee.org/
-- **ACM Digital Library**: https://dl.acm.org/
-- **Google Scholar**: https://scholar.google.com/
-
-### **Expert Community**
-- **Codeforces Blog**: https://codeforces.com/blog/entry/7619
-- **TopCoder Forums**: https://www.topcoder.com/community/
-- **Research Groups**: University competitive programming teams
-- **IOI Community**: https://ioi.org/
+**Practice target**: 12 BIT problems
 
 ---
 
-## 🏆 **Gold Division Success Path**
+### Module 3 — Shortest Path Algorithms (Month 2–3)
 
-### **Month 1-3**: DP Excellence
-- **Goal**: Master advanced dynamic programming
-- **Problems**: 300 DP problems
-- **Skills**: Complex optimization, specialized DP
+#### 3A. Dijkstra (Non-negative weights) — O((V + E) log V)
 
-### **Month 4-6**: Graph Mastery
-- **Goal**: Advanced graph algorithms
-- **Problems**: 270 graph problems
-- **Skills**: Network flow, decomposition, geometry
+The most important shortest path algorithm. Memorize this implementation.
 
-### **Month 7-9**: Expert Topics
-- **Goal**: Advanced data structures and mathematics
-- **Problems**: 250 advanced problems
-- **Skills**: Complex algorithms, mathematical reasoning
+```cpp
+vector<long long> dijkstra(int src, vector<vector<pair<int,int>>>& adj, int n) {
+    // adj[u] = list of {v, weight}
+    vector<long long> dist(n, LLONG_MAX);
+    priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> pq;
+    dist[src] = 0; pq.push({0, src});
+    while (!pq.empty()) {
+        auto [d, u] = pq.top(); pq.pop();
+        if (d > dist[u]) continue; // stale entry — skip
+        for (auto [v, w] : adj[u]) {
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+    return dist; // dist[i] = shortest distance from src to i
+}
+```
 
-### **Final Achievement**:
-- **Gold Mastery**: Complete gold division competence
-- **Platinum Readiness**: Prepared for expert challenges
-- **Contest Success**: Consistent 700+ performance
-- **IOI Path**: On track for international competition
+**Common mistake**: forgetting `if (d > dist[u]) continue` — this causes TLE because stale entries get processed.
 
-This comprehensive gold training plan develops the expert-level algorithmic thinking required for USACO platinum division and competitive programming excellence at the international level.
+#### 3B. Bellman-Ford (negative edge weights, no negative cycles) — O(VE)
+
+```cpp
+vector<long long> bellman_ford(int src, vector<tuple<int,int,int>>& edges, int n) {
+    // edges = list of {u, v, weight}
+    vector<long long> dist(n, LLONG_MAX);
+    dist[src] = 0;
+    for (int i = 0; i < n-1; i++) // relax n-1 times
+        for (auto [u, v, w] : edges)
+            if (dist[u] != LLONG_MAX && dist[u] + w < dist[v])
+                dist[v] = dist[u] + w;
+    // Check for negative cycle: if any edge still relaxes, negative cycle exists
+    return dist;
+}
+```
+
+#### 3C. Floyd-Warshall (all-pairs) — O(V³), use when V ≤ 500
+
+```cpp
+// Initialize: dist[i][j] = weight of edge i→j (INF if no edge), dist[i][i] = 0
+for (int k = 0; k < n; k++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            if (dist[i][k] != INF && dist[k][j] != INF)
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+```
+
+#### 3D. 0-1 BFS (edges weight 0 or 1) — O(V+E), faster than Dijkstra for this case
+
+```cpp
+// Use deque: push weight-0 edges to front, weight-1 edges to back
+deque<int> dq;
+vector<int> dist(n, INT_MAX);
+dist[src] = 0; dq.push_front(src);
+while (!dq.empty()) {
+    int u = dq.front(); dq.pop_front();
+    for (auto [v, w] : adj[u]) {
+        if (dist[u] + w < dist[v]) {
+            dist[v] = dist[u] + w;
+            if (w == 0) dq.push_front(v); else dq.push_back(v);
+        }
+    }
+}
+```
+
+**Worked example** — USACO 2015 February Gold "Fencing the Cows":
+> Cows move between fields connected by roads with given distances. Find shortest time for a cow to travel from field S to field T.
+> Classic Dijkstra: build adjacency list of {neighbor, distance}, run Dijkstra from S, answer is dist[T].
+
+**Where to practice**:
+- CSES Shortest Paths section: https://cses.fi/problemset/list/ (all 12 problems — do them all)
+  - "Shortest Routes I" (Dijkstra), "Shortest Routes II" (Floyd-Warshall), "High Score" (Bellman-Ford with negative edges)
+- USACO Guide Gold → Shortest Paths: https://usaco.guide/gold/shortest-paths
+
+**Practice target**: 20 shortest path problems
+
+---
+
+### Module 4 — Minimum Spanning Tree (Month 3)
+
+#### Kruskal's Algorithm (standard — O(E log E))
+
+```cpp
+// Sort edges by weight; use DSU to add edge if it connects two different components
+sort(edges.begin(), edges.end()); // sort by weight (first element of tuple)
+DSU dsu(n);
+long long mst_cost = 0;
+vector<pair<int,int>> mst_edges;
+for (auto [w, u, v] : edges) {
+    if (dsu.unite(u, v)) {
+        mst_cost += w;
+        mst_edges.push_back({u, v});
+    }
+}
+// If mst_edges.size() < n-1, graph is disconnected
+```
+
+#### Prim's Algorithm (O(E log V) with priority queue, better for dense graphs)
+
+```cpp
+// Grow MST greedily: maintain a priority queue of (edge_weight, node)
+// representing the cheapest edge to add each unvisited node
+vector<long long> key(n, LLONG_MAX);
+vector<bool> inMST(n, false);
+priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<>> pq;
+key[0] = 0; pq.push({0, 0});
+long long mst_cost = 0;
+
+while (!pq.empty()) {
+    auto [d, u] = pq.top(); pq.pop();
+    if (inMST[u]) continue;
+    inMST[u] = true; mst_cost += d;
+    for (auto [v, w] : adj[u]) {
+        if (!inMST[v] && w < key[v]) {
+            key[v] = w; pq.push({w, v});
+        }
+    }
+}
+```
+
+**When to use which**: For sparse graphs (E ≈ V log V), both are similar. For dense graphs (E ≈ V²), Prim's with an adjacency matrix is O(V²) which beats Kruskal's O(E log E).
+
+**Worked example** — USACO 2018 February Gold "Taming the Herd":
+> N towns connected by N-1 roads forming a tree. Some roads have travel costs. You must connect all towns at minimum total cost using exactly N-1 of the given M edges (Kruskal's directly).
+> Sort all M edges by weight. Run Kruskal's: use DSU to greedily pick the cheapest edge that doesn't form a cycle. Stop after n-1 edges are picked. Sum of those edges = MST cost.
+
+**Where to practice**:
+- CSES "Road Reparation": https://cses.fi/problemset/task/1675
+- CSES "Road Construction": https://cses.fi/problemset/task/1676
+- USACO Guide Gold → Minimum Spanning Tree: https://usaco.guide/gold/mst
+
+**Practice target**: 10 MST problems
+
+---
+
+### Module 5 — Advanced Graph Theory (Month 3–4)
+
+#### 5A. Topological Sort
+
+```cpp
+// Kahn's algorithm (BFS-based): O(V+E)
+// Returns topological order; if order.size() < n, cycle exists
+vector<int> topo_sort(vector<vector<int>>& adj, int n) {
+    vector<int> indegree(n, 0);
+    for (int u = 0; u < n; u++) for (int v : adj[u]) indegree[v]++;
+    queue<int> q;
+    for (int i = 0; i < n; i++) if (!indegree[i]) q.push(i);
+    vector<int> order;
+    while (!q.empty()) {
+        int u = q.front(); q.pop(); order.push_back(u);
+        for (int v : adj[u]) if (--indegree[v] == 0) q.push(v);
+    }
+    return order;
+}
+```
+
+#### 5B. Strongly Connected Components — Tarjan's Algorithm O(V+E)
+
+```cpp
+// Outputs SCCs; comp[u] = SCC id of node u
+// SCCs are output in reverse topological order of the condensation DAG
+int num_scc = 0, timer_val = 0;
+vector<int> ord(n,-1), low(n), comp(n,-1);
+vector<bool> on_stk(n, false);
+stack<int> stk;
+
+function<void(int)> tarjan = [&](int u) {
+    ord[u] = low[u] = timer_val++;
+    stk.push(u); on_stk[u] = true;
+    for (int v : adj[u]) {
+        if (ord[v] == -1) { tarjan(v); low[u] = min(low[u], low[v]); }
+        else if (on_stk[v]) low[u] = min(low[u], ord[v]);
+    }
+    if (low[u] == ord[u]) { // u is root of an SCC
+        while (true) {
+            int v = stk.top(); stk.pop(); on_stk[v] = false; comp[v] = num_scc;
+            if (v == u) break;
+        }
+        num_scc++;
+    }
+};
+for (int i = 0; i < n; i++) if (ord[i] == -1) tarjan(i);
+```
+
+#### 5C. Bridges and Articulation Points — O(V+E)
+
+```cpp
+// Bridge: edge whose removal disconnects the graph
+// low[u] = min discovery time reachable from subtree of u
+vector<int> disc(n,-1), low(n); int t=0;
+vector<bool> is_bridge(E, false); // mark edge indices
+
+function<void(int,int)> dfs = [&](int u, int par_edge) {
+    disc[u] = low[u] = t++;
+    for (auto [v, eid] : adj[u]) { // adj stores {neighbor, edge_id}
+        if (disc[v] == -1) {
+            dfs(v, eid);
+            low[u] = min(low[u], low[v]);
+            if (low[v] > disc[u]) is_bridge[eid] = true;
+        } else if (eid != par_edge) low[u] = min(low[u], disc[v]);
+    }
+};
+```
+
+#### 5D. Euler Tour on Trees
+
+Flattens a tree into an array: subtree of node u occupies interval [in[u], out[u]].
+
+```cpp
+int timer = 0;
+vector<int> in(n), out(n);
+function<void(int,int)> dfs = [&](int u, int p) {
+    in[u] = timer++;
+    for (int v : adj[u]) if (v != p) dfs(v, u);
+    out[u] = timer-1; // out[u] = last position in subtree
+};
+dfs(root, -1);
+// Subtree of u = array positions [in[u], out[u]]
+// Apply segment tree on the flattened array for subtree queries
+```
+
+**Worked example** — USACO 2012 March Gold "Grass Cownoisseur":
+> Directed graph of fields. Cows can move along directed edges. After collapsing SCCs (each SCC = one super-node), determine if cow can return to start from every field.
+> Run Tarjan's SCC to condense the graph. If the condensation DAG has any node with out-degree 0 that isn't the start's SCC, cow cannot return from those fields. Topological sort the condensation to reason about reachability.
+
+**Where to practice**:
+- CSES Graph Algorithms: https://cses.fi/problemset/list/ (all remaining problems after shortest paths)
+  - "Course Schedule" (topological sort), "Strongly Connected Components", "Building Teams" (bipartite check)
+- USACO Guide Gold → Graph section: https://usaco.guide/gold/toposort
+
+**Practice target**: 25 advanced graph problems
+
+---
+
+### Module 6 — Network Flow (Month 4–5)
+
+#### Dinic's Algorithm — O(V²E) general, O(E√V) unit graphs
+
+The standard max flow algorithm for competitive programming.
+
+```cpp
+struct Dinic {
+    struct Edge { int to, rev, cap; };
+    vector<vector<Edge>> g; vector<int> level, iter;
+    Dinic(int n) : g(n), level(n), iter(n) {}
+
+    void add_edge(int u, int v, int cap) {
+        g[u].push_back({v, (int)g[v].size(), cap});
+        g[v].push_back({u, (int)g[u].size()-1, 0}); // reverse edge cap=0
+    }
+
+    bool bfs(int s, int t) {
+        fill(level.begin(),level.end(),-1);
+        queue<int> q; level[s]=0; q.push(s);
+        while (!q.empty()) {
+            int v=q.front(); q.pop();
+            for (auto& e:g[v]) if (e.cap>0 && level[e.to]<0) { level[e.to]=level[v]+1; q.push(e.to); }
+        }
+        return level[t] >= 0;
+    }
+
+    int dfs(int v, int t, int f) {
+        if (v==t) return f;
+        for (int& i=iter[v]; i<(int)g[v].size(); i++) {
+            auto& e=g[v][i];
+            if (e.cap>0 && level[v]<level[e.to]) {
+                int d=dfs(e.to,t,min(f,e.cap));
+                if (d>0) { e.cap-=d; g[e.to][e.rev].cap+=d; return d; }
+            }
+        }
+        return 0;
+    }
+
+    int max_flow(int s, int t) {
+        int flow=0;
+        while (bfs(s,t)) { fill(iter.begin(),iter.end(),0); int d; while((d=dfs(s,t,INT_MAX))>0) flow+=d; }
+        return flow;
+    }
+};
+```
+
+**Flow applications**:
+- **Bipartite matching**: source → left nodes (cap 1), left → right (cap 1), right → sink (cap 1). Max flow = max matching.
+- **Min vertex cover**: By König's theorem, min vertex cover = max matching in bipartite graphs.
+- **Project selection**: Split nodes into "profit" and "cost"; source/sink represent which project/resource to include.
+
+**Worked example** — USACO 2011 March Gold "Dining":
+> N cows, M hay bales, K pairs of (cow, bale) indicating a cow can eat that bale. Each cow eats at most 1 bale; each bale feeds at most 1 cow. Find maximum number of cows fed.
+> This is bipartite matching: left = cows, right = bales, edges = preferences. Source → each cow (cap 1), each bale → sink (cap 1), cow → bale edges (cap 1). Run Dinic's. Max flow = max matching = max cows fed.
+
+**Where to practice**:
+- CSES Flow section: https://cses.fi/problemset/list/ (all 4 problems)
+- USACO Guide Gold → Max Flow: https://usaco.guide/gold/max-flow
+- USACO Gold archive problems tagged "flow"
+
+**Practice target**: 15 flow problems
+
+---
+
+### Module 7 — Advanced Dynamic Programming (Months 5–7)
+
+Now that you have the data structures from Modules 1–2, DP problems that require them become tractable.
+
+#### 7A. DP on Trees (Re-rooting)
+
+Compute an answer for every node as the root in O(n) total.
+
+```cpp
+// Phase 1: DFS downward — dp_down[u] = answer using only subtree of u
+// Phase 2: DFS upward — dp_up[u] = contribution from "rest of tree" (everything not in subtree of u)
+// Answer for rooting at u: f(dp_down[u], dp_up[u])
+function<void(int,int)> dfs_down = [&](int u, int p) {
+    dp_down[u] = base_case;
+    for (int v : adj[u]) if (v != p) {
+        dfs_down(v, u);
+        dp_down[u] = combine(dp_down[u], dp_down[v]);
+    }
+};
+function<void(int,int)> dfs_up = [&](int u, int p) {
+    ans[u] = merge(dp_down[u], dp_up[u]);
+    for (int v : adj[u]) if (v != p) {
+        // dp_up[v] = contribution from u's subtree excluding v's subtree + dp_up[u]
+        dp_up[v] = recompute_excluding(u, v, dp_down, dp_up[u]);
+        dfs_up(v, u);
+    }
+};
+```
+
+#### 7B. Bitmask DP
+
+For n ≤ 20, enumerate subsets as bitmasks.
+
+```cpp
+// TSP variant: dp[mask][u] = min cost visiting exactly the nodes in mask, ending at u
+vector<vector<long long>> dp(1<<n, vector<long long>(n, LLONG_MAX));
+dp[1<<src][src] = 0;
+for (int mask = 0; mask < (1<<n); mask++)
+    for (int u = 0; u < n; u++) if ((mask>>u)&1 && dp[mask][u] != LLONG_MAX)
+        for (int v = 0; v < n; v++) if (!((mask>>v)&1))
+            dp[mask|(1<<v)][v] = min(dp[mask|(1<<v)][v], dp[mask][u] + cost[u][v]);
+```
+
+#### 7C. Digit DP
+
+Count integers in [0, N] satisfying a digit-based property.
+
+```cpp
+// dp[pos][tight][state]: count valid numbers of length pos
+// tight: whether current prefix equals N's prefix (limits next digit choice)
+// state: problem-specific (e.g., sum mod k, digit presence flags)
+function<long long(int,bool,int)> solve = [&](int pos, bool tight, int state) -> long long {
+    if (pos == digits.size()) return is_valid(state);
+    if (memo[pos][tight][state] != -1) return memo[pos][tight][state];
+    int limit = tight ? digits[pos] : 9;
+    long long res = 0;
+    for (int d = 0; d <= limit; d++)
+        res += solve(pos+1, tight && (d==limit), next_state(state, d));
+    return memo[pos][tight][state] = res;
+};
+```
+
+#### 7D. SOS DP (Sum over Subsets)
+
+```cpp
+// f[mask] = sum of a[sub] for all sub that are subsets of mask
+// O(n * 2^n) — runs in O(n * 2^n), not O(4^n)
+for (int i = 0; i < n; i++)
+    for (int mask = 0; mask < (1<<n); mask++)
+        if ((mask >> i) & 1) f[mask] += f[mask ^ (1<<i)];
+```
+
+#### 7E. Matrix Exponentiation
+
+Compute linear recurrences in O(k³ log n) using fast matrix power.
+
+```cpp
+using Matrix = vector<vector<long long>>;
+const long long MOD = 1e9+7;
+
+Matrix multiply(const Matrix& A, const Matrix& B) {
+    int n = A.size(); Matrix C(n, vector<long long>(n, 0));
+    for (int i=0;i<n;i++) for (int k=0;k<n;k++) if (A[i][k])
+        for (int j=0;j<n;j++) C[i][j] = (C[i][j] + A[i][k]*B[k][j]) % MOD;
+    return C;
+}
+
+Matrix matpow(Matrix A, long long p) {
+    int n = A.size(); Matrix R(n, vector<long long>(n, 0));
+    for (int i=0;i<n;i++) R[i][i] = 1; // identity
+    for (; p > 0; p >>= 1) { if (p&1) R = multiply(R,A); A = multiply(A,A); }
+    return R;
+}
+// For Fibonacci: [[1,1],[1,0]]^n gives F(n+1)
+```
+
+**Worked example** — USACO 2019 December Gold "Milk Visits":
+> Tree with nodes colored W or H. Answer Q path queries: does path from u to v contain at least one node of color c?
+> Use Euler tour + segment tree. Precompute for each path whether it contains W or H using tree traversal.
+> This combines Euler tour (Module 5D) with segment tree (Module 1) — typical Gold combination.
+
+**Where to practice**:
+- CSES DP section: https://cses.fi/problemset/list/ (all 19 problems)
+- AtCoder DP Contest: https://atcoder.jp/contests/dp/tasks (all 26 problems — do problems D, E, F, G, H, I, J, K, L, P, R, S, T)
+- USACO Guide Gold → DP section: https://usaco.guide/gold/dp
+
+**Practice target**: 50 DP problems
+
+---
+
+### Module 8 — String Algorithms (Month 7)
+
+#### 8A. String Hashing (polynomial rolling hash)
+
+```cpp
+// Build hash of string s; query hash of any substring in O(1)
+const long long BASE = 131, MOD = 1e18 + 9;
+int n = s.size();
+vector<long long> h(n+1,0), pw(n+1,1);
+for (int i=0;i<n;i++) { h[i+1]=(h[i]*BASE+s[i])%MOD; pw[i+1]=pw[i]*BASE%MOD; }
+auto get_hash = [&](int l, int r) { // hash of s[l..r] inclusive
+    return (h[r+1] - h[l]*pw[r-l+1] % MOD + MOD*2) % MOD;
+};
+// Two substrings are equal iff their hashes match
+// Use double hashing (two different MODs) to reduce collision probability
+```
+
+#### 8B. Z-Algorithm — O(n)
+
+z[i] = length of longest prefix of s that matches starting at s[i].
+
+```cpp
+vector<int> z_function(const string& s) {
+    int n = s.size(); vector<int> z(n, 0); z[0] = n;
+    for (int i=1,l=0,r=0; i<n; i++) {
+        if (i < r) z[i] = min(r-i, z[i-l]);
+        while (i+z[i] < n && s[z[i]] == s[i+z[i]]) z[i]++;
+        if (i+z[i] > r) { l=i; r=i+z[i]; }
+    }
+    return z;
+}
+// Pattern matching: run on (pattern + "#" + text)
+// z[i] == pattern.size() iff text starting at (i - pattern.size() - 1) matches pattern
+```
+
+#### 8C. KMP (Knuth-Morris-Pratt) — O(|P| + |T|)
+
+```cpp
+// failure[i] = length of longest proper prefix of p[0..i] that is also a suffix
+vector<int> kmp_failure(const string& p) {
+    int n = p.size(); vector<int> f(n, 0);
+    for (int i=1,j=0; i<n; i++) {
+        while (j>0 && p[i]!=p[j]) j=f[j-1];
+        if (p[i]==p[j]) j++;
+        f[i] = j;
+    }
+    return f;
+}
+// Find all occurrences of pattern in text using failure function
+```
+
+**Worked example** — USACO 2018 January Gold "Cow at Large":
+> Given a string s of length n and pattern p of length m, find all starting positions in s where p occurs.
+> Use Z-algorithm: build t = p + "#" + s (length m+1+n). Compute z[] for t. Position i in s (= index m+1+i in t) is a match iff z[m+1+i] == m.
+> Output all i where z[m+1+i] == m. O(n+m) time.
+
+**Note on Aho-Corasick**: Multi-pattern matching using a trie + failure links. This algorithm appears occasionally at Gold but is more common at Platinum. If you have time, learn it; if not, deprioritize it relative to Modules 1–7.
+
+**Where to practice**:
+- CSES String Algorithms: https://cses.fi/problemset/list/ (first 8 problems)
+  - "String Matching" (Z or KMP), "Finding Borders", "Finding Periods"
+- USACO Guide Gold → String Hashing: https://usaco.guide/gold/hashing
+
+**Practice target**: 15 string problems
+
+---
+
+### Module 9 — Monotone Stack, Sparse Table, DSU with Rollback (Month 8)
+
+#### 9A. Monotone Stack
+
+```cpp
+// Nearest smaller element to the LEFT for each position
+vector<int> left_smaller(n, -1);
+stack<int> stk;
+for (int i = 0; i < n; i++) {
+    while (!stk.empty() && a[stk.top()] >= a[i]) stk.pop();
+    if (!stk.empty()) left_smaller[i] = stk.top();
+    stk.push(i);
+}
+// Compute right_smaller similarly (iterate right to left)
+// Applications: largest rectangle in histogram, next greater element, stock span
+```
+
+#### 9B. Sparse Table (O(1) static range min/max)
+
+```cpp
+// Preprocessing O(n log n), query O(1) — only for IDEMPOTENT operations (min, max, GCD)
+const int LOG = 20;
+vector<vector<int>> sparse(LOG, vector<int>(n));
+sparse[0] = a;
+for (int j=1; j<LOG; j++)
+    for (int i=0; i+(1<<j)<=n; i++)
+        sparse[j][i] = min(sparse[j-1][i], sparse[j-1][i+(1<<(j-1))]);
+
+auto rmq = [&](int l, int r) { // [l, r] inclusive, O(1)
+    int k = __lg(r-l+1);
+    return min(sparse[k][l], sparse[k][r-(1<<k)+1]);
+};
+```
+
+#### 9C. DSU with Rollback (for offline dynamic connectivity)
+
+Standard DSU with path compression cannot be rolled back. Use union by rank without path compression.
+
+```cpp
+struct RollbackDSU {
+    vector<int> parent, rank;
+    vector<pair<int*,int>> history; // {pointer, old_value}
+    RollbackDSU(int n) : parent(n), rank(n,0) { iota(parent.begin(),parent.end(),0); }
+    int find(int x) { return parent[x]==x ? x : find(parent[x]); } // NO path compression
+    bool unite(int x, int y) {
+        x=find(x); y=find(y); if(x==y) return false;
+        if (rank[x]<rank[y]) swap(x,y);
+        history.push_back({&parent[y], parent[y]});
+        history.push_back({&rank[x], rank[x]});
+        parent[y]=x; if(rank[x]==rank[y]) rank[x]++;
+        return true;
+    }
+    void rollback() { // undo last unite
+        for (int i=0;i<2;i++) { *history.back().first=history.back().second; history.pop_back(); }
+    }
+    int save() { return history.size(); }
+    void restore(int checkpoint) { while((int)history.size()>checkpoint) { *history.back().first=history.back().second; history.pop_back(); } }
+};
+```
+
+**Worked example** — USACO 2016 February Gold "Fencing the Cows":
+> Array of N values. Answer Q queries: what is the minimum element in range [l, r]?
+> Build sparse table in O(n log n): `sparse[j][i] = min(a[i..i+2^j-1])`. For query [l,r]: let k = floor(log2(r-l+1)), answer is `min(sparse[k][l], sparse[k][r-2^k+1])`. O(1) per query.
+
+**Note on Mo's Algorithm**: Offline range queries in O((n+q)√n). This technique is rare at Gold (appears in ~2–3 Gold problems ever). It is more common at Platinum. If time is limited, deprioritize it.
+
+**Where to practice**:
+- CSES "Maximum Subarray Sum II" (monotone deque): https://cses.fi/problemset/task/1644
+- CSES "Sliding Median" (two BITs or two heaps): https://cses.fi/problemset/task/1076
+- USACO Guide Gold → Monotone Stack: https://usaco.guide/gold/stacks
+
+**Practice target**: 12 problems
+
+---
+
+## Weekly Schedule
+
+| Day | Activity | Duration |
+|-----|----------|----------|
+| Monday | USACO Guide module: read + implement algorithm from scratch (no copy-paste) | 3h |
+| Tuesday | USACO Guide module: all "Recommended" problems, then "Normal" until stuck | 3h |
+| Wednesday | CSES section matching current module (exact links above); submit to judge | 3h |
+| Thursday | Codeforces Div. 1 B/C problems (rated 1800–2400) from problemset | 3h |
+| Friday | USACO Gold archive: 3 past Gold problems, timed at 75 min each | 2.5h |
+| Saturday | Full 4-hour timed USACO Gold contest simulation (pick a year from usaco.org) | 4h |
+| Sunday | Read editorial for every problem you didn't solve; re-implement correct solution | 1.5h |
+
+**Total**: ~20 hours/week
+
+---
+
+## Monthly Goals
+
+| Month | Primary Topic | CSES Section | Problem Target |
+|-------|--------------|--------------|---------------|
+| 1 | Segment Trees (lazy) | Range Queries (all 10) | 30 |
+| 2 | BIT + Shortest Paths | Shortest Paths (all 12) | 35 |
+| 3 | MST + Advanced Graphs | Graph Algorithms remainder | 30 |
+| 4–5 | Network Flow | Flows (all 4) | 25 |
+| 5–7 | Advanced DP | DP section (all 19) + AtCoder DP contest | 60 |
+| 7 | String Algorithms | String Algorithms (first 8) | 20 |
+| 8 | Monotone Stack + Sparse Table | Remaining CSES | 20 |
+| 9–12 | Weak area review + Platinum exposure | All 300 CSES problems done | 70 |
+
+**Total**: 290+ Gold-level problems
+
+---
+
+## Contest Execution (Gold)
+
+Gold problems are harder to categorize on sight. Constraints tell you the required complexity, but not always the algorithm. Strategy:
+
+```
+0:00–0:15  Read all 3 problems; note constraints for each
+           n ≤ 200,000 → O(n log n) → likely seg tree, Dijkstra, or similar
+           n ≤ 5,000 → O(n²) → likely O(n²) DP or brute force
+
+0:15–1:15  Easiest problem (60 min max)
+           — 10 min: understand + think algorithm
+           — 35 min: implement
+           — 15 min: test + debug
+
+1:15–2:30  Medium problem (75 min)
+
+2:30–3:45  Hard problem (75 min)
+           If completely stuck after 30 min: implement O(n²) brute force
+           for partial credit on small test cases
+
+3:45–4:00  Improve partial solutions; double-check output format
+```
+
+**Partial credit is critical at Gold**: An O(n²) solution may score 300–500/1000 on small subtests. Always submit something rather than nothing.
+
+---
+
+## Promotion Checklist
+
+Before advancing to Platinum, verify:
+- [ ] Implement lazy propagation segment tree (range add + range sum) from memory in under 20 minutes
+- [ ] Code Dijkstra correctly from memory (including stale-entry skip)
+- [ ] Code Dinic's max flow correctly from memory
+- [ ] Run Tarjan's SCC algorithm correctly
+- [ ] Write DP with bitmask states
+- [ ] Implement Z-algorithm + KMP for string matching from memory
+- [ ] Score 750+/1000 on at least 2 simulated Gold contests
+- [ ] Solved all 300 CSES problems (or within 10–20 of completion)
+
+---
+
+## Transitioning to Platinum
+
+**When you're ready**: Consistently solve 2 of 3 Gold problems in simulations; Codeforces rating 2000+; all (or nearly all) CSES problems solved.
+
+**What changes at Platinum**:
+- Identifying the algorithm is the hard part, not implementing it
+- Problems are designed to look unsolvable — the key insight is hidden
+- Expect to spend 30–90 minutes thinking before writing a single line of code
+- Segment trees, HLD, centroid decomposition, suffix arrays — you must implement all of these without referencing documentation
+
+**First Platinum topics to start**: Begin with USACO Guide Platinum → Segment Tree Beats and CHT/Convex Hull Trick, as these are direct extensions of Gold skills.
+
+---
+
+## Resources
+
+| Resource | URL | Use Case |
+|----------|-----|---------|
+| USACO Guide Gold | https://usaco.guide/gold/ | Primary curriculum |
+| CSES Problem Set | https://cses.fi/problemset/ | Canonical problems (target: all 300) |
+| CP-Algorithms | https://cp-algorithms.com/ | All algorithm implementations |
+| Competitive Programmer's Handbook | https://cses.fi/book/ | Chapters 15–25 (free PDF) |
+| Codeforces Div. 1 | https://codeforces.com/problemset | B/C problems (rated 2000–2400) |
+| AtCoder ARC | https://atcoder.jp/contests/arc | C/D problems |
+| AtCoder DP Contest | https://atcoder.jp/contests/dp/tasks | All 26 DP problems |
+
+---
+
+*Primary source: usaco.guide — the authoritative USACO preparation resource*

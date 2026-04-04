@@ -1,558 +1,712 @@
 # Platinum Division & IOI Preparation
-## 12-Month Path to International Olympiad in Informatics
+## 12-Month Path to USA IOI Team
 
 ---
 
-## 🎯 **Platinum Division & IOI Objectives**
-**Target Score**: 650+ points (top 5% in USA)
+## Objectives
+
+**USACO Target**: Consistent high performance in Platinum; top ~25 at US Open
+**IOI Target**: USA IOI team (4 students selected at Training Camp in June)
 **Duration**: 12 months
-**Time Commitment**: 20+ hours/week
-**Success Rate**: 75%+ accuracy on platinum problems
-**Ultimate Goal**: Qualify for USA IOI Team
+**Time Commitment**: 22+ hours/week
+**Primary Resources**: [USACO Guide Platinum](https://usaco.guide/platinum/) + [oj.uz](https://oj.uz/) + [CSES](https://cses.fi/problemset/)
+
+### What Platinum Tests
+Platinum problems require research-level implementation skills in competitive programming. You must know advanced data structures (segment tree beats, persistent segment trees, Li Chao tree), advanced DP optimizations (CHT, D&C DP, Aliens trick), tree decompositions (centroid, HLD, LCT), and string structures (suffix arrays, suffix automata). Problems often have no obvious algorithm — you must discover the key insight before implementing.
+
+**Critical difference from Gold**: At Gold, once you identify the algorithm, the implementation is standard. At Platinum, identifying the algorithm IS the hard part. Expect to spend 30–90 minutes thinking before coding on hard problems.
 
 ---
 
-## 📚 **Expert-Level Algorithm Curriculum**
+## Platinum Curriculum
 
-### **Month 1-3: Research-Level Algorithms**
+### Module 1 — Advanced Segment Trees (Month 1)
 
-#### **Month 1: Advanced Optimization**
-**Learning Objectives**:
-- Master cutting-edge optimization techniques
-- Understand approximation algorithms
-- Implement research-level solutions
+#### 1A. Segment Tree Beats (Ji Driver Segmentation)
 
-**Advanced Optimization Topics**:
-- **Linear Programming**: Simplex method, interior point methods
-- **Integer Programming**: Branch and bound, cutting planes
-- **Semidefinite Programming**: SDP relaxations
-- **Convex Optimization**: Gradient methods, Newton's method
+Supports range operations like "set all elements > x to x" in amortized O(n log² n).
 
-**Approximation Algorithms**:
-- **Vertex Cover**: 2-approximation algorithms
-- **Set Cover**: Logarithmic approximation
-- **Traveling Salesman**: Christofides algorithm
-- **Knapsack**: PTAS and FPTAS schemes
+```cpp
+// Track: max value, second max, count of max, sum
+// When updating range [l,r] with operation "clamp to x" (a[i] = min(a[i], x)):
+// If x >= max: do nothing
+// If x > second_max (and x < max): update lazily — new max = x, sum decreases by (max-x)*count_max
+// If x <= second_max: recurse into children
+```
 
-**Practice Problems**: 100 optimization problems
-**Key Resources**:
-- Approximation Algorithms Textbook: Williamson & Shmoys
-- Linear Programming: https://ocw.mit.edu/courses/15-053-optimization-methods-in-management-science-spring-2013/
-- IOI Optimization Problems: https://ioi.org/tasks/
+**Applications**: Range chmin + range sum queries; covered in USACO Guide Platinum.
 
-#### **Month 2: Algorithmic Game Theory**
-**Learning Objectives**:
-- Master game-theoretic algorithms
-- Understand equilibrium concepts
-- Implement strategic algorithms
+#### 1B. Persistent Segment Tree
 
-**Game Theory Topics**:
-- **Nash Equilibrium**: Finding equilibria in games
-- **Mechanism Design**: Auction theory, voting systems
-- **Algorithmic Game Theory**: Computational game theory
-- **Fair Division**: Cake cutting algorithms
+```cpp
+// Each update creates a new root; old roots still accessible
+// Represents "version history" of the segment tree
+// Space: O(n log n) total (each update adds O(log n) nodes)
+struct Node { int left, right, val; };
+vector<Node> nodes; // node pool
+int roots[MAXN]; // roots[i] = root of version i
 
-**Strategic Algorithms**:
-- **Auction Design**: Optimal auction mechanisms
-- **Voting Systems**: Computational social choice
-- **Fair Division**: Envy-free division algorithms
-- **Coalition Formation**: Cooperative game theory
+int update(int prev, int l, int r, int pos, int val) {
+    int cur = nodes.size(); nodes.push_back(nodes[prev]);
+    if (l == r) { nodes[cur].val += val; return cur; }
+    int mid = (l+r)/2;
+    if (pos <= mid) nodes[cur].left = update(nodes[prev].left, l, mid, pos, val);
+    else nodes[cur].right = update(nodes[prev].right, mid+1, r, pos, val);
+    nodes[cur].val = nodes[nodes[cur].left].val + nodes[nodes[cur].right].val;
+    return cur;
+}
+// query(roots[r], roots[l-1], ...) for range [l,r] queries on immutable array
+```
 
-**Practice Problems**: 80 game theory problems
-**Key Resources**:
-- Algorithmic Game Theory: Nisan, Roughgarden, Tardos
-- Game Theory Course: https://www.coursera.org/learn/game-theory
-- Game Theory Problems: https://codeforces.com/blog/entry/64465
+**Applications**: K-th smallest in range [l,r], offline range inversions.
 
-#### **Month 3: Computational Complexity**
-**Learning Objectives**:
-- Master complexity theory concepts
-- Understand hardness reductions
-- Implement complexity-aware algorithms
+#### 1C. Li Chao Tree (for CHT with arbitrary queries)
 
-**Complexity Theory Topics**:
-- **P vs NP**: Understanding computational difficulty
-- **NP-Completeness**: Reduction techniques
-- **Approximation Hardness**: PCP theorem, hardness of approximation
-- **Parameterized Complexity**: FPT algorithms
+```cpp
+// Supports: add line y = mx + b; query: maximum y at point x
+struct LiChaoTree {
+    struct Line { long long m, b; long long eval(long long x) { return m*x+b; } };
+    int n; vector<Line> tree;
+    LiChaoTree(int n) : n(n), tree(2*n, {0, LLONG_MIN/2}) {}
+    void add_line(int node, int l, int r, Line line) {
+        int mid = (l+r)/2;
+        bool left_better = line.eval(l) > tree[node].eval(l);
+        bool mid_better  = line.eval(mid) > tree[node].eval(mid);
+        if (mid_better) swap(tree[node], line);
+        if (l == r) return;
+        if (left_better != mid_better) add_line(2*node, l, mid, line);
+        else add_line(2*node+1, mid+1, r, line);
+    }
+    long long query(int node, int l, int r, int x) {
+        long long res = tree[node].eval(x);
+        if (l == r) return res;
+        int mid = (l+r)/2;
+        if (x <= mid) return max(res, query(2*node, l, mid, x));
+        else return max(res, query(2*node+1, mid+1, r, x));
+    }
+};
+```
 
-**Complexity Applications**:
-- **Hardness Proofs**: NP-hardness reductions
-- **Approximation Limits**: Inapproximability results
-- **Parameterized Algorithms**: Fixed-parameter tractability
-- **Kernelization**: Preprocessing techniques
-
-**Practice Problems**: 70 complexity problems
-**Key Resources**:
-- Computational Complexity: Arora & Barak
-- Complexity Zoo: https://complexityzoo.net/
-- Parameterized Algorithms: https://fpt.wikidot.com/
-
-### **Month 4-6: Advanced Mathematical Algorithms**
-
-#### **Month 4: Advanced Number Theory**
-**Learning Objectives**:
-- Master advanced number theory algorithms
-- Understand cryptographic applications
-- Implement efficient number-theoretic solutions
-
-**Advanced Number Theory Topics**:
-- **Elliptic Curves**: Group law, point counting
-- **Primality Testing**: AKS algorithm, Miller-Rabin
-- **Integer Factorization**: Pollard's rho, quadratic sieve
-- **Discrete Logarithm**: Baby-step giant-step, index calculus
-
-**Cryptographic Applications**:
-- **RSA Implementation**: Key generation, encryption/decryption
-- **Diffie-Hellman**: Key exchange protocols
-- **Digital Signatures**: DSA, ECDSA
-- **Zero-Knowledge Proofs**: Interactive proof systems
-
-**Practice Problems**: 90 advanced number theory problems
-**Key Resources**:
-- Handbook of Applied Cryptography: Menezes, van Oorschot, Vanstone
-- Number Theory: https://www.numbertheory.org/
-- Cryptography Course: https://www.coursera.org/learn/cryptography
-
-#### **Month 5: Advanced Combinatorics**
-**Learning Objectives**:
-- Master advanced combinatorial algorithms
-- Understand probabilistic methods
-- Implement combinatorial optimization
-
-**Advanced Combinatorics Topics**:
-- **Probabilistic Method**: Randomized algorithms
-- **Lovász Local Lemma**: Avoiding bad events
-- **Extremal Combinatorics**: Ramsey theory, Turán's theorem
-- **Algebraic Methods**: Polynomial method, spectral methods
-
-**Combinatorial Applications**:
-- **Randomized Algorithms**: Monte Carlo, Las Vegas
-- **Derandomization**: Method of conditional expectations
-- **Graph Coloring**: Chromatic number algorithms
-- **Hypergraph Matching**: Matching in hypergraphs
-
-**Practice Problems**: 80 combinatorics problems
-**Key Resources**:
-- The Probabilistic Method: Alon & Spencer
-- Extremal Combinatorics: https://www.cs.elte.hu/~lovasz/
-- Randomized Algorithms: Motwani & Raghavan
-
-#### **Month 6: Advanced Geometry**
-**Learning Objectives**:
-- Master computational geometry
-- Understand geometric algorithms
-- Implement efficient geometric solutions
-
-**Advanced Geometry Topics**:
-- **Arrangements**: Line and hyperplane arrangements
-- **Voronoi Diagrams**: Fortune's algorithm, applications
-- **Delaunay Triangulation**: Flip algorithm, properties
-- **Geometric Optimization**: Facility location, clustering
-
-**Geometric Applications**:
-- **Robotics**: Motion planning, visibility
-- **Computer Graphics**: Rendering, collision detection
-- **Geographic Information**: Spatial queries, indexing
-- **Computational Biology**: Molecular docking, protein folding
-
-**Practice Problems**: 70 geometry problems
-**Key Resources**:
-- Computational Geometry: de Berg, Cheong, van Kreveld, Overmars
-- Geometry Algorithms: https://geomalgorithms.com/
-- CGAL Library: https://www.cgal.org/
-
-### **Month 7-9: IOI-Specific Training**
-
-#### **Month 7: Past IOI Problems**
-**Learning Objectives**:
-- Master all IOI problems from last 10 years
-- Understand IOI problem patterns
-- Implement optimal IOI solutions
-
-**IOI Problem Categories**:
-- **Algorithmic Problems**: Complex algorithmic challenges
-- **Data Structure Problems**: Advanced data structure design
-- **Mathematical Problems**: Number theory, combinatorics
-- **Optimization Problems**: Complex optimization challenges
-
-**IOI Problem Analysis**:
-- **Problem Classification**: Pattern recognition
-- **Solution Techniques**: Optimal approaches
-- **Implementation Details**: Efficient coding
-- **Time Complexity**: Optimization techniques
-
-**Practice Problems**: All IOI problems (2014-2024)
-**Key Resources**:
-- IOI Official Site: https://ioi.org/tasks/
-- IOI Solutions: https://github.com/ioi/ioi-solutions
-- IOI Training: https://ioi-training.org/
-
-#### **Month 8: International Competition Practice**
-**Learning Objectives**:
-- Master international competition formats
-- Understand global problem styles
-- Implement competition-winning solutions
-
-**International Competitions**:
-- **Codeforces Round**: Global competitive programming
-- **AtCoder Grand Contest**: Japanese advanced contests
-- **TopCoder Open**: Algorithm and marathon matches
-- **Google Code Jam**: International programming contest
-
-**Competition Strategies**:
-- **Problem Selection**: Optimal problem ordering
-- **Time Management**: Contest pacing strategies
-- **Implementation Strategy**: Efficient coding practices
-- **Debugging Techniques**: Systematic error finding
-
-**Practice Problems**: 200 international contest problems
-**Key Resources**:
-- Codeforces: https://codeforces.com/
-- AtCoder: https://atcoder.jp/
-- TopCoder: https://www.topcoder.com/
-- Google Code Jam: https://codingcompetitions.withgoogle.com/
-
-#### **Month 9: Advanced Problem Solving**
-**Learning Objectives**:
-- Master advanced problem-solving techniques
-- Understand creative algorithm design
-- Implement innovative solutions
-
-**Advanced Problem-Solving Topics**:
-- **Problem Creation**: Design novel algorithmic problems
-- **Solution Innovation**: Create new algorithmic approaches
-- **Mathematical Modeling**: Model complex real-world problems
-- **Algorithm Design**: Design efficient algorithms from scratch
-
-**Creative Problem-Solving**:
-- **Pattern Recognition**: Identify problem patterns
-- **Algorithm Synthesis**: Combine multiple techniques
-- **Mathematical Insight**: Deep mathematical understanding
-- **Implementation Excellence**: Optimal code design
-
-**Practice Problems**: 150 advanced problems
-**Key Resources**:
-- Problem Solving Strategies: https://artofproblemsolving.com/
-- Algorithm Design Manual: Skiena
-- Creative Problem Solving: https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/algorithm.html
-
-### **Month 10-12: Final IOI Preparation**
-
-#### **Month 10: Team Selection Preparation**
-**Learning Objectives**:
-- Master USACO team selection criteria
-- Understand team selection process
-- Prepare for team selection camp
-
-**Team Selection Topics**:
-- **USACO Platinum**: Consistent high performance
-- **Team Selection Camp**: Intensive training program
-- **Mock IOI**: Simulate IOI conditions
-- **Team Strategy**: Collaborative problem solving
-
-**Selection Criteria**:
-- **Contest Performance**: Consistent top results
-- **Algorithm Knowledge**: Comprehensive understanding
-- **Problem-Solving Speed**: Efficient solution development
-- **Collaboration Skills**: Teamwork and communication
-
-**Practice**: 10 full IOI simulations
-**Key Resources**:
-- USACO Team Selection: https://usaco.org/current/data/
-- IOI Training Camp: https://ioi-training.org/
-- Team Selection Guide: https://www.usaco.org/index.php?page=about
-
-#### **Month 11: Intensive Training**
-**Learning Objectives**:
-- Master time management under pressure
-- Understand contest psychology
-- Implement peak performance strategies
-
-**Intensive Training Topics**:
-- **Time Management**: Optimal contest pacing
-- **Stress Management**: Performance under pressure
-- **Physical Preparation**: Health and wellness
-- **Mental Preparation**: Focus and concentration
-
-**Performance Optimization**:
-- **Speed Training**: Rapid problem solving
-- **Accuracy Training**: Error-free implementation
-- **Endurance Training**: Long contest performance
-- **Strategy Training**: Optimal contest approach
-
-**Practice**: Daily 4-hour contests
-**Key Resources**:
-- Sports Psychology: https://www.sportpsych.org/
-- Performance Psychology: https://www.apa.org/monitor/2018/02/high-performers
-- Contest Psychology: https://codeforces.com/blog/entry/7619
-
-#### **Month 12: Final Preparation**
-**Learning Objectives**:
-- Master all IOI problem types
-- Understand final competition strategies
-- Prepare for IOI competition
-
-**Final Preparation Topics**:
-- **Comprehensive Review**: All algorithmic topics
-- **Contest Simulation**: Realistic IOI conditions
-- **Strategy Finalization**: Optimal contest approach
-- **Confidence Building**: Mental preparation
-
-**IOI Competition Strategy**:
-- **Problem Analysis**: Quick problem understanding
-- **Solution Planning**: Optimal solution design
-- **Implementation**: Efficient coding
-- **Testing**: Comprehensive verification
-
-**Final Practice**: 5 full IOI simulations
-**Key Resources**:
-- IOI Official: https://ioi.org/
-- IOI Rules: https://ioi.org/regulations/
-- IOI Schedule: https://ioi.org/ioi2024/
+**Practice**: 20 advanced segment tree problems from USACO Platinum archive + oj.uz
 
 ---
 
-## 🎯 **Weekly Training Schedule**
+### Module 2 — DP Optimization Techniques (Month 2)
 
-### **Daily Routine (4-5 hours)**
-- **Algorithm Study**: 90 minutes expert theory
-- **Practice Problems**: 5-6 problems (3-4 hours)
-- **Code Review**: Analyze optimal solutions (30 minutes)
-- **Research**: Read papers/tutorials (30 minutes)
+#### 2A. Convex Hull Trick (CHT) — Classical
 
-### **Weekly Schedule (20+ hours)**
-- **Monday**: Advanced Optimization + 10 problems
-- **Tuesday**: Game Theory + 10 problems
-- **Wednesday**: Advanced Mathematics + 10 problems
-- **Thursday**: IOI Problems + 10 problems
-- **Friday**: International Contests + 10 problems
-- **Saturday**: Full Contest Simulation (5 hours) + analysis
-- **Sunday**: Review + Research (5 hours)
+For DP recurrences of the form: `dp[j] = min/max over i<j of (dp[i] + cost(i,j))` where `cost(i,j)` factors into a linear function of j with slope/intercept depending on i.
 
-### **Monthly Goals**
-- **Month 1**: 100 optimization problems
-- **Month 2**: 80 game theory problems
-- **Month 3**: 70 complexity problems
-- **Month 4**: 90 advanced number theory problems
-- **Month 5**: 80 combinatorics problems
-- **Month 6**: 70 geometry problems
-- **Month 7**: All IOI problems (2014-2024)
-- **Month 8**: 200 international contest problems
-- **Month 9**: 150 advanced problems
-- **Month 10**: 10 IOI simulations
-- **Month 11**: Daily 4-hour contests
-- **Month 12**: 5 final IOI simulations
+```cpp
+// Minimize dp[j] = min_{i<j} (a[i]*j + b[i]) — monotone slopes, monotone query
+// Use a stack of lines; O(n) total
+struct CHT {
+    struct Line { long long m, b; long long eval(long long x) { return m*x+b; } };
+    deque<Line> hull;
+    bool bad(Line l1, Line l2, Line l3) {
+        return (__int128)(l3.b-l1.b)*(l1.m-l2.m) <= (__int128)(l2.b-l1.b)*(l1.m-l3.m);
+    }
+    void add(long long m, long long b) {
+        Line l = {m, b};
+        while (hull.size() >= 2 && bad(hull[hull.size()-2], hull.back(), l)) hull.pop_back();
+        hull.push_back(l);
+    }
+    long long query(long long x) { // monotone query
+        while (hull.size() > 1 && hull[0].eval(x) >= hull[1].eval(x)) hull.pop_front();
+        return hull[0].eval(x);
+    }
+};
+```
 
----
+#### 2B. Divide and Conquer DP
 
-## 📊 **Problem Categories & Targets**
+When the optimal split point `opt(i)` is monotone: `opt(i) <= opt(i+1)`. Solve in O(n log n) instead of O(n²).
 
-### **Research-Level Algorithms (250 problems)**
-**Difficulty**: Expert to Research
-**Time Target**: < 90 minutes per problem
-**Accuracy Target**: 75%+
+```cpp
+void solve(int l, int r, int optl, int optr) {
+    if (l > r) return;
+    int mid = (l+r)/2, opt = optl;
+    for (int k = optl; k <= min(mid, optr); k++)
+        if (cost(k, mid) < cost(opt, mid)) opt = k;
+    dp[mid] = cost(opt, mid);
+    solve(l, mid-1, optl, opt);
+    solve(mid+1, r, opt, optr);
+}
+```
 
-**Key Research Categories**:
-- **Advanced Optimization**: Linear programming, approximation
-- **Game Theory**: Equilibrium, mechanism design
-- **Complexity Theory**: Hardness, reductions, parameterization
+#### 2C. Knuth's Optimization
 
-### **Advanced Mathematical Algorithms (240 problems)**
-**Difficulty**: Expert to Research
-**Time Target**: < 80 minutes per problem
-**Accuracy Target**: 80%+
+For interval DP `dp[i][j] = min_{i<=k<j} (dp[i][k] + dp[k+1][j] + cost(i,j))` when `cost` satisfies the quadrangle inequality. Reduces O(n³) to O(n²).
 
-**Key Math Categories**:
-- **Advanced Number Theory**: Elliptic curves, cryptography
-- **Advanced Combinatorics**: Probabilistic methods, extremal
-- **Advanced Geometry**: Arrangements, Voronoi, Delaunay
+```cpp
+// opt[i][j] = optimal split point
+// Constraint: opt[i][j-1] <= opt[i][j] <= opt[i+1][j]
+for (int len = 2; len <= n; len++)
+    for (int i = 0; i+len-1 < n; i++) {
+        int j = i+len-1;
+        opt[i][j] = i;
+        for (int k = opt[i][j-1]; k <= opt[i+1][j]; k++)
+            if (dp[i][k] + dp[k+1][j] + cost[i][j] < dp[i][j])
+                dp[i][j] = dp[i][k]+dp[k+1][j]+cost[i][j], opt[i][j]=k;
+    }
+```
 
-### **IOI Problems (200+ problems)**
-**Difficulty**: Expert to Research
-**Time Target**: < 120 minutes per problem
-**Accuracy Target**: 70%+
+#### 2D. WQS Binary Search (Aliens Trick)
 
-**Key IOI Categories**:
-- **Algorithmic Problems**: Complex algorithmic challenges
-- **Data Structure Problems**: Advanced structure design
-- **Mathematical Problems**: Number theory, combinatorics
-- **Optimization Problems**: Complex optimization
+For DP problems with constraint "use exactly K items" where the answer is concave/convex in K.
 
----
+```cpp
+// Binary search on penalty λ for using one more item
+// For each λ, solve unconstrained DP; track item count used
+// Find λ such that item count = K
+```
 
-## 🏆 **IOI Competition Strategy**
+#### 2E. Slope Trick
 
-### **IOI Contest Format**
-**Duration**: 5 hours over 2 days
-**Problems**: 6 problems (3 per day)
-**Scoring**: Partial scoring, multiple test cases
-**Environment**: C++, Java, Python, Pascal
+For DP recurrences where the cost function is piecewise linear and convex. Track the slope change points in a priority queue.
 
-### **Day 1 Strategy**
-**Time Allocation**: 5 hours
-**Target**: 2-3 problems solved
-
-#### **First Hour**
-- **Problem Reading**: All 3 problems (20 minutes)
-- **Difficulty Assessment**: Choose easiest problem (10 minutes)
-- **Easy Problem**: Solve and submit (30 minutes)
-
-#### **Second Hour**
-- **Medium Problem**: Analysis and implementation (45 minutes)
-- **Hard Problem**: Start analysis (15 minutes)
-
-#### **Third Hour**
-- **Hard Problem**: Implementation (45 minutes)
-- **Debugging**: Fix issues (15 minutes)
-
-#### **Fourth-Fifth Hours**
-- **Optimization**: Improve solutions (60 minutes)
-- **Partial Scoring**: Maximize points (60 minutes)
-
-### **Day 2 Strategy**
-**Time Allocation**: 5 hours
-**Target**: 2-3 problems solved
-
-#### **First Hour**
-- **Problem Reading**: All 3 problems (20 minutes)
-- **Strategy Adjustment**: Based on Day 1 performance (10 minutes)
-- **Problem Selection**: Choose optimal approach (30 minutes)
-
-#### **Second-Third Hours**
-- **Primary Problem**: Complete implementation (90 minutes)
-
-#### **Fourth-Fifth Hours**
-- **Secondary Problem**: Implementation and optimization (90 minutes)
-- **Final Review**: Ensure maximum points (30 minutes)
-
-### **Success Metrics**
-- **Total Score**: 300+ points (top 50 internationally)
-- **Problem Solving**: 4+ problems total
-- **Partial Scoring**: Maximum points on attempted problems
-- **Time Management**: Optimal contest pacing
+**Practice**: 30 DP optimization problems — [AtCoder DP Contest](https://atcoder.jp/contests/dp) hard problems + oj.uz + Codeforces rated 2600–3000
 
 ---
 
-## 📈 **Progress Tracking**
+### Module 3 — Centroid Decomposition (Month 3)
 
-### **Weekly Metrics**
-- **Problems Solved**: Target 40-50 per week
-- **Accuracy Rate**: Maintain 75%+
-- **Average Time**: < 90 minutes per problem
-- **Algorithm Coverage**: Track concept mastery
+**Core idea**: Recursively find the centroid of the tree; the centroid is the node whose removal results in no subtree of size > n/2. Depth of centroid decomposition = O(log n).
 
-### **Monthly Assessment**
-- **IOI Readiness**: Comprehensive IOI preparation check
-- **Algorithm Proficiency**: All required algorithms mastered
-- **Contest Performance**: Mock IOI results
-- **Team Selection**: USA team qualification readiness
+```cpp
+// centroid decomposition: O(n log n) total processing
+vector<int> subtree_size(n), centroid_parent(n,-1);
+vector<bool> removed(n,false);
 
-### **Success Indicators**
-- **Consistent 650+**: 3 consecutive USACO contests
-- **IOI Practice**: Top 20% on past IOI problems
-- **International Ranking**: Top 100 globally
-- **Team Selection**: USA IOI team qualification
+int get_subtree_size(int u, int p) {
+    subtree_size[u] = 1;
+    for (int v : adj[u]) if (v != p && !removed[v]) subtree_size[u] += get_subtree_size(v,u);
+    return subtree_size[u];
+}
 
----
+int get_centroid(int u, int p, int tree_size) {
+    for (int v : adj[u]) if (v != p && !removed[v])
+        if (subtree_size[v] > tree_size/2) return get_centroid(v,u,tree_size);
+    return u;
+}
 
-## 🚀 **IOI Team Qualification**
+void decompose(int u, int p) {
+    int sz = get_subtree_size(u, -1);
+    int c = get_centroid(u, -1, sz);
+    centroid_parent[c] = p;
+    removed[c] = true;
+    for (int v : adj[c]) if (!removed[v]) decompose(v, c);
+}
 
-### **Selection Criteria**
-- **USACO Performance**: Top 5 in USA
-- **Algorithm Knowledge**: Comprehensive understanding
-- **Problem-Solving Speed**: Efficient solution development
-- **Collaboration Skills**: Teamwork and communication
+// For path queries: for each query (u,v), answer = f(u,c) + f(v,c) - f(root,c)
+// for each centroid c on the path from u to root of centroid tree
+```
 
-### **Selection Process**
-- **USACO Platinum**: Consistent high performance
-- **Team Selection Camp**: Intensive training and evaluation
-- **Mock IOI**: Performance under competition conditions
-- **Final Selection**: Team of 4 competitors
+**Applications**: Count paths with given length/sum, distance queries on trees.
 
-### **Success Metrics**
-- **USACO Ranking**: Top 5 in USA
-- **IOI Practice**: Top 20% on past problems
-- **Team Camp Performance**: Excellent evaluation
-- **Final Selection**: USA IOI team member
+**Practice**: 15 centroid decomposition problems
 
 ---
 
-## 🎯 **Expected Outcomes**
+### Module 4 — Heavy-Light Decomposition (HLD) (Month 3–4)
 
-### **After 12 Months**:
-- **Problems Solved**: 1000+ expert-level problems
-- **Algorithm Mastery**: All platinum and IOI algorithms
-- **Contest Score**: Consistent 650+ points
-- **IOI Ready**: Prepared for international competition
+**Core idea**: Partition tree into O(log n) "heavy" chains. Any path in the tree is covered by O(log n) chains. Apply segment tree to each chain → path queries in O(log² n).
 
-### **Key Skills Developed**:
-- **Research-Level Algorithms**: Cutting-edge techniques
-- **Mathematical Reasoning**: Advanced problem solving
-- **Competition Strategy**: Optimal contest performance
-- **International Excellence**: Global competitive level
+```cpp
+// HLD implementation
+vector<int> parent(n), depth(n), heavy(n,-1), head(n), pos(n);
+int cur_pos = 0;
 
-### **Confidence Level**:
-- **Platinum Problems**: 75% confidence
-- **IOI Problems**: 70% confidence
-- **Contest Performance**: Consistent success
-- **Team Selection**: Ready for USA IOI team
+int dfs(int u, int p, int d) {
+    parent[u]=p; depth[u]=d; int size=1, max_size=0;
+    for (int v : adj[u]) if (v != p) {
+        int child_size = dfs(v,u,d+1); size += child_size;
+        if (child_size > max_size) { max_size=child_size; heavy[u]=v; }
+    }
+    return size;
+}
 
----
+void decompose(int u, int h) {
+    head[u]=h; pos[u]=cur_pos++;
+    if (heavy[u] != -1) decompose(heavy[u], h); // continue heavy chain
+    for (int v : adj[u]) if (v != parent[u] && v != heavy[u]) decompose(v,v);
+}
 
-## 📚 **Expert Learning Resources**
+// Path query from u to v: walk up chains, query segment tree on each chain
+long long path_query(int u, int v) {
+    long long result = 0;
+    while (head[u] != head[v]) {
+        if (depth[head[u]] < depth[head[v]]) swap(u,v);
+        result += seg.query(pos[head[u]], pos[u]); // segment tree query
+        u = parent[head[u]];
+    }
+    if (depth[u] > depth[v]) swap(u,v);
+    result += seg.query(pos[u], pos[v]);
+    return result;
+}
+```
 
-### **Primary Learning**
-- **IOI Official**: https://ioi.org/
-- **USACO Platinum**: https://usaco.guide/current/platinum/
-- **Codeforces Expert**: https://codeforces.com/problemset?difficulty=3000
+**Applications**: Path sum/min/max queries with updates, LCA in O(log n), subtree updates.
 
-### **Advanced References**
-- **Algorithm Design**: Kleinberg & Tardos
-- **Approximation Algorithms**: Williamson & Shmoys
-- **Computational Complexity**: Arora & Barak
-- **The Art of Computer Programming**: Donald Knuth
-
-### **Research Resources**
-- **ArXiv Computer Science**: https://arxiv.org/list/cs.DS/recent
-- **ACM Digital Library**: https://dl.acm.org/
-- **IEEE Xplore**: https://ieeexplore.ieee.org/
-- **Google Scholar**: https://scholar.google.com/
-
-### **IOI Community**
-- **IOI Official Site**: https://ioi.org/
-- **USACO Forum**: https://usaco.org/current/forum/
-- **International CP Community**: https://codeforces.com/blog/
-- **IOI Alumni Network**: https://ioi.org/alumni/
+**Practice**: 15 HLD problems
 
 ---
 
-## 🏆 **IOI Success Path**
+### Module 5 — Link-Cut Trees (Month 4–5)
 
-### **Month 1-3**: Research Foundation
-- **Goal**: Master research-level algorithms
-- **Problems**: 250 research problems
-- **Skills**: Advanced optimization, game theory, complexity
+LCT supports dynamic tree operations in O(log n) amortized: link (add edge), cut (remove edge), path queries.
 
-### **Month 4-6**: Mathematical Excellence
-- **Goal**: Advanced mathematical algorithms
-- **Problems**: 240 mathematical problems
-- **Skills**: Number theory, combinatorics, geometry
+**Core**: Maintain "preferred paths" using splay trees. Each node's splay key is its depth in the represented tree.
 
-### **Month 7-9**: IOI Mastery
-- **Goal**: Master all IOI problems
-- **Problems**: All IOI problems + international contests
-- **Skills**: IOI-specific techniques, competition strategy
+```cpp
+// Full Link-Cut Tree with path XOR aggregate
+// Supports: link(u,v), cut(u,v), connected(u,v), path_query(u,v), update(u,val)
+struct LCT {
+    struct Node {
+        int ch[2], p, val, agg;
+        bool rev;
+    };
+    vector<Node> t;
 
-### **Month 10-12**: Final Preparation
-- **Goal**: IOI team qualification
-- **Problems**: Intensive contest simulations
-- **Skills**: Peak performance, team selection
+    LCT(int n) : t(n+1, {{0,0}, 0, 0, 0, false}) {}
 
-### **Final Achievement**:
-- **IOI Qualification**: USA IOI team member
-- **International Success**: Top performance at IOI
-- **Algorithmic Excellence**: World-class competitive programmer
-- **Career Foundation**: Strong foundation for CS career
+    bool isRoot(int x) { return t[t[x].p].ch[0]!=x && t[t[x].p].ch[1]!=x; }
+    bool dir(int x) { return t[t[x].p].ch[1]==x; }
+    void push_up(int x) { t[x].agg = t[t[x].ch[0]].agg ^ t[x].val ^ t[t[x].ch[1]].agg; }
 
-This comprehensive platinum and IOI preparation plan develops the world-class algorithmic thinking and competition performance required for international competitive programming success and potential IOI medal achievement.
+    void flip(int x) { swap(t[x].ch[0], t[x].ch[1]); t[x].rev^=1; }
+    void push_down(int x) {
+        if (t[x].rev) {
+            if (t[x].ch[0]) flip(t[x].ch[0]);
+            if (t[x].ch[1]) flip(t[x].ch[1]);
+            t[x].rev=0;
+        }
+    }
+
+    void rotate(int x) {
+        int y=t[x].p, z=t[y].p, k=dir(x);
+        if (!isRoot(y)) t[z].ch[dir(y)]=x; t[x].p=z;
+        t[y].ch[k]=t[x].ch[k^1];
+        if (t[x].ch[k^1]) t[t[x].ch[k^1]].p=y;
+        t[x].ch[k^1]=y; t[y].p=x;
+        push_up(y); push_up(x);
+    }
+
+    void splay(int x) {
+        static int stk[500005]; int top=0;
+        stk[top++]=x;
+        for (int i=x; !isRoot(i); i=t[i].p) stk[top++]=t[i].p;
+        while (top) push_down(stk[--top]);
+        while (!isRoot(x)) {
+            int y=t[x].p;
+            if (!isRoot(y)) rotate(dir(x)==dir(y)?y:x);
+            rotate(x);
+        }
+    }
+
+    void access(int x) {
+        int last=0;
+        for (int y=x; y; y=t[y].p) { splay(y); t[y].ch[1]=last; push_up(y); last=y; }
+        splay(x);
+    }
+
+    void makeRoot(int x) { access(x); flip(x); }
+
+    int findRoot(int x) {
+        access(x);
+        while (t[x].ch[0]) { push_down(x); x=t[x].ch[0]; }
+        splay(x); return x;
+    }
+
+    void link(int x, int y) {
+        makeRoot(x);
+        if (findRoot(y)!=x) t[x].p=y; // only link if different components
+    }
+
+    void cut(int x, int y) {
+        makeRoot(x); access(y);
+        if (t[y].ch[0]==x && !t[x].ch[1]) { t[y].ch[0]=0; t[x].p=0; push_up(y); }
+    }
+
+    bool connected(int x, int y) { makeRoot(x); return findRoot(y)==x; }
+
+    int query(int x, int y) { makeRoot(x); access(y); return t[y].agg; } // XOR on path x→y
+
+    void update(int x, int v) { splay(x); t[x].val=v; push_up(x); }
+};
+// Usage: LCT lct(n); lct.update(u, val); lct.link(u,v); lct.cut(u,v); lct.query(u,v);
+// Aggregate can be changed from XOR to sum/min/max by modifying push_up and agg field
+```
+
+**Operations and complexity**:
+- `access(x)`: O(log n) amortized — makes x the root of its splay tree and connects it to the true root
+- `makeRoot(x)`: O(log n) — re-roots the represented tree at x (uses path reversal via `rev` flag)
+- `link(u,v)`: O(log n) — adds edge between two different trees
+- `cut(u,v)`: O(log n) — removes edge (u,v) from tree
+- `query(u,v)`: O(log n) — aggregate (XOR here; can be sum/min/max) on path from u to v
+
+**Where to practice**:
+- USACO Guide Platinum → Link-Cut Trees: https://usaco.guide/plat/link-cut-tree
+- CSES "Dynamic Tree Connectivity": https://cses.fi/problemset/task/2236
+- Codeforces problems tagged "link cut tree" (rated 2700+)
+
+**Practice**: 10 LCT problems (difficult — take your time)
+
+---
+
+### Module 6 — Suffix Array & LCP (Month 5)
+
+**Suffix Array (O(n log² n) construction via prefix doubling)**
+
+**Suffix Array (SA)**: Sorted array of all suffixes of string S. SA[i] = start of the i-th lexicographically smallest suffix.
+
+```cpp
+// Prefix doubling method: O(n log² n) — sufficient for USACO (n ≤ 10^5 strings)
+// SA-IS is O(n) but significantly harder to implement correctly; not required for USACO
+vector<int> suffix_array(string s) {
+    s += '$'; int n = s.size();
+    vector<int> sa(n), rank_(n), tmp(n);
+    iota(sa.begin(),sa.end(),0);
+    for (int i=0;i<n;i++) rank_[i]=s[i];
+    for (int k=1;k<n;k<<=1) {
+        auto cmp=[&](int a, int b){
+            if(rank_[a]!=rank_[b]) return rank_[a]<rank_[b];
+            int ra=a+k<n?rank_[a+k]:-1, rb=b+k<n?rank_[b+k]:-1;
+            return ra<rb;
+        };
+        sort(sa.begin(),sa.end(),cmp);
+        tmp[sa[0]]=0;
+        for(int i=1;i<n;i++) tmp[sa[i]]=tmp[sa[i-1]]+(cmp(sa[i-1],sa[i])?1:0);
+        rank_=tmp;
+        if(rank_[sa[n-1]]==n-1) break;
+    }
+    return vector<int>(sa.begin()+1, sa.end()); // remove sentinel
+}
+```
+
+**LCP Array** (Kasai's algorithm, O(n)):
+```cpp
+// lcp[i] = length of longest common prefix of SA[i] and SA[i-1]
+vector<int> build_lcp(string s, vector<int>& sa) {
+    int n=s.size(); vector<int> rank_(n), lcp(n);
+    for(int i=0;i<n;i++) rank_[sa[i]]=i;
+    for(int i=0,h=0;i<n;i++) {
+        if(rank_[i]>0) {
+            int j=sa[rank_[i]-1];
+            while(i+h<n&&j+h<n&&s[i+h]==s[j+h]) h++;
+            lcp[rank_[i]]=h;
+            if(h) h--;
+        }
+    }
+    return lcp;
+}
+```
+
+**Suffix Array applications (with concrete examples)**:
+- *Longest repeated substring*: max value in LCP array = length of longest repeated substring. The substring is `s.substr(SA[argmax(LCP)], max(LCP))`.
+- *Number of distinct substrings*: `n*(n+1)/2 - sum(LCP)`. Each suffix contributes `(n - SA[i])` total substrings, minus the `LCP[i]` that it shares with the previous suffix.
+- *Longest common substring of two strings A and B*: concatenate as `A + "#" + B`, build SA+LCP; find max LCP[i] where SA[i] and SA[i-1] are from different strings.
+- *Check if pattern P occurs in text T*: binary search on SA to find first suffix ≥ P and verify.
+
+**Applications**: Longest repeated substring, number of distinct substrings (= n*(n+1)/2 - sum(lcp)), longest common substring of 2 strings, string compression.
+
+**Practice**: 15 suffix array problems — CSES String Algorithms section (last 8 problems)
+
+---
+
+### Module 7 — Suffix Automaton (SAM) (Month 5–6)
+
+The most space-efficient structure for all substrings: O(n) nodes, O(n) construction.
+
+```cpp
+struct SAM {
+    struct State { int len, link; map<char,int> next; };
+    vector<State> st; int last;
+    SAM() { st.push_back({0,-1,{}}); last=0; }
+    void extend(char c) {
+        int cur=st.size(); st.push_back({st[last].len+1,-1,{}});
+        int p=last;
+        while(p!=-1&&!st[p].next.count(c)){ st[p].next[c]=cur; p=st[p].link; }
+        if(p==-1) st[cur].link=0;
+        else {
+            int q=st[p].next[c];
+            if(st[p].len+1==st[q].len) st[cur].link=q;
+            else {
+                int clone=st.size(); st.push_back({st[p].len+1,st[q].link,st[q].next});
+                while(p!=-1&&st[p].next[c]==q){ st[p].next[c]=clone; p=st[p].link; }
+                st[q].link=st[cur].link=clone;
+            }
+        }
+        last=cur;
+    }
+};
+```
+
+**Applications**: Count occurrences of each substring, longest common substring, number of distinct substrings (for each state: `st[v].len - st[st[v].link].len` distinct substrings end at this state).
+
+**Practice**: 10 SAM problems
+
+---
+
+### Module 8 — Advanced Combinatorics and FFT (Month 6–7)
+
+#### 8A. Fast Fourier Transform (FFT)
+
+```cpp
+// Multiply two polynomials in O(n log n) using FFT
+// Applications: polynomial multiplication, string convolution, count pairs
+using cd = complex<double>;
+void fft(vector<cd>&a, bool inv) {
+    int n=a.size();
+    for(int i=1,j=0;i<n;i++){
+        int bit=n>>1;
+        for(;j&bit;bit>>=1) j^=bit;
+        j^=bit; if(i<j) swap(a[i],a[j]);
+    }
+    for(int len=2;len<=n;len<<=1){
+        double ang=2*M_PI/len*(inv?-1:1);
+        cd wlen(cos(ang),sin(ang));
+        for(int i=0;i<n;i+=len){
+            cd w(1);
+            for(int j=0;j<len/2;j++,w*=wlen){
+                cd u=a[i+j], v=a[i+j+len/2]*w;
+                a[i+j]=u+v; a[i+j+len/2]=u-v;
+            }
+        }
+    }
+    if(inv) for(auto&x:a) x/=n;
+}
+```
+
+**Critical precision caveat**: The FFT using `complex<double>` accumulates floating-point errors. For large polynomials (degree > 10^5) or when coefficients are large integers, the rounded output may be wrong. Rule of thumb:
+- If the answer requires exact integers AND coefficients × polynomial degree > 10^15, use NTT (Number Theoretic Transform) instead
+- NTT uses modular arithmetic (exact) at the cost of only working modulo a specific prime
+
+**When to use FFT vs NTT**:
+- Need exact integer output for polynomial multiplication → use NTT with MOD = 998244353
+- Floating-point answer is acceptable (e.g., convolution for probability) → FFT is fine
+- Input values are small (< 1000) and n < 200,000 → FFT is usually safe
+
+**NTT** (Number Theoretic Transform): Same as FFT but with modular arithmetic. Use MOD = 998244353 (has primitive root 3).
+
+#### 8B. Linear Basis (XOR Basis)
+
+```cpp
+// Insert numbers into a linear basis (over GF(2))
+// Supports: max XOR of a subset, k-th smallest XOR subset
+struct LinearBasis {
+    vector<long long> basis;
+    bool insert(long long x) {
+        for (long long b : basis) x = min(x, x^b);
+        if (x) { basis.push_back(x); for(int i=basis.size()-1;i>0&&basis[i]>basis[i-1];i--) swap(basis[i],basis[i-1]); }
+        return x != 0;
+    }
+    long long max_xor() {
+        long long res=0;
+        for (long long b : basis) res = max(res, res^b);
+        return res;
+    }
+};
+```
+
+#### 8C. Sprague-Grundy Theorem
+
+- Grundy number (nimber) of a game state = mex of Grundy numbers of states reachable in one move
+- Combined game: XOR of Grundy numbers of components
+- Applications: Nim variants, token-moving games on graphs
+
+**Practice**: 20 math/FFT problems
+
+---
+
+### Module 9 — Advanced Graph Techniques (Month 7–8)
+
+#### 9A. 2-SAT
+
+Solve satisfiability for clauses of form (x OR y) where x,y are literals.
+
+```cpp
+// Build implication graph: (x OR y) = (~x → y) AND (~y → x)
+// Run SCC; if x and ~x are in same SCC → unsatisfiable
+// Otherwise: x = true iff comp[x] > comp[~x] in topological order
+```
+
+#### 9B. Min Cost Max Flow
+
+```cpp
+// SPFA-based MCMF: find augmenting path with minimum cost using Bellman-Ford/SPFA
+// Each augmenting path: O(VE) with SPFA, better in practice
+// Alternatively: Johnson's algorithm / potential-based Dijkstra for non-negative reduced costs
+```
+
+#### 9C. Dominator Trees
+
+For a directed graph with source s, t dominates u if every path from s to u passes through t.
+
+#### 9D. Offline Dynamic Connectivity
+
+Using CDQ divide and conquer to handle insertions and deletions of edges offline.
+
+**Practice**: 20 advanced graph problems from oj.uz + Codeforces
+
+---
+
+### Module 10 — IOI-Specific Training (Months 8–12)
+
+#### What IOI Requires Beyond USACO Platinum
+
+IOI problems have a different flavor than USACO:
+- **Partial scoring by subtasks**: Each problem has 5–10 subtasks, each worth different points. A solution that handles n ≤ 1000 might score 20–40 points. ALWAYS solve the easy subtasks first.
+- **Interaction problems**: Your solution communicates with a judge by calling library functions. Requires different thinking.
+- **Output-only problems**: Given fixed input files, submit output files. Explore heuristics.
+- **C++ is the only practical language**: At IOI, you must use C++ for any time-critical solution.
+
+#### IOI Problem Strategy
+
+```
+For each problem:
+1. Read carefully; understand ALL subtasks (not just full constraints)
+2. Implement brute force for smallest subtasks first (often 10–20 points for n ≤ 100)
+3. Look for structural observations (tree DP, greedy, divide and conquer)
+4. Implement each subtask's solution and verify against brute force
+5. Combine for full solution if possible
+
+Time allocation per 5-hour day:
+- All 3 problems: 20 minutes reading
+- Choose your best problem: ~2h first pass
+- Second problem: ~1.5h
+- Third: ~1h partial solutions
+- Buffer for debugging: 30 min
+```
+
+#### IOI Past Problems Practice
+
+Work through these problems from oj.uz (chronological within difficulty):
+
+**IOI 2024 (Alexandria)**:
+- Nile, Sphinx's Riddle, Message (interactive), Competition, Mosaic, Tree
+
+**IOI 2023 (Szeged)**:
+- Overtaking, Longest Trip (interactive), Soccer Stadium, Packing Biscuits, Sequence, Closing Time
+
+**IOI 2022 (Yogyakarta)**:
+- Catfish Farm, Unscrambling a Sequence, Prison Break (interactive), Rarest Coincidence, Circuit, Thousands Islands
+
+**IOI 2021 (remote)**:
+- Dungeons Game, Bit Shift Registers, Keys, Radio Towers, Vision Program, Fountain Parks
+
+**IOI 2020 (remote)**:
+- Comparing Shovels, Carnival Tickets, Packing Biscuits, Connecting Supertrees, Crocodile's Underground City, Teams
+
+**Tip**: Use oj.uz to submit and get immediate feedback on subtasks. Compare your approach with editorial solutions after solving.
+
+---
+
+### Month-by-Month Training Plan
+
+| Month | Topics | Target Problems |
+|-------|--------|----------------|
+| 1 | Advanced segment trees (beats, persistent, Li Chao) | 30 |
+| 2 | DP optimization (CHT, D&C DP, Knuth, WQS) | 35 |
+| 3 | Centroid decomposition + HLD | 30 |
+| 4–5 | LCT + suffix structures (SA, LCP, SAM) | 35 |
+| 5–6 | FFT/NTT, linear basis, Grundy, advanced math | 25 |
+| 7–8 | 2-SAT, MCMF, advanced graph techniques | 25 |
+| 8–12 | IOI problems: 2020–2024 (all problems) | 60+ |
+
+**Plus**: Codeforces Div. 1 D/E (rated 2800+) weekly; AtCoder Grand Contests C/D/E
+
+---
+
+## Weekly Schedule (Platinum/IOI)
+
+| Day | Activity | Duration |
+|-----|----------|----------|
+| Monday | New algorithm study + implementation | 3h |
+| Tuesday | 5–7 targeted problems on current topic | 3.5h |
+| Wednesday | oj.uz IOI problem (past problem) | 3h |
+| Thursday | Codeforces Div. 1 C/D (rated 2500–3000) | 3h |
+| Friday | AtCoder Grand Contest (AGC) A–C | 3h |
+| Saturday | 5-hour IOI simulation (pick a year's Day 1) | 5h |
+| Sunday | Editorial review + re-implement all problems missed | 1.5h |
+
+**Total**: ~22 hours/week
+
+---
+
+## IOI Selection Process (USA)
+
+### Path to IOI Team
+
+1. **Reach Platinum** (prerequisite — you cannot attend camp without Platinum)
+
+2. **US Open Performance** (April/May)
+   - The most important USACO contest for team selection
+   - Top ~25 scorers across Platinum are invited to Training Camp
+   - Some invitations based on full-year performance, not just US Open
+
+3. **USACO Training Camp** (June, 1 week, in-person)
+   - ~25–30 students attend
+   - Run ~4 selection contests (IOI format: 5 hours, 3 problems, partial scoring)
+   - Cumulative score determines final ranking
+   - Top 4 are selected as the USA IOI team
+
+4. **IOI Competition** (July)
+   - 2 days × 5 hours = 6 problems total
+   - Each problem: 100 points (600 total possible)
+   - Partial credit for subtasks
+   - C++ strongly preferred (Java/Python have severe TLE risk)
+   - IOI 2025: Almaty, Kazakhstan
+
+### How to Get Invited to Camp
+
+- Be in top 25 at US Open (competitive)
+- Strong performance throughout the year builds your reputation with USACO coaches
+- The camp invitation is also influenced by performance in December/January/February contests
+
+---
+
+## Key Resources for Platinum/IOI
+
+| Resource | URL | Why Critical |
+|----------|-----|-------------|
+| USACO Guide Platinum | https://usaco.guide/platinum/ | Authoritative platinum curriculum |
+| oj.uz | https://oj.uz/ | All IOI/CEOI/JOI/Baltic problems with judge |
+| CSES Advanced Techniques | https://cses.fi/problemset/ | Advanced algorithms section |
+| CP-Algorithms | https://cp-algorithms.com/ | All algorithm implementations + proofs |
+| Codeforces Div. 1 | https://codeforces.com/problemset | D/E problems (rated 2800–3500) |
+| AtCoder Grand Contests | https://atcoder.jp/contests/agc | AGC C/D/E — world-class problems |
+| IOI Official Tasks | https://ioi.org/tasks/ | All IOI problems 1989–present |
+| Competitive Programmer's Handbook | https://cses.fi/book/ | Chapters 25–30 (advanced) |
+| Benq's CP templates | https://github.com/bqi343/cp-notebook | Reference templates from USACO #1 ranker |
+
+---
+
+## USACO Training Camp Preparation
+
+The camp selection exams are IOI-style (5 hours, 3 problems, partial scoring). Specific preparation:
+
+1. **IOI editorial reading**: For every IOI problem from 2018–2024, read the editorial after attempting. Understand the key observations.
+
+2. **Partial scoring mindset**: Never leave a problem blank. If you can't solve it fully, implement the O(n³) brute force and get partial credit.
+
+3. **Implementation speed**: At IOI/camp level, you need to implement complex algorithms (HLD+segment tree, centroid+map, SAM) quickly. Practice writing them from scratch repeatedly.
+
+4. **Clean debugging**: With 5 hours and complex problems, debugging time is precious. Use `assert()`, print intermediate states, compare with brute force on small cases.
+
+---
+
+## Success Benchmarks
+
+| Level | Benchmark |
+|-------|-----------|
+| Platinum Entry | Can implement lazy segment tree and Dijkstra in under 20 min each |
+| Platinum Mid | Can implement HLD + centroid decomposition from scratch |
+| Platinum Strong | Can solve all CSES 300 problems; Codeforces rating ≥ 2500 |
+| IOI Camp | Top 25 at USACO US Open; can solve 2–3 IOI subtasks on unfamiliar problems |
+| IOI Team | Top 4 at camp; expected IOI bronze/silver |
+
+---
+
+*Primary sources: usaco.guide, ioi.org, oj.uz, cses.fi*
+*Last updated: April 2026*

@@ -1,403 +1,379 @@
 # Contest Strategy Guide
-## World-Class Competitive Programming Contest Techniques
+## World-Class Competitive Programming Techniques — USACO, Codeforces, AtCoder, IOI
 
 ---
 
-## 🎯 **Contest Philosophy**
+## USACO Contest Facts
 
-### **Mindset for Success**
-- **Problem-Solving First**: Focus on understanding problems deeply
-- **Time Management**: Optimize contest pacing
-- **Accuracy Over Speed**: Better to be correct than fast
-- **Strategic Thinking**: Choose problems wisely
-- **Stress Management**: Perform under pressure
-
-### **Contest Psychology**
-- **Confidence**: Believe in your abilities
-- **Focus**: Concentrate on current problem
-- **Resilience**: Bounce back from failures
-- **Adaptability**: Adjust strategy during contest
-- **Endurance**: Maintain performance throughout
+- **4 contests per year**: December, January, February, US Open (April/May)
+- **Duration**: 4 hours each
+- **Format**: 3 problems, open book (can use internet, notes, templates)
+- **Submissions**: Unlimited re-submissions within 4 hours — NO PENALTY for wrong answers
+- **Feedback**: "All test cases passed" or count of failed test cases (no details on which ones fail)
+- **Scoring**: Each problem worth ~333 points (total ~1000). Each problem has multiple test cases. Partial credit for solving a subset of test cases.
+- **Promotion**: ~750/1000 threshold (varies per contest)
+- **After contest**: All test inputs/outputs revealed. Study them.
 
 ---
 
-## 📊 **USACO Contest Strategy**
+## USACO Pre-Contest Checklist
 
-### **Pre-Contest Preparation**
-#### **Equipment Setup**
-- **Development Environment**: Ready and tested
-- **Reference Materials**: Quick access to algorithms
-- **Time Management Tools**: Clock, timer
-- **Physical Preparation**: Rest, nutrition, hydration
+### 1 Hour Before
+- [ ] Test your compilation environment (template compiles, file I/O works)
+- [ ] Review your standard template one more time
+- [ ] Ensure `bits/stdc++.h` and `using namespace std` are ready
+- [ ] Set up file I/O template: `freopen("problem.in","r",stdin); freopen("problem.out","w",stdout);`
 
-#### **Mental Preparation**
-- **Algorithm Review**: Quick review of key algorithms
-- **Problem Patterns**: Familiarize with common patterns
-- **Strategy Planning**: Decide on problem approach
-- **Goal Setting**: Set realistic targets
-
-### **During Contest**
-#### **First 15 Minutes: Problem Analysis**
-- **Read All Problems**: Understand all 3 problems
-- **Difficulty Assessment**: Rate each problem difficulty
-- **Strategy Selection**: Choose optimal problem order
-- **Time Allocation**: Plan time for each problem
-
-#### **Problem Order Strategy**
-- **Easy → Medium → Hard**: Standard approach
-- **Confidence Building**: Start with easiest problem
-- **Momentum**: Build confidence early
-- **Risk Management**: Save hardest for last
-
-#### **Time Management**
-```
-USACO Bronze/Silver/Gold: 4 hours total
-- Problem Reading: 15 minutes
-- Easy Problem: 30-45 minutes
-- Medium Problem: 45-75 minutes
-- Hard Problem: 75-120 minutes
-- Debugging: 30 minutes
-- Optimization: 30 minutes
-```
-
-#### **Problem-Solving Approach**
-1. **Understand Problem**: Read carefully, identify constraints
-2. **Algorithm Selection**: Choose appropriate algorithm
-3. **Implementation**: Write clean, efficient code
-4. **Testing**: Test with sample cases and edge cases
-5. **Optimization**: Improve if time permits
-6. **Submission**: Submit when confident
-
-### **Post-Contest Analysis**
-- **Solution Review**: Analyze your solutions
-- **Optimal Solutions**: Study official solutions
-- **Performance Analysis**: Identify strengths and weaknesses
-- **Learning**: Extract lessons for improvement
+### Right Before the Clock Starts
+- [ ] Have scratch paper ready
+- [ ] Have your reference sheet open (allowed during USACO)
+- [ ] Browser tab open: usaco.org (for the problems)
+- [ ] Clear your terminal, open IDE
 
 ---
 
-## 🌍 **International Contest Strategy**
+## USACO During-Contest Strategy
 
-### **Codeforces Strategy**
-#### **Contest Format**
-- **Duration**: 2 hours
-- **Problems**: 5-7 problems
-- **Scoring**: Dynamic scoring based on submissions
-- **Difficulty**: Progressive difficulty
+### Minutes 0–15: Read All 3 Problems
 
-#### **Strategy**
-- **Problem Reading**: 10 minutes for all problems
-- **Easy Problems**: Solve 2-3 easiest quickly
-- **Medium Problems**: Focus on 1-2 medium problems
-- **Hard Problems**: Attempt if time permits
-- **Penalty Management**: Minimize wrong submissions
+**Do not skip this step.** Read all 3 problems before starting to code.
 
-#### **Time Allocation**
+For each problem, note:
+- **N constraint**: n ≤ 1000? n ≤ 100,000? n ≤ 10^6? This tells you the required algorithm complexity.
+- **Time limit**: 2s or 4s?
+- **What is being asked**: Output format, what counts as a valid answer
+
+Estimate relative difficulty. USACO problems are (generally) ordered easy → hard, but not always. Sometimes problem 2 is easier than problem 1.
+
+### Complexity → Algorithm Mapping
+
+| Constraint | Maximum Algorithm Complexity |
+|------------|---------------------------|
+| n ≤ 10 | O(n!) — brute force, all permutations |
+| n ≤ 20 | O(2^n * n) — bitmask DP |
+| n ≤ 200 | O(n³) — Floyd-Warshall, O(n³) DP |
+| n ≤ 5,000 | O(n²) — double nested loop |
+| n ≤ 100,000 | O(n log n) — sorting, binary search, segment tree |
+| n ≤ 1,000,000 | O(n) or O(n log log n) — linear algorithms only |
+
+**Use this table immediately when reading constraints.** If n = 200,000, your O(n²) idea is wrong.
+
+### Time Allocation
+
 ```
-Codeforces Round: 2 hours total
-- Problem Reading: 10 minutes
-- Easy Problems: 40-60 minutes
-- Medium Problems: 40-60 minutes
-- Hard Problems: 20-40 minutes
-- Review: 10 minutes
-```
+Total: 4 hours = 240 minutes
 
-### **AtCoder Strategy**
-#### **Contest Format**
-- **Duration**: 100 minutes
-- **Problems**: 6-8 problems
-- **Scoring**: Partial scoring available
-- **Difficulty**: Well-calibrated difficulty
+Standard (solve all 3):
+  0:00 – 0:15   Read all 3 problems
+  0:15 – 1:00   Problem 1 (easiest): 45 min
+  1:00 – 2:15   Problem 2 (medium): 75 min
+  2:15 – 3:30   Problem 3 (hardest): 75 min
+  3:30 – 4:00   Buffer: debug, improve partial solutions
 
-#### **Strategy**
-- **Problem Reading**: 10-15 minutes
-- **Partial Scoring**: Maximize partial points
-- **Progressive Approach**: Start from easiest
-- **Time Management**: Balance between problems
+If stuck on problem 3:
+  3:00 – 4:00   Implement partial solution for problem 3 (brute force subtasks)
+                Submit brute force: may score 100–300 partial points
 
-#### **Time Allocation**
-```
-AtCoder Contest: 100 minutes total
-- Problem Reading: 15 minutes
-- Easy Problems: 30-40 minutes
-- Medium Problems: 30-40 minutes
-- Hard Problems: 20-30 minutes
-- Review: 5-10 minutes
+Never spend the full 4 hours on 1 problem.
 ```
 
-### **TopCoder Strategy**
-#### **Contest Format**
-- **Duration**: 75 minutes (SRM)
-- **Problems**: 3 problems
-- **Scoring**: Weighted scoring
-- **Difficulty**: Progressive difficulty
+### Per-Problem Workflow
 
-#### **Strategy**
-- **Problem Reading**: 5-10 minutes
-- **Easy Problem**: Quick solve for confidence
-- **Medium Problem**: Main focus
-- **Hard Problem**: Attempt if time permits
-- **Challenge Phase**: Review others' solutions
+1. **Understand the problem** (5–10 min)
+   - Re-read carefully
+   - Trace through the sample input manually on paper
+   - What are edge cases? (n=1, all same values, empty cases)
 
-#### **Time Allocation**
+2. **Design algorithm** (5–10 min, think before typing)
+   - What's the time complexity required? (from constraints)
+   - What algorithmic approach fits? (DP? greedy? BFS? binary search?)
+   - If not sure, start with brute force and think about optimizing
+
+3. **Code** (15–40 min depending on problem)
+   - Follow your template; don't reinvent file I/O or standard includes
+   - Write clean code — debugging messy code costs much more time
+   - Comment major sections for your own clarity under pressure
+
+4. **Test on sample** (5 min)
+   - Must match sample output before submitting
+   - If wrong, trace through logic on the sample manually
+
+5. **Edge cases** (5 min)
+   - n=1, n=2
+   - All elements equal
+   - Minimum/maximum possible values
+   - Overflow? Use `long long` if products might exceed 2×10^9
+
+6. **Submit** — then continue to next problem
+
+### Partial Credit Strategy
+
+USACO scores each test case independently. If you can't solve a problem fully:
+- Implement the O(n²) brute force even if it only handles n ≤ 5000 (might score 300–600/1000 on a problem)
+- Add special-case code for small inputs: `if (n <= 100) brute_force(); else fast_solution();`
+- Submit the partial solution, then continue working on the full solution
+- Any points from partial credit could determine whether you promote
+
+---
+
+## Stress Testing (Critical Technique)
+
+Stress testing is how you find bugs when your solution passes samples but fails on judge.
+
+**Setup**:
 ```
-TopCoder SRM: 75 minutes total
-- Problem Reading: 10 minutes
-- Easy Problem: 10-15 minutes
-- Medium Problem: 30-40 minutes
-- Hard Problem: 15-25 minutes
-- Challenge Phase: 15 minutes
+brute.cpp   — correct O(n²) or O(n³) solution (easy to write, definitely correct)
+fast.cpp    — your optimized solution
+gen.py      — random test case generator
+```
+
+**gen.py example**:
+```python
+import random, sys
+
+n = random.randint(1, 10)
+a = [random.randint(1, 100) for _ in range(n)]
+print(n)
+print(*a)
+```
+
+**stress.sh**:
+```bash
+#!/bin/bash
+while true; do
+    python3 gen.py > test.in
+    ./brute < test.in > expected.out
+    ./fast  < test.in > actual.out
+    if ! diff -q expected.out actual.out > /dev/null; then
+        echo "DIFFERENCE FOUND!"
+        echo "Input:"
+        cat test.in
+        echo "Expected:"
+        cat expected.out
+        echo "Actual:"
+        cat actual.out
+        exit 1
+    fi
+done
+```
+
+**When to stress test**: Any time your solution gives WA (wrong answer) on the judge but passes your sample. This finds bugs in 5–15 minutes that manual testing might never find.
+
+---
+
+## Post-Contest Analysis
+
+After every USACO contest, within 24–48 hours:
+
+1. **Check all test cases**: USACO releases all inputs/outputs after the contest. Run your code on them.
+
+2. **Read the official editorial**: usaco.org posts editorials. Even for problems you solved, read the editorial — there's often a cleaner approach.
+
+3. **Re-implement problems you couldn't solve**: Write the correct solution from scratch using the editorial. This is where you actually learn.
+
+4. **Categorize your errors**:
+   - Was the algorithm wrong? (need more algorithm study)
+   - Was the implementation buggy? (need more coding practice)
+   - Did you run out of time? (need speed drills)
+   - Did you misread the problem? (need more careful reading)
+
+5. **Add to your weak areas list**: If you couldn't figure out a problem's approach, add that topic to study.
+
+---
+
+## Codeforces Contest Strategy
+
+### Format
+- **Div. 2**: 2 hours, 5–6 problems. A = easy (5–10 min), B = easy (10–20 min), C = medium, D = harder, E/F = hard
+- **Div. 1**: 2.5 hours, 5–6 problems. All problems are hard.
+- **Educational rounds**: Slower pacing, hacking not allowed, editorials published same day
+
+### Scoring
+Codeforces uses dynamic scoring — each problem starts at a maximum point value (500, 1000, 1500, 2000, 2500, 3000) and decreases as time passes. Solving faster earns more points.
+
+**Wrong submission penalty**: Each wrong submission on a problem deducts **50 points from that problem's score** at the time you eventually solve it. This is not a time penalty — the deduction applies when (and only if) you solve the problem. If you never solve a problem, wrong submissions on it don't affect your score at all.
+
+**Hacking** (Div. 1/2 rounds, during the 12-hour hack phase after the contest): You can submit a counterexample against another contestant's solution. A successful hack gives +100 points; a failed hack attempt costs −50 points. Hacking is entirely separate from the wrong-submission penalty above.
+
+**Round types and their scoring rules**:
+- **Div. 1/2 rounds**: Dynamic scoring + 50-pt per WA (when solved) + hacking phase
+- **Educational rounds**: Fixed scoring, no hacking, no wrong-submission penalty — safe to try-and-see
+- **Div. 3 / Div. 4 rounds**: Fixed scoring, no hacking
+- **Global rounds**: Dynamic scoring, hacking
+
+**Practical implication**: In Div. 1/2, do NOT spam wrong submissions. Each WA on A costs you 50 pts if you eventually solve A. But if you're confident in your solution, don't over-test — time lost is also points lost.
+
+### Strategy
+- **A + B fast** (target < 15 min combined): These are easy. Speed matters for rating.
+- **C problem**: Central challenge of Div. 2. Spend 20–30 min. If stuck, skip to D.
+- **D/E**: Harder problems — attempt if time allows
+
+### Minimize Wrong Submissions
+Unlike USACO, Codeforces penalizes wrong submissions (in Div. 1/2 rounds):
+- Test locally with sample cases AND manually-crafted edge cases before submitting
+- If 80% confident, submit — but trace through edge cases first
+- In Educational rounds, the penalty rule doesn't apply — safer to submit speculatively
+- Use `assert()` statements for debugging locally, remove before submission
+
+---
+
+## AtCoder Contest Strategy
+
+### ABC (AtCoder Beginner Contest)
+**Duration**: 100 minutes, 6–8 problems
+- A/B: trivial (2–5 min each)
+- C: simple implementation or algorithm (5–10 min)
+- D: first real problem — medium difficulty (15–25 min) [Silver equivalent]
+- E: harder — Gold equivalent (20–40 min)
+- F/G: expert level [Platinum equivalent]
+
+**Strategy**: Solve A–D as fast as possible, then attempt E. F/G require Platinum+ level skill.
+
+### ARC (Regular Contest)
+**Duration**: 100 minutes, 6 problems
+- A/B: medium (Silver/Gold)
+- C/D: hard (Platinum)
+- E/F: expert (IOI level)
+
+### AGC (Grand Contest)
+**Duration**: 110–180 minutes, 6 problems
+- All problems are hard. A/B = Gold/Platinum, C/D/E/F = IOI level.
+- Recommended for: Platinum+ competitors who want IOI-level challenges
+
+---
+
+## IOI Contest Strategy
+
+### Format
+- 2 days × 5 hours = 10 hours total
+- 3 problems per day, 6 problems total
+- Each problem: 100 points, 5–10 subtasks
+- Partial credit: solve subtasks in increasing difficulty
+
+### IOI Scoring Mindset
+
+**NEVER leave a problem blank.** Even a brute force O(n³) solution scores 10–30 points on small subtasks. A blank submission scores 0.
+
+For each problem:
+1. Read all subtasks first: understand what the easy subtasks ask
+2. Implement brute force: get subtask 1 (n ≤ 100 or similar) for 5–20 points
+3. Look for the key structural insight for harder subtasks
+4. Implement each subtask's optimized solution
+
+### IOI Time Allocation (5 hours)
+
+```
+0:00 – 0:20   Read ALL 3 problems; read all subtasks
+0:20 – 1:00   Implement brute forces for all 3 problems (subtask 1 each)
+1:00 – 2:30   Deep solve on your strongest problem (target: full score)
+2:30 – 4:00   Second problem: solve as many subtasks as possible
+4:00 – 4:40   Third problem: maximize remaining subtask points
+4:40 – 5:00   Final review, double-check submissions
+```
+
+**Day 2**: After Day 1 results, you know exactly how many points you have. Adjust strategy: if already near medal threshold, be conservative; if far below, take risks on harder subtasks.
+
+### IOI Implementation Tips
+
+- Use `#include <bits/stdc++.h>` but note IOI problems often use custom headers (`grader.h`, etc.)
+- For interaction problems: flush output after each response: `cout << answer << "\n"; cout.flush();`
+- Memory: IOI usually allows 512 MB or 1 GB. Be careful with large arrays.
+- `assert()` for debugging in practice; remove for contest (asserts slow down code)
+- For partial scoring: implement solution per subtask with explicit `if (n <= 100)` guards
+
+---
+
+## Mental Performance Under Pressure
+
+### Before the Contest
+- Sleep 8+ hours the night before
+- Light meal, stay hydrated
+- 30-minute review of your template and key algorithms (don't cram new material)
+
+### During the Contest
+- **When stuck**: Take a 2-minute break, breathe, re-read the problem from scratch. Often you misunderstood something.
+- **When panicking**: Focus only on the current problem. Block out awareness of remaining time.
+- **When approaching time limit**: Switch to partial credit mode. A brute force that scores 200/333 is better than nothing.
+- **Keep a scratch paper log**: Write down your key observations and invariants. This prevents going in circles.
+
+### After the Contest
+- Don't check standings/others' solutions until you've submitted your final answers.
+- If you didn't perform well: that's normal. Every top competitor has bad contests. Analyze and move on.
+
+---
+
+## Code Templates
+
+### Standard C++ Template (USACO)
+```cpp
+#pragma GCC optimize("O2")
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+using pii = pair<int,int>;
+using vi = vector<int>;
+using vl = vector<ll>;
+
+const int MOD = 1e9 + 7;
+const int INF = 1e9;
+const ll LINF = 1e18;
+
+void setIO(string name = "") {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    if (name.size()) {
+        freopen((name+".in").c_str(), "r", stdin);
+        freopen((name+".out").c_str(), "w", stdout);
+    }
+}
+
+int main() {
+    setIO("problem_name"); // change to actual problem name
+    int n; cin >> n;
+    // solution here
+}
+```
+
+### Useful Macros
+```cpp
+#define all(v) (v).begin(), (v).end()
+#define rep(i,a,b) for(int i=a; i<(b); i++)
+#define pb push_back
+#define fi first
+#define se second
+#define sz(v) ((int)(v).size())
+```
+
+### Debug Output (remove before submission)
+```cpp
+#define DEBUG
+#ifdef DEBUG
+    #define dbg(x) cerr << #x << " = " << x << "\n"
+    #define dbg2(x,y) cerr << #x << " = " << x << ", " << #y << " = " << y << "\n"
+#else
+    #define dbg(x)
+    #define dbg2(x,y)
+#endif
 ```
 
 ---
 
-## 🏆 **IOI Contest Strategy**
+## Contest Calendar
 
-### **IOI Format**
-- **Duration**: 5 hours over 2 days
-- **Problems**: 6 problems (3 per day)
-- **Scoring**: Partial scoring, multiple test cases
-- **Environment**: C++, Java, Python, Pascal
-
-### **Day 1 Strategy**
-#### **Morning Session (5 hours)**
-- **Problem Reading**: 20 minutes for all 3 problems
-- **Strategy Selection**: Choose 2-3 problems to attempt
-- **Primary Focus**: Solve 2 problems completely
-- **Partial Scoring**: Maximize points on third problem
-
-#### **Time Allocation**
-```
-IOI Day 1: 5 hours total
-- Problem Reading: 20 minutes
-- Problem 1: 90-120 minutes
-- Problem 2: 90-120 minutes
-- Problem 3: 60-90 minutes
-- Review: 30 minutes
-```
-
-### **Day 2 Strategy**
-#### **Morning Session (5 hours)**
-- **Problem Reading**: 20 minutes for all 3 problems
-- **Strategy Adjustment**: Based on Day 1 performance
-- **Goal Setting**: Target specific score
-- **Execution**: Implement optimal strategy
-
-#### **Time Allocation**
-```
-IOI Day 2: 5 hours total
-- Problem Reading: 20 minutes
-- Problem 4: 90-120 minutes
-- Problem 5: 90-120 minutes
-- Problem 6: 60-90 minutes
-- Review: 30 minutes
-```
-
-### **IOI Success Factors**
-- **Algorithm Knowledge**: Comprehensive understanding
-- **Implementation Speed**: Efficient coding
-- **Problem Analysis**: Quick understanding
-- **Partial Scoring**: Maximize points
-- **Stress Management**: Handle pressure
-- **Time Management**: Optimal pacing
+| Month | Recommended Contests |
+|-------|---------------------|
+| Every week | Codeforces rounds (participate in Div. 2 or Div. 1 based on level) |
+| Every week | AtCoder ABC (Sunday evenings JST) |
+| Monthly | AtCoder ARC (once or twice per month) |
+| December | USACO December contest |
+| January | USACO January contest |
+| February | USACO February contest |
+| March | AtCoder AGC (for Platinum+) |
+| April/May | USACO US Open (most important!) |
+| June | USACO Training Camp (if invited) |
+| July | IOI (if selected for team) |
 
 ---
 
-## 🎯 **Problem-Solving Strategies**
-
-### **Problem Classification**
-#### **By Algorithm Type**
-- **Greedy**: Local optimal choices
-- **Dynamic Programming**: Optimal substructure
-- **Graph**: Network problems
-- **Mathematical**: Number theory, combinatorics
-- **Data Structure**: Efficient operations
-
-#### **By Difficulty Level**
-- **Easy**: Straightforward implementation
-- **Medium**: Algorithm design required
-- **Hard**: Complex algorithm or optimization
-- **Expert**: Research-level problems
-
-### **Solution Development Process**
-1. **Problem Understanding**
-   - Read problem statement carefully
-   - Identify constraints and requirements
-   - Clarify ambiguities
-   - Determine input/output format
-
-2. **Algorithm Selection**
-   - Identify problem type
-   - Choose appropriate algorithm
-   - Consider time/space complexity
-   - Plan implementation approach
-
-3. **Implementation**
-   - Write clean, efficient code
-   - Use appropriate data structures
-   - Handle edge cases
-   - Optimize for performance
-
-4. **Testing**
-   - Test with sample cases
-   - Test with edge cases
-   - Test with random cases
-   - Verify correctness
-
-5. **Optimization**
-   - Analyze bottlenecks
-   - Optimize critical sections
-   - Improve memory usage
-   - Enhance performance
-
-### **Common Problem Patterns**
-#### **Sorting Problems**
-- **Pattern**: Sort input, process in order
-- **Examples**: Sorting by criteria, ordering tasks
-- **Approach**: Choose appropriate sorting algorithm
-- **Complexity**: O(n log n) typical
-
-#### **Search Problems**
-- **Pattern**: Find element in structure
-- **Examples**: Binary search, DFS, BFS
-- **Approach**: Choose search strategy
-- **Complexity**: Varies by structure
-
-#### **DP Problems**
-- **Pattern**: Optimize over subproblems
-- **Examples**: Knapsack, path counting
-- **Approach**: Define state, transition
-- **Complexity**: O(n²) typical
-
-#### **Graph Problems**
-- **Pattern**: Network traversal/optimization
-- **Examples**: Shortest path, connectivity
-- **Approach**: Choose graph algorithm
-- **Complexity**: Varies by graph size
-
----
-
-## 📈 **Performance Optimization**
-
-### **Time Optimization**
-#### **Algorithm Selection**
-- **Choose Efficient Algorithms**: O(n log n) vs O(n²)
-- **Consider Data Structures**: Appropriate DS selection
-- **Optimize Critical Paths**: Focus on bottlenecks
-- **Use Built-in Functions**: Library optimizations
-
-#### **Implementation Optimization**
-- **Avoid Unnecessary Copies**: Use references
-- **Minimize Memory Allocation**: Reuse objects
-- **Use Efficient I/O**: Fast input/output
-- **Optimize Loops**: Reduce overhead
-
-### **Memory Optimization**
-#### **Data Structure Choice**
-- **Use Appropriate DS**: Choose memory-efficient structures
-- **Avoid Large Arrays**: Use dynamic allocation
-- **Reuse Memory**: Free unused memory
-- **Consider Constraints**: Plan memory usage
-
-#### **Implementation Techniques**
-- **Bitmasking**: Compact state representation
-- **Compression**: Reduce memory footprint
-- **Lazy Allocation**: Allocate on demand
-- **Memory Pools**: Reuse memory blocks
-
----
-
-## 🎯 **Contest-Specific Techniques**
-
-### **USACO Techniques**
-- **File I/O**: Handle file input/output
-- **Multiple Test Cases**: Process multiple cases efficiently
-- **Edge Cases**: Handle boundary conditions
-- **Precision**: Handle floating-point precision
-
-### **Codeforces Techniques**
-- **Fast I/O**: Use fast input/output methods
-- **Modular Arithmetic**: Handle large numbers
-- **Bit Operations**: Use bitwise operations
-- **Template Usage**: Use code templates
-
-### **AtCoder Techniques**
-- **Partial Scoring**: Maximize partial points
-- **Precision Handling**: Careful with floating-point
-- **Multiple Solutions**: Consider alternative approaches
-- **Time Management**: Balance between problems
-
-### **IOI Techniques**
-- **Partial Scoring**: Implement basic solution first
-- **Test Case Optimization**: Handle different test cases
-- **Memory Management**: Efficient memory usage
-- **Stress Testing**: Test thoroughly
-
----
-
-## 🏆 **Success Metrics**
-
-### **Performance Indicators**
-- **Problem Solving Speed**: Time per problem
-- **Accuracy Rate**: Correct submissions
-- **Contest Ranking**: Relative performance
-- **Algorithm Knowledge**: Breadth and depth
-
-### **Improvement Tracking**
-- **Weekly Progress**: Problem solving improvement
-- **Monthly Goals**: Target achievement
-- **Contest Results**: Performance trends
-- **Skill Development**: Algorithm mastery
-
-### **Success Benchmarks**
-- **Bronze**: 800+ points, 90% accuracy
-- **Silver**: 750+ points, 85% accuracy
-- **Gold**: 700+ points, 80% accuracy
-- **Platinum**: 650+ points, 75% accuracy
-- **IOI**: Top 20% internationally
-
----
-
-## 🎯 **Mental Preparation**
-
-### **Pre-Contest Routine**
-- **Rest**: Adequate sleep before contest
-- **Nutrition**: Balanced meal, stay hydrated
-- **Exercise**: Light physical activity
-- **Mental Focus**: Clear mind, positive attitude
-
-### **During Contest**
-- **Breathing**: Stay calm, control breathing
-- **Focus**: Concentrate on current problem
-- **Confidence**: Trust your abilities
-- **Adaptability**: Adjust strategy as needed
-
-### **Post-Contest**
-- **Review**: Analyze performance
-- **Learn**: Extract lessons
-- **Recover**: Rest and recharge
-- **Prepare**: Plan for next contest
-
----
-
-## 🎯 **Long-Term Strategy**
-
-### **Skill Development**
-- **Algorithm Mastery**: Comprehensive understanding
-- **Implementation Skills**: Efficient coding
-- **Problem Analysis**: Quick understanding
-- **Contest Strategy**: Optimal approach
-
-### **Career Preparation**
-- **Technical Skills**: Algorithmic thinking
-- **Problem Solving**: Analytical abilities
-- **Performance Under Pressure**: Stress management
-- **Team Collaboration**: Communication skills
-
-### **Continuous Improvement**
-- **Regular Practice**: Consistent training
-- **Learning**: Stay updated with new techniques
-- **Competition**: Regular contest participation
-- **Review**: Analyze and improve
-
-This comprehensive contest strategy guide provides world-class techniques for competitive programming success, covering USACO, international contests, and IOI preparation with proven strategies and performance optimization techniques.
+*Last updated: April 2026*
