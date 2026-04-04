@@ -33,10 +33,12 @@
   - "Applications of Sorting and Searching"
 - **Learning Tasks**:
   1. Read all sorting sections thoroughly
-  2. Implement basic sorting algorithms (selection, bubble)
-  3. Understand binary search concept and implementation
+  2. Learn `std::sort()` with default and custom comparators — do NOT implement sorting from scratch
+  3. Understand binary search concept; learn `lower_bound`/`upper_bound`
   4. Practice with USACO sorting problems
-  5. Learn when to use different sorting approaches
+  5. Know when O(n log n) vs O(n²) is needed based on constraints
+
+> **Note**: At Bronze level you use `std::sort()`. Implementing bubble sort, selection sort etc. from scratch is not tested and wastes contest time. Understanding *why* O(n log n) is faster than O(n²) is sufficient conceptual background.
 
 ### **C++ STL Tutorial**
 - **Resource**: https://en.cppreference.com/w/cpp/container

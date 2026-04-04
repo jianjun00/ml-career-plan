@@ -20,9 +20,15 @@
 
 ### **Monthly Targets**
 - **Problems Solved**: 180+ (Silver difficulty)
-- **USACO**: Silver qualification (750+ points)
+- **USACO**: Silver → Gold promotion (~750 points; threshold varies per contest)
 - **Codeforces**: 1400+ rating
-- **Skills**: Advanced data structures, graph algorithms, basic DP
+- **Skills**: `map`/`set`/`priority_queue`, Dijkstra, Union-Find, toposort, DP fundamentals
+
+### **Detailed Week Files**
+- [Week 5: Advanced STL Data Structures](month_2/weeks/week_5_advanced_data_structures.md)
+- [Week 6: Graph Algorithms — Dijkstra, Union-Find, Toposort](month_2/weeks/week_6_graphs.md)
+- [Week 7: Dynamic Programming — Foundations](month_2/weeks/week_7_dynamic_programming.md)
+- [Week 8: Silver Contest Preparation + Real Contest](month_2/weeks/week_8_silver_contest_prep.md)
 
 ---
 

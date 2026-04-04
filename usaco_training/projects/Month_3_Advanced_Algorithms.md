@@ -13,16 +13,22 @@
 - Prepare for IOI-level problem solving
 
 ### **Weekly Structure**
-- **Week 9**: Mathematical algorithms (number theory, combinatorics)
-- **Week 10**: Advanced data structures (segment trees, fenwick trees)
-- **Week 11**: Advanced graph algorithms (network flow, decomposition)
-- **Week 12**: Contest excellence and IOI problem practice
+- **Week 9**: Advanced data structures (Fenwick tree, segment tree with lazy propagation)
+- **Week 10**: Advanced graph algorithms (SCC, bridges, Euler paths)
+- **Week 11**: Advanced DP (bitmask DP, digit DP, DP optimizations)
+- **Week 12**: Gold contest preparation and real contest
 
 ### **Monthly Targets**
-- **Problems Solved**: 200+ (Gold difficulty)
-- **USACO**: Gold qualification (700+ points)
+- **Problems Solved**: 120+ (Gold difficulty)
+- **USACO**: Gold → Platinum promotion (~750 points; threshold varies per contest)
 - **Codeforces**: 1800+ rating
-- **Skills**: Mathematical algorithms, advanced DS, complex graphs
+- **Skills**: Fenwick/segment tree, SCC/bridges, bitmask DP, digit DP, string hashing/KMP
+
+### **Detailed Week Files**
+- [Week 9: Fenwick Tree and Segment Tree](month_3/weeks/week_9_fenwick_segment_tree.md)
+- [Week 10: Advanced Graph — SCC, Bridges, Euler Paths](month_3/weeks/week_10_advanced_graph.md)
+- [Week 11: Advanced DP — Bitmask, Digit DP, Optimizations](month_3/weeks/week_11_advanced_dp.md)
+- [Week 12: Gold Contest Preparation + Real Contest](month_3/weeks/week_12_gold_contest_prep.md)
 
 ---
 

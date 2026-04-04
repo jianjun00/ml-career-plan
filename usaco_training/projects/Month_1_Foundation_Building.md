@@ -14,15 +14,30 @@
 
 ### **Weekly Structure**
 - **Week 1**: Programming fundamentals and language mastery
-- **Week 2**: Algorithm implementation (sorting and searching)
-- **Week 3**: Contest simulation and advanced topics
-- **Week 4**: Comprehensive review and real competition participation
+- **Week 2**: Sorting (STL), binary search, complete search, simulation, greedy
+- **Week 3**: Graph intro (BFS/DFS), prefix sums, two pointers, mock contest
+- **Week 4**: Comprehensive review and real competition
+
+### **Detailed Day Files**
+- [Week 1](month_1/month_1_weeks/week_1/) — Days 1-7: C++ fundamentals, containers, problem-solving
+- [Week 2 — Day 8: `std::sort` + custom comparators](month_1/month_1_weeks/week_2/day_8_sort_stl.md)
+- [Week 2 — Day 9: Binary search](month_1/month_1_weeks/week_2/day_9_binary_search.md)
+- [Week 2 — Day 10: Complete search](month_1/month_1_weeks/week_2/day_10_complete_search.md)
+- [Week 2 — Day 11: Simulation](month_1/month_1_weeks/week_2/day_11_simulation.md)
+- [Week 2 — Day 12: Greedy](month_1/month_1_weeks/week_2/day_12_greedy.md)
+- [Week 2 — Days 13-14: Mock contest + review](month_1/month_1_weeks/week_2/day_13_14_mock_contest_review.md)
+- [Week 3 — Days 15-16: BFS and DFS](month_1/month_1_weeks/week_3/day_15_16_graph_intro.md)
+- [Week 3 — Day 17: Prefix sums + difference arrays](month_1/month_1_weeks/week_3/day_17_prefix_sums.md)
+- [Week 3 — Day 18: Two pointers + sliding window](month_1/month_1_weeks/week_3/day_18_two_pointers.md)
+- [Week 3 — Days 19-21: Mock contest 2 + review](month_1/month_1_weeks/week_3/day_19_21_mock_contest_2.md)
+- [Week 4 — Days 22-24: Comprehensive review](month_1/month_1_weeks/week_4/day_22_24_comprehensive_review.md)
+- [Week 4 — Days 25-28: Real contest](month_1/month_1_weeks/week_4/day_25_28_real_contest.md)
 
 ### **Monthly Targets**
 - **Problems Solved**: 150+ (Bronze difficulty)
-- **USACO**: Bronze qualification (800+ points)
+- **USACO**: Bronze qualification (~750 points; promotion threshold varies per contest)
 - **Codeforces**: 1000+ rating
-- **Skills**: Basic algorithms, data structures, problem-solving methodology
+- **Skills**: STL-based sorting/searching, simulation, complete search, problem-solving methodology
 
 ---
 
@@ -209,83 +224,88 @@
 
 ## 📚 **Week 2: Algorithm Implementation**
 
-### **Day 8-10: Sorting Algorithms**
+### **Day 8-10: Sorting with STL + Custom Comparators**
+
+> **Competition reality**: At Bronze level you use `std::sort()` — you do NOT implement sorting algorithms from scratch. Knowing *how* merge sort and quicksort work conceptually is useful context, but writing them is not tested and wastes contest time.
 
 #### **📖 Learning Materials**
-**MIT 6.006 Lecture 3: Sorting and Searching**
-- **Video**: Lecture 3 from MIT 6.006
-- **Focus**: Sorting algorithm analysis, efficiency comparison
-- **Topics**: Time complexity, stability, in-place sorting
-
-**CP-Algorithms: Sorting**
-- **Resource**: https://cp-algorithms.com/sorting/
-- **Topics**: Implementation details, applications, optimizations
-
-**USACO Guide: Advanced Sorting**
+**USACO Guide: Sorting and Searching**
 - **Resource**: https://usaco.guide/current/bronze/sort-search/
-- **Topics**: Custom comparators, sorting applications
+- **Topics**: `std::sort`, custom comparators, sort-based problem patterns
 
-#### **🔧 Sorting Algorithms to Master**
-**Basic Sorting**:
-- **Bubble Sort**: O(n²), educational purpose
-- **Selection Sort**: O(n²), selection principle
-- **Insertion Sort**: O(n²), incremental building
+**CP-Algorithms: Sorting Intro (read only, don't implement)**
+- **Resource**: https://cp-algorithms.com/sorting/
+- **Purpose**: Understand why O(n log n) vs O(n²) matters for constraint analysis only
 
-**Efficient Sorting**:
-- **Merge Sort**: O(n log n), divide and conquer
-- **Quick Sort**: O(n log n), partition-based
-- **Heap Sort**: O(n log n), priority queue
+#### **🔧 What to Master (STL-first approach)**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-**Special Sorting**:
-- **Counting Sort**: O(n+k), integer sorting
-- **Radix Sort**: O(d(n+k)), digit-based sorting
+// 1. Sort vector of ints
+vector<int> v = {5, 2, 8, 1, 9};
+sort(v.begin(), v.end());               // ascending [1,2,5,8,9]
+sort(v.begin(), v.end(), greater<int>()); // descending [9,8,5,2,1]
 
-#### **💻 Practice Problems (30 problems)**
-**Basic Sorting Applications**:
-1. **Custom Sorting**: Sort with custom criteria
-2. **Stable Sorting**: Maintain order for equal elements
-3. **Sorting with Constraints**: Limited memory/time
-4. **Multi-key Sorting**: Sort by multiple criteria
-5. **Sorting Optimization**: Choose best algorithm
+// 2. Sort pairs — sorts by first, then second
+vector<pair<int,int>> p = {{3,1},{1,5},{3,2}};
+sort(p.begin(), p.end()); // {{1,5},{3,1},{3,2}}
 
-**USACO Bronze Sorting Problems**:
-6. **Sorting Challenges**: Various sorting tasks
-7. **Ordering Problems**: Arrange elements
-8. **Ranking Problems**: Determine positions
-9. **Sorting with Logic**: Complex sorting rules
-10. **Efficient Sorting**: Optimize sorting approach
+// 3. Custom comparator (lambda) — sort by second element
+sort(p.begin(), p.end(), [](auto& a, auto& b){
+    return a.second < b.second;
+});
 
-**Codeforces Sorting Tag (800-1000)**:
-11. **Simple Sorting**: Basic sorting tasks
-12. **Custom Comparators**: Define sorting rules
-13. **Sorting Applications**: Real-world sorting
-14. **Efficient Sorting**: Optimize for constraints
-15. **Sorting with Data**: Sort complex structures
+// 4. Sort struct by custom field
+struct Cow { string name; int weight; };
+vector<Cow> cows = {{"Bessie",500},{"Elsie",600},{"Mildred",400}};
+sort(cows.begin(), cows.end(), [](const Cow& a, const Cow& b){
+    return a.weight < b.weight;
+});
 
-**AtCoder Sorting Problems**:
-16. **Sorting Basics**: Fundamental sorting
-17. **Sorting Challenges**: Advanced sorting
-18. **Sorting with Conditions**: Constraint-based sorting
-19. **Multi-dimensional Sorting**: Sort by multiple fields
-20. **Sorting Optimization**: Performance optimization
+// 5. Stable sort (preserves relative order for equal elements)
+stable_sort(cows.begin(), cows.end(), [](const Cow& a, const Cow& b){
+    return a.weight < b.weight;
+});
 
-**Advanced Sorting Practice**:
-21. **Stability Testing**: Test sorting stability
-22. **Complex Sorting**: Multi-criteria sorting
-23. **Sorting with Memory**: Limited memory sorting
-24. **Sorting with Time**: Time-optimized sorting
-25. **Sorting Analysis**: Algorithm comparison
-26. **Sorting Implementation**: Code sorting algorithms
-27. **Sorting Applications**: Practical uses
-28. **Sorting Edge Cases**: Handle special cases
-29. **Sorting Optimization**: Advanced techniques
-30. **Sorting Review**: Comprehensive practice
+// 6. Sort-then-two-pointer pattern (very common in Bronze)
+sort(v.begin(), v.end());
+int lo = 0, hi = v.size() - 1;
+while (lo < hi) { /* sliding window logic */ }
+```
+
+**Complexity reference** (constraint → algorithm choice):
+- n ≤ 1,000: O(n²) OK (nested loops fine)
+- n ≤ 100,000: need O(n log n) → `std::sort` or map/set
+- n ≤ 10^6: O(n log n) tight → avoid extra log factors
+
+#### **💻 Practice Problems (15 problems)**
+**USACO Bronze Sorting Problems** (specific, from USACO Guide):
+1. [Moocast](https://usaco.org/index.php?page=viewproblem2&cpid=1084) — sort by field, simulate
+2. [Photoshoot](https://usaco.org/index.php?page=viewproblem2&cpid=1023) — reconstruct array from sort
+3. [Livestock Lineup](https://usaco.org/index.php?page=viewproblem2&cpid=965) — custom sort with constraints
+4. [Diamond Collector](https://usaco.guide/bronze/intro-sorting/) — sort + sliding window
+5. [Blocked Billboard](https://usaco.org/index.php?page=viewproblem2&cpid=759) — sort + geometry
+
+**Codeforces Sort Tag (800-1000)**:
+6. [977B: Two-gram](https://codeforces.com/problemset/problem/977/B) — sort + frequency
+7. [1041A: Heist](https://codeforces.com/problemset/problem/1041/A) — sort + max gap
+8. [1157A: Reorder the Array](https://codeforces.com/problemset/problem/1157/A) — sort then count
+9. [1234A: Equalize Prices Again](https://codeforces.com/problemset/problem/1234/A) — sort + arithmetic
+10. [1272A: Three Friends](https://codeforces.com/problemset/problem/1272/A) — sort + range
+
+**AtCoder Sort Problems**:
+11. [ABC 237B](https://atcoder.jp/contests/abc237/tasks/abc237_b) — custom sort
+12. [ABC 241B](https://atcoder.jp/contests/abc241/tasks/abc241_b) — sort application
+13. [ABC 242B](https://atcoder.jp/contests/abc242/tasks/abc242_b) — sort + check
+14. [ABC 249B](https://atcoder.jp/contests/abc249/tasks/abc249_b) — sort logic
+15. [ABC 252B](https://atcoder.jp/contests/abc252/tasks/abc252_b) — multi-key sort
 
 #### **🎯 Daily Goals**
-- **Day 8**: Basic sorting algorithms; solve 10 problems
-- **Day 9**: Efficient sorting algorithms; solve 10 problems
-- **Day 10**: Special sorting and applications; solve 10 problems
-- **Focus**: Understand sorting complexity and applications
+- **Day 8**: `std::sort` with default/custom comparators; solve 5 problems
+- **Day 9**: Sort + two-pointer/sliding window; solve 5 problems
+- **Day 10**: Mixed sort applications; solve 5 problems
+- **Focus**: Write `std::sort` with lambda comparator fluently from memory
 
 ---
 
@@ -584,8 +604,8 @@
 #### **📊 Competition Goals**
 **USACO Goals**:
 - Complete at least 2 problems
-- Score 800+ points
-- Qualify for Bronze division
+- Score ~750+ points (promotion threshold varies per contest)
+- Qualify for Silver division
 - Demonstrate solid problem-solving
 
 **Codeforces Goals**:
@@ -659,7 +679,7 @@
 
 ### **🎯 Achievement Targets**
 - **Problems Solved**: 150+ (Bronze difficulty)
-- **USACO**: Bronze qualification (800+ points)
+- **USACO**: Bronze → Silver promotion (~750 points; threshold set per contest)
 - **Codeforces**: 1000+ rating
 - **Accuracy**: 85%+ correct submissions
 - **Average Time**: < 30 minutes per problem
